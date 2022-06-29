@@ -14,8 +14,8 @@
                 </div>
             
                 <div class="col-sm-4">
-                    <label for="description">Valor</label>
-                    <input type="text" name="description" id="description" class="form-control">
+                    <label for="value">Valor</label>
+                    <input type="text" name="value" id="value" class="form-control">
                 </div>
             
                 <div class="col-sm-4">
@@ -26,12 +26,12 @@
             <div class="row mt-4">
                 <div class="col-sm-4">
                     <label for="cost-price">Preço de custo</label>
-                    <input type="text" name="cost-price" id="cost-price" class="form-control" >
+                    <input type="text" name="cost_price" id="cost_price" class="form-control" >
                 </div>
             
                 <div class="col-sm-4">
                     <label for="sale-price">Preço de venda</label>
-                    <input type="text" name="sale-price" id="sale-price" class="form-control" >
+                    <input type="text" name="sale_price" id="sale_price" class="form-control" >
                 </div>
                 <div class="col-sm-4">
                     <label for="photo">Foto</label>
