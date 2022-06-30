@@ -22,10 +22,10 @@
                             <a class="nav-link" href="#">INÍCIO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PRODUTOS</a>
+                            <a class="nav-link" href="/produtos">PRODUTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">NOVO PRODUTO</a>
+                            <a class="nav-link" href="produtos/novo">NOVO PRODUTO</a>
                         </li>
                     </ul>
                 </nav>
@@ -33,7 +33,7 @@
         </nav>
     </header>
 
-    <article>
+    <article class="container">
         @yield('content')
     </article>
 
