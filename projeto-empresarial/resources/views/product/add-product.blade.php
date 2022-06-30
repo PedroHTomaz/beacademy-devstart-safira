@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center mt-4">CADASTRO DE PRODUTO</h1>
-        <form action="#" method="POST">
+        <form action="{{route('produtos.create')}}" method="POST">
             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
             <div class="row mt-5">
                 <div class="col-sm-4">
@@ -15,34 +15,34 @@
             
                 <div class="col-sm-4">
                     <label for="value">Valor</label>
-                    <input type="text" name="value" id="value" class="form-control">
+                    <input type="text" name="value" id="value" class="form-control" required>
                 </div>
             
                 <div class="col-sm-4">
                     <label for="quantity">Quantidade</label>
-                    <input type="text" name="quantity" id="quantity" class="form-control" >
+                    <input type="text" name="quantity" id="quantity" class="form-control" required>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-sm-4">
-                    <label for="cost-price">Preço de custo</label>
-                    <input type="text" name="cost_price" id="cost_price" class="form-control" >
+                    <label for="cust-price">Preço de custo</label>
+                    <input type="text" name="cust_price" id="cust_price" class="form-control" required>
                 </div>
             
                 <div class="col-sm-4">
                     <label for="sale-price">Preço de venda</label>
-                    <input type="text" name="sale_price" id="sale_price" class="form-control" >
+                    <input type="text" name="sale_price" id="sale_price" class="form-control" required>
                 </div>
                 <div class="col-sm-4">
                     <label for="photo">Foto</label>
-                    <input type="text" name="photo" id="photo" class="form-control" >
+                    <input type="text" name="photo" id="photo" class="form-control" required>
                 </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-sm-12">
                     <label for="description">Preço de custo</label>
-                    <textarea name="description" id="description"  class="form-control" rows="2"></textarea>
+                    <textarea name="description" id="description"  class="form-control" rows="2" required></textarea>
                 </div>
             </div>
             <div class="row">

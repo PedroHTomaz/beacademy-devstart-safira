@@ -13,6 +13,7 @@ Route::get('/', function () {
 // });
 
 Route::get('/produtos/novo',[ProductController::class,'add'])->name('produtos.add');
+Route::post('/produtos',[ProductController::class,'create'])->name('produtos.create');
 
 
 Route::get('/admin/login', function () {

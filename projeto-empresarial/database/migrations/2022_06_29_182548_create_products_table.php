@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->decimal('value');
             $table->integer('quantity');
-            $table->decimal('cost_price');
+            $table->decimal('cust_price');
             $table->decimal('sale_price');
             $table->string('photo');
             $table->string('description');
