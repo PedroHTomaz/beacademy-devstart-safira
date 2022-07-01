@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center mt-4">CADASTRO DE PRODUTO</h1>
-        <form action="{{route('produtos.create')}}" method="POST">
+        <form action="{{route('produtos.store')}}" method="POST">
             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
             <div class="row mt-5">
                 <div class="col-sm-4">
@@ -41,7 +41,7 @@
 
             <div class="row mt-4">
                 <div class="col-sm-12">
-                    <label for="description">Preço de custo</label>
+                    <label for="description">Descrição</label>
                     <textarea name="description" id="description"  class="form-control" rows="2" required></textarea>
                 </div>
             </div>

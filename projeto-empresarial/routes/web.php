@@ -1,19 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\{
+    ProductController,
+    AdminController,
+    UserController
+};
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
+//Usuários
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 
-Route::get('/produtos/novo',[ProductController::class,'add'])->name('produtos.add');
-Route::post('/produtos',[ProductController::class,'create'])->name('produtos.create');
+//Adm
+Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
 
-Route::get('/admin/login', function () {
-    return view ('admin-login');
-});
+//Produtos
+Route::get('/produtos/novo',[ProductController::class,'add'])->name('produtos.add');
+Route::post('/produtos/novo',[ProductController::class,'store'])->name('produtos.store');
+Route::get('/produtos', [ProductController::class, 'index'])->name('produtos.index');
+Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
