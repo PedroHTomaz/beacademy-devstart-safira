@@ -29,7 +29,7 @@
                   <td>{{ $produtos->photo }}</td>
                   <td>{{ $produtos->description }}</td>
               
-              <td> <a href="{{ route('produtos.index') }}" class='btn btn-warning'>Editar</a> </td>
+              <td> <a href="{{ route('produtos.edit', $produtos->id) }}" class='btn btn-warning'>Editar</a> </td>
               <td> <a href="{{ route('produtos.index') }}" class='btn btn-danger'>Delete</a> </td>
           </tr>
           
