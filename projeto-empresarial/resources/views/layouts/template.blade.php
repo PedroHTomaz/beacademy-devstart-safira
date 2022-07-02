@@ -22,10 +22,10 @@
                             <a class="nav-link" href="#">INÍCIO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/produtos">PRODUTOS</a>
+                            <a class="nav-link" href="{{route('produtos.index')}}">PRODUTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="produtos/novo">NOVO PRODUTO</a>
+                            <a class="nav-link" href="{{route('produtos.add')}}">NOVO PRODUTO</a>
                         </li>
                     </ul>
                 </nav>

@@ -59,4 +59,32 @@ class ProductController extends Controller
   
      return redirect()->route('produtos.index');
     }
+
+    public function edit($id)
+    {
+      if(! $produto = Product::find($id)){
+        return redirect()->route('users.index');
+      }
+  
+        $title = 'Editar produto ' . $produto->name;
+       return view('product.edit', compact('produto', 'title'));
+    }
+  
+    public function update(Request $Request, $id)
+    {
+         if(! $produto = Product::find($id)){
+                return redirect()->route('produtos.index');
+           };
+   
+            if($Request->password){
+              $data['password'] = bcrypt($Request->password);
+            };
+  
+           /* $data = $Request->only('name, email'); */
+           $data= $Request->all();
+  
+           $produto->update($data);
+  
+           return redirect()->route('produtos.index');
+  }
 }
