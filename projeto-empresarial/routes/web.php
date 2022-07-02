@@ -7,12 +7,14 @@ use App\Http\Controllers\{
     UserController
 };
 
+//Home
 Route::get('/', function () {
     return view('index');
 });
 
 //Usuários
-Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
+Route::post('/usuarios/cadastrar', [UserController::class, 'registered'])->name('users.registered');
 
 //Adm
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
