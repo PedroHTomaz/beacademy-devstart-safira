@@ -27,7 +27,7 @@
                 <a class="nav-link mx-3" href="#">Entrar</a>
                 </li>
                 <li class="nav-item">
-                <a class="btn btn-primary" href="#">Cadastrar</a>
+                <a class="btn btn-primary" href="{{route('users.create')}}">Cadastrar</a>
                 </li>
             </ul>
             </div>
