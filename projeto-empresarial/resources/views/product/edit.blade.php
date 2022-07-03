@@ -5,7 +5,7 @@
     <form style="margin: 30px" action="{{ route('produtos.update', $produto->id) }}" method='post' >
     @method('PUT')  
     @csrf
-                      <h1>Editar Usuário  {{ $produto->name }} </h1>
+                      <h1 class='text-primary'>Editar Usuário  {{ $produto->name }} </h1>
     <div class="row mt-5">
                     <div class="col-sm-4">
                         <label for="name">Nome</label>
@@ -44,7 +44,7 @@
                         <textarea name="description" id="description" class="form-control" rows="2" required>{{$produto->description}}</textarea>
                     </div>
                 </div>
-      <button type="submit" class="btn btn-primary">Atualizar</button>
+      <button type="submit" class="btn btn-primary mt-4">Atualizar</button>
     </form>
 
 @endsection
