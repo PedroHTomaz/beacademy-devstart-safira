@@ -10,7 +10,6 @@
     <style>
         body {
             max-width: 768px !important;
-            background-color: #5d8efc;
         }
     </style>
 </head>
