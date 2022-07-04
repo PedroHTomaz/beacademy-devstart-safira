@@ -10,7 +10,7 @@
     <title>Safira Squad - Projeto Empresarial</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg container">
+    <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container">
             <div class='d-flex'>
                 <a class="navbar-brand text-primary fw-bold" href="#"><i class="fa-solid fa-diamond"></i> SAFIRA</a>

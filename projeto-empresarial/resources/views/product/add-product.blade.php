@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center mt-4">CADASTRO DE PRODUTO</h1>
+        <h1 class="text-center mt-4 text-primary">CADASTRO DE PRODUTO</h1>
         <form action="{{route('produtos.store')}}" method="POST">
             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
             <div class="row mt-5">
@@ -47,8 +47,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-12  mt-4">
-                    <button class="btn btn-danger"><a href="#">CANCELAR </a></button>
-                    <button type="submit" class="btn btn-success">CADASTRAR</button>
+                    <button type="submit" class="btn btn-primary">CADASTRAR</button>
+                    <button class='btn btn-outline-danger'><a href="#" class='text-danger'>CANCELAR </a></button>
                 </div>
             </div>
         </form>

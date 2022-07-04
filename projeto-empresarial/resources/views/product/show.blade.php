@@ -1,8 +1,8 @@
 @extends('layouts.template')
 @section('title', $title)
 @section('content')
-                <h1>Listagem de {{$produtos -> name}} </h1>
-        <table class="table table-striped table-dark">
+                <h1 class='text-primary my-4'>Listagem de {{$produtos -> name}} </h1>
+        <table class="table table-striped">
    <thead>
         <tr>
         <th scope="col">ID</th>
