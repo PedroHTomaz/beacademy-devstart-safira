@@ -20,8 +20,9 @@ Route::post('/usuarios/cadastrar', [UserController::class, 'registered'])->name(
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
 
 //Produtos
-Route::get('/produtos/novo',[ProductController::class,'add'])->name('produtos.add');
-Route::post('/produtos/novo',[ProductController::class,'store'])->name('produtos.store');
+Route::delete('/produtos/{id}', [ProductController::class, 'destroy'])->name('produtos.destroy');
+Route::get('/produtos/novo', [ProductController::class, 'add'])->name('produtos.add');
+Route::post('/produtos/novo', [ProductController::class, 'store'])->name('produtos.store');
 Route::get('/produtos', [ProductController::class, 'index'])->name('produtos.index');
 Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('produtos.edit');
 Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
