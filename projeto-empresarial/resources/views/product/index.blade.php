@@ -2,9 +2,9 @@
 @section('title', 'Listagem de Produtos')
 @section('content')
 
-                  <h1>Listagem de Produtos </h1>
-                  <a href="{{ route('produtos.add') }}" class="btn btn-warning mb-2">Adicionar Novo Produtos</a>
-            <table class="table table-striped table-dark">
+                  <h1 class='text-primary mt-4'>Listagem de Produtos </h1>
+                  <a href="{{ route('produtos.add') }}" class="btn btn-warning my-3">+ Adicionar Novo Produto</a>
+            <table class="table table-striped">
       <thead>
             <tr>
             <th scope="col">ID</th>

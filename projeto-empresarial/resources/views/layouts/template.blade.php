@@ -6,26 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>@yield('title')</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#3E065F">
+        <nav class="navbar navbar-expand-sm navbar-dark shadow-sm" style="background-color:#fff">
             <div class="container">
-                <a class="navbar-brand" href="#">LOJA SAFIRA</a>
+                <a class="navbar-brand text-primary" href="/"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">INÍCIO</a>
+                            <a class="nav-link text-dark" href="/">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('produtos.index')}}">PRODUTOS</a>
+                            <a class="nav-link text-dark" href="{{route('produtos.index')}}">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('produtos.add')}}">NOVO PRODUTO</a>
+                            <a class="nav-link text-dark" href="{{route('produtos.add')}}">Novo produto</a>
                         </li>
                     </ul>
                 </nav>
