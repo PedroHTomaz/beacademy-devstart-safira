@@ -47,7 +47,7 @@
                 </p>
             </div>
             <div>
-                <a href="" class='btn btn-outline-primary me-lg-3'>Veja nosso catálogo</a>
+                <a href="{{route('catalago.list')}}" class='btn btn-outline-primary me-lg-3'>Veja nosso catálogo</a>
                 <a href="" class='btn text-dark'>ou nos dê um oi</a>
             </div>
         </div>

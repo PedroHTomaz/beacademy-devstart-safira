@@ -27,3 +27,6 @@ Route::get('/produtos', [ProductController::class, 'index'])->name('produtos.ind
 Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('produtos.edit');
 Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
 Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
+
+
+Route::get('/catalago', [ProductController::class,'list'])->name('catalago.list');

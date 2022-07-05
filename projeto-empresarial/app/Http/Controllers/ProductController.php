@@ -93,4 +93,9 @@ class ProductController extends Controller
 
     return redirect()->route('produtos.index');
   }
+
+  public function list()
+  {
+    return view('product.list');
+  }
 }
