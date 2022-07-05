@@ -28,5 +28,5 @@ Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('pro
 Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
 Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
 
-
+//Catalogo
 Route::get('/catalago', [ProductController::class,'list'])->name('catalago.list');
