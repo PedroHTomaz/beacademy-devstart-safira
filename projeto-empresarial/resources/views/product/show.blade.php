@@ -28,7 +28,13 @@
                   <td>{{ $produtos->description }}</td>
               
               <td> <a href="{{ route('produtos.edit', $produtos->id) }}" class='btn btn-warning'>Editar</a> </td>
-              <td> <a href="{{ route('produtos.index') }}" class='btn btn-danger'>Delete</a> </td>
+              <td> 
+                <form action="{{route('produtos.destroy', $produtos->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <button class='btn btn-danger'>Delete</button> 
+                </form>
+                </td>
           </tr>
           
   </tbody>
