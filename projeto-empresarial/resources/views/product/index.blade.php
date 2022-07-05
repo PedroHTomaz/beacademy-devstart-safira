@@ -9,7 +9,6 @@
             <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
-            <th scope="col">Valor</th>
             <th scope="col">Quantidade</th>
             <th scope="col">Preço de custo</th>
             <th scope="col">Preço de venda</th>
@@ -24,7 +23,6 @@
             <tr>
                   <th scope="row">{{ $produto->id }}</th>
                   <td>{{ $produto->name }}</td>
-                  <td>{{ $produto->value }}</td>
                   <td>{{ $produto->quantity }}</td>
                   <td>{{ $produto->cust_price }}</td>
                   <td>{{ $produto->sale_price }}</td>

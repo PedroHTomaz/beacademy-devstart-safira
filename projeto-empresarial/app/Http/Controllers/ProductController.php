@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\CreateProductFormRequest;
 class ProductController extends Controller
 {
+
     public function __construct(Product $produto)
     {
       $this->model = $produto; 
@@ -16,7 +17,7 @@ class ProductController extends Controller
       return view('product.add-product');
     }
 
-    public function create(Request $request)
+    public function create(request $request)
     {
       return view('product.add-product');
     }
@@ -39,14 +40,9 @@ class ProductController extends Controller
       return view('product.show', compact('produtos', 'title') );
     }
 
-    public function store(request $request)
+    public function store(CreateProductFormRequest $request)
     {
-      /* $user = new User();
-      $user->name = $request->name;
-      $user->email = $request->email;
-      $user->password = bcrypt($request->password);
-      $user->save(); */
-  
+     
       $data = $request->all();
       $data['password'] = bcrypt($request->password);
      
@@ -65,7 +61,7 @@ class ProductController extends Controller
        return view('product.edit', compact('produto', 'title'));
     }
   
-    public function update(Request $Request, $id)
+    public function update(CreateProductFormRequest $Request, $id)
     {
          if(! $produto = Product::find($id)){
                 return redirect()->route('produtos.index');

@@ -23,17 +23,49 @@ class CreateProductFormRequest extends FormRequest
      */
     public function rules()
     {
-        // return [
-        //     'name' => [
-        //         'required',
-        //         'string',
-        //         'max:255',
-        //         'min:3'
-        //     ],
-        //     'quantity' => [
-        //         'required',
-        //     ]
+        $id = $this->id ?? '';
+       /*  'unique:product,quantity,{$id}, id' */
 
-        // ];
+
+         if($this->method('PUT') || $this->method('POST'))
+         {
+            $rules = [
+
+                'name' => [               
+                        'min:3',
+                        'max:25',
+                        'required',
+                        'string',
+                    ],
+                    'quantity' => [ 
+                        'min:1',
+                        'max:4',
+                        'required',
+                    ],
+        
+                    'sale_price' =>[
+                        'required',
+                       'min:1',
+                       'max:5'
+                    ],
+        
+                    'photo' =>[
+                        'required'
+                    ],
+        
+                    'description' => [
+                       'required' ,
+                    ],
+        
+                    'cust_price' => [
+                        'required',
+                        'min:1',
+                        'max:5',
+                    ],
+                ];
+        
+         }
+
+         return $rules;
     }
 }
