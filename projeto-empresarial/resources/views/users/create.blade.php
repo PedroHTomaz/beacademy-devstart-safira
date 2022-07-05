@@ -1,9 +1,22 @@
 @extends('layouts.template')
 @section('title','Novo Usuário')
 
+<nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <div class='d-flex'>
+                <a class="navbar-brand text-primary fw-bold" href="/"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
+            </div>       
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+
 @section('content')
-<div class="container" style='max-width:768px;'>
-    <div class="my-4">
+<div class="container text-center" style='max-width:768px;'>
+    <i class="fa-solid fa-diamond h1 text-primary mt-5"></i>
+    <div class="my-4 text-start">
         <span>Já possui uma conta?<span><a href="#" class="btn text-primary">Faça login!</a>
     </div>
     <form action="{{ route('users.registered') }}" method="POST" class='rounded shadow p-3 p-md-5 text-start' style='background-color:#fff;'>

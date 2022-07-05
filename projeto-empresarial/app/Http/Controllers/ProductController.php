@@ -25,7 +25,6 @@ class ProductController extends Controller
     {
       $produtos= Product::all();
       
-      //quando quiser passar alguma váriavel para a página, use o compact;
       return view('product.index', compact('produtos'));
     }
 
@@ -75,7 +74,6 @@ class ProductController extends Controller
               $data['password'] = bcrypt($Request->password);
             };
   
-           /* $data = $Request->only('name, email'); */
            $data= $Request->all();
   
            $produto->update($data);
