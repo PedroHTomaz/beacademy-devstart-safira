@@ -46,7 +46,7 @@ class CreateProductFormRequest extends FormRequest
                     'sale_price' =>[
                         'required',
                        'min:1',
-                       'max:5'
+                       'max:8'
                     ],
         
                     'photo' =>[
@@ -60,7 +60,7 @@ class CreateProductFormRequest extends FormRequest
                     'cust_price' => [
                         'required',
                         'min:1',
-                        'max:5',
+                        'max:8',
                     ],
                 ];
         

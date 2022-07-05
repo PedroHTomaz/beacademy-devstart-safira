@@ -4,7 +4,7 @@
 
    <h1 class='text-primary' style="margin: 30px">Editar Usuário  {{ $products->name }} </h1>
 
-    <form style="margin: 30px" action="{{ route('produtos.update', $produto->id) }}" method='post' >
+    <form style="margin: 30px" action="{{ route('produtos.update', $products->id) }}" method='post' >
     @method('PUT')  
     @csrf
     
@@ -19,35 +19,35 @@
     <div class="row mt-5">
                     <div class="col-sm-4">
                         <label for="name">Nome</label>
-                        <input type="text" name="name"value='{{$produto->name}}' id="name" class="form-control" >
+                        <input type="text" name="name"value='{{$products->name}}' id="name" class="form-control" >
                     </div>
                 
                 
                     <div class="col-sm-4">
                         <label for="quantity">Quantidade</label>
-                        <input type="text" name="quantity"value='{{$produto->quantity}}' id="quantity" class="form-control"  >
+                        <input type="text" name="quantity"value='{{$products->quantity}}' id="quantity" class="form-control"  >
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-sm-4">
                         <label for="cust-price">Preço de custo</label>
-                        <input type="text" name="cust_price"value='{{$produto->cust_price}}' id="cust_price" class="form-control"  >
+                        <input type="text" name="cust_price"value='{{$products->cust_price}}' id="cust_price" class="form-control"  >
                     </div>
                 
                     <div class="col-sm-4">
                         <label for="sale-price">Preço de venda</label>
-                        <input type="text" name="sale_price"value='{{$produto->sale_price}}' id="sale_price" class="form-control" >
+                        <input type="text" name="sale_price"value='{{$products->sale_price}}' id="sale_price" class="form-control" >
                     </div>
                     <div class="col-sm-4">
                         <label for="photo">Foto</label>
-                        <input type="text" name="photo" id="photo" value='{{$produto->photo}}' class="form-control" >
+                        <input type="text" name="photo" id="photo" value='{{$products->photo}}' class="form-control" >
                     </div>
                 </div>
 
                 <div class="row mt-4">
                     <div class="col-sm-12">
                         <label for="description">Descrição</label>
-                        <textarea name="description" id="description" class="form-control" rows="2" >{{$produto->description}}</textarea>
+                        <textarea name="description" id="description" class="form-control" rows="2" >{{$products->description}}</textarea>
                     </div>
                 </div>
       <button type="submit" class="btn btn-primary mt-4">Atualizar</button>
