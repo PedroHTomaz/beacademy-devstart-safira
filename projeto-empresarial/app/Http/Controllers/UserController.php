@@ -12,6 +12,13 @@ class UserController extends Controller
         $this->model = $registered; 
     }
 
+    public function index()
+    {
+        $users = Registered::all();
+
+        return view('users.index', compact('users'));
+    }
+
     public function create()
     {
         return view('users.create');
