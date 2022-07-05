@@ -19,16 +19,16 @@
       </thead>
 
       <tbody>
-                  @foreach ($produtos as $produto)
+                  @foreach ($products as $product)
             <tr>
-                  <th scope="row">{{ $produto->id }}</th>
-                  <td>{{ $produto->name }}</td>
-                  <td>{{ $produto->quantity }}</td>
-                  <td>{{ $produto->cust_price }}</td>
-                  <td>{{ $produto->sale_price }}</td>
-                  <td>{{ $produto->photo }}</td>
-                  <td>{{ $produto->description }}</td>
-                  <td> <a href="{{ route('produtos.idGet', $produto->id) }}" class='btn btn-info text-white'>Visualizar</a> </td>
+                  <th scope="row">{{ $product->id }}</th>
+                  <td>{{ $product->name }}</td>
+                  <td>{{ $product->quantity }}</td>
+                  <td>{{ $product->cust_price }}</td>
+                  <td>{{ $product->sale_price }}</td>
+                  <td>{{ $product->photo }}</td>
+                  <td>{{ $product->description }}</td>
+                  <td> <a href="{{ route('produtos.idGet', $product->id) }}" class='btn btn-info text-white'>Visualizar</a> </td>
             </tr>
             @endforeach
       </tbody>

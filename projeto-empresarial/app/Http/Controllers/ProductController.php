@@ -9,9 +9,9 @@ use App\Http\Requests\CreateProductFormRequest;
 class ProductController extends Controller
  {
 
-  public function __construct(Product $produto)
+  public function __construct(Product $product)
   {
-    $this->model = $produto;
+    $this->model = $product;
   }
 
   public function add()
@@ -26,22 +26,22 @@ class ProductController extends Controller
 
   public function index()
   {
-    $produtos = Product::all();
+    $products = Product::all();
 
-    return view('product.index', compact('produtos'));
+    return view('product.index', compact('products'));
   }
 
   public function idGet($id)
   {
-    if (!$produtos = Product::find($id))
+    if (!$products = Product::find($id))
      {
       return redirect()->route('produtos.index');
 
      }
 
-    $title = 'Produto ' . $produtos->name;
+    $title = 'Produto ' . $products->name;
 
-    return view('product.show', compact('produtos', 'title'));
+    return view('product.show', compact('products', 'title'));
   }
 
   public function store(CreateProductFormRequest $request)
@@ -58,13 +58,13 @@ class ProductController extends Controller
 
   public function edit($id)
   {
-    if(!$produto = Product::find($id)) 
+    if(!$products = Product::find($id)) 
     {
       return redirect()->route('users.index');
     }
 
-    $title = 'Editar produto ' . $produto->name;
-    return view('product.edit', compact('produto', 'title'));
+    $title = 'Editar produto ' . $products->name;
+    return view('product.edit', compact('products', 'title'));
   }
 
   public function update(CreateProductFormRequest $Request, $id)
@@ -79,7 +79,7 @@ class ProductController extends Controller
       $data['password'] = bcrypt($Request->password);
     };
 
-    /* $data = $Request->only('name, email'); */
+    
     $data = $Request->all();
 
     $produto->update($data);
@@ -89,10 +89,10 @@ class ProductController extends Controller
 
   public function destroy($id)
   {
-    if (!$produto = $this->model->find($id))
+    if (!$products = $this->model->find($id))
       return redirect()->route('produtos.index');
 
-      $produto->delete();
+      $products->delete();
 
     return redirect()->route('produtos.index');
   }
