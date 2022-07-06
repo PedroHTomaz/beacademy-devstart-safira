@@ -42,4 +42,13 @@ button a
 h1{
     font-size: 25px;
     font-weight: bold;
-} */
+}
+
+<<<<<<< HEAD
+
+
+=======
+ button{
+    width:50px;
+}
+>>>>>>> c8da212dbca9de7949d1d313c6c79660793937fc
