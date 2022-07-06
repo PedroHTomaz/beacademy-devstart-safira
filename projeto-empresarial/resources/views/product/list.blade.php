@@ -9,7 +9,7 @@
                         <img src="{{asset('storage/'.$produto->photo) }}">
                         <div class="card-body">
                             <h6 class="card-title">{{$produto->name}}</h6>
-                            <h6 class="card-title">R$ {{$produto->value}}</h6>
+                            <h6 class="card-title">R$ {{$produto->sale_price}}</h6>
                             <a href="{{ route('produtos.idGet', $produto->id) }}" class="btn btn-secondary btn-sm">Adicionar ao carrinho</a>
                         </div>
                     </div>

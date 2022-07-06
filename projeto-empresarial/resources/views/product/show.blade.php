@@ -1,46 +1,39 @@
 @extends('layouts.template')
 @section('title', $title)
 @section('content')
-                <h1 class='text-primary my-4'>Listagem de {{$produtos -> name}} </h1>
-        <table class="table table-striped">
-   <thead>
-        <tr>
-        <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Valor</th>
-            <th scope="col">Quantidade</th>
-            <th scope="col">Preço de custo</th>
-            <th scope="col">Preço de venda</th>
-            <th scope="col">Foto</th>
-            <th scope="col">descrição</th>
-            <th  scope="col" colspan="2">Ações</th>
-        </tr>
-  </thead>
-
-  <tbody>
-           
+    <h1 class='text-primary my-4'>Listagem de {{$products -> name}} </h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                    <th scope="col">Nome</th>            
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Preço de custo</th>
+                    <th scope="col">Preço de venda</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col">descrição</th>
+                    <th  scope="col" colspan="2">Ações</th>
+                </tr>
+        </thead>
+        <tbody>
            <tr>
-              <th scope="row">{{ $produtos->id }}</th>
-                  <td>{{ $produtos->name }}</td>
-                  <td>{{ $produtos->value }}</td>
-                  <td>{{ $produtos->quantity }}</td>
-                  <td>{{ $produtos->cust_price }}</td>
-                  <td>{{ $produtos->sale_price }}</td>
-                  <td><img src="{{asset('storage/'.$produtos->photo) }}" width="50px" height="50px" class="rounded-circle"></td>
-                  <td>{{ $produtos->description }}</td>
+              <th scope="row">{{ $products->id }}</th>
+                  <td>{{ $products->name }}</td>
+                  <td>{{ $products->quantity }}</td>
+                  <td>{{ $products->cust_price }}</td>
+                  <td>{{ $products->sale_price }}</td>
+                  <td><img src="{{asset('storage/'.$products->photo)}}" width="50" height="50" class="rounde-circle"></td>
+                  <td>{{ $products->description }}</td>
               
-              <td> <a href="{{ route('produtos.edit', $produtos->id) }}" class='btn btn-warning'>Editar</a> </td>
+                  <td><a href="{{ route('produtos.edit', $products->id) }}" class='btn btn-warning'>Editar</a> </td>
               <td> 
-                <form action="{{route('produtos.destroy', $produtos->id)}}" method="POST">
+                <form action="{{route('produtos.destroy', $products->id)}}" method="POST">
                     @method('delete')
                     @csrf
                     <button class='btn btn-danger'>Delete</button> 
                 </form>
                 </td>
           </tr>
-          
-  </tbody>
-
-</table>
-      
+        </tbody>
+    </table>
 @endsection
