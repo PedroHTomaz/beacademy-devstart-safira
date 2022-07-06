@@ -51,9 +51,7 @@ class ProductController extends Controller
     $path = $filePhoto->store('profile','public');//armazenando a imagem na pasta profile, que irá ser criado dentro do diretorio public
     $data['photo'] = $path;
     $this->model->create($data);
-
-    $this->model->create($data);
-
+    
     return redirect()->route('produtos.index');
   }
 
