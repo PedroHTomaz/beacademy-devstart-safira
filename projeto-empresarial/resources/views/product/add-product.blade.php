@@ -54,7 +54,6 @@
             <div class="row">
                 <div class="col-sm-12  mt-4">
                     <button type="submit" class="btn btn-primary">CADASTRAR</button>
-                    <button class='btn btn-outline-danger'><a href="#" class='text-danger'>CANCELAR </a></button>
                 </div>
             </div>
         </form>
