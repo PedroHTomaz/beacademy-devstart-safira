@@ -24,7 +24,7 @@
                 <a class="nav-link fw-bold" aria-current="page" href="#">Início</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link mx-3" href="#">Entrar</a>
+                <a class="nav-link mx-3" href="{{route('users.login')}}">Entrar</a>
                 </li>
                 <li class="nav-item">
                 <a class="btn btn-primary" href="{{route('users.create')}}">Cadastrar</a>

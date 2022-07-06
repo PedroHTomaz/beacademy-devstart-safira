@@ -25,4 +25,9 @@ class UserController extends Controller
 
         return view('index');
     }
+
+    public function showLogin()
+    {
+        return view('users.login');
+    }
 }
