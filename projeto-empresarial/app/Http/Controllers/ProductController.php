@@ -16,11 +16,29 @@ class ProductController extends Controller
   {
     return view('product.add-product');
   }
-
-  public function create(Request $request)
+  public function store(request $request)
   {
-    return view('product.add-product');
+    /* $user = new User();
+      $user->name = $request->name;
+      $user->email = $request->email;
+      $user->password = bcrypt($request->password);
+      $user->save(); */
+
+    $data = $request->all();
+    $data['password'] = bcrypt($request->password);
+
+    $filePhoto = $request['photo'];//capturando a img obtida pelo o objeto resquest
+    $path = $filePhoto->store('profile','public');//armazenando a imagem na pasta profile, que irá ser criado dentro do diretorio public
+    $data['photo'] = $path;
+    $this->model->create($data);
+
+    return redirect()->route('produtos.index');
   }
+
+  // public function create(Request $request)
+  // {
+  //   return view('product.add-product');
+  // }
 
   public function index()
   {
@@ -40,21 +58,7 @@ class ProductController extends Controller
     return view('product.show', compact('produtos', 'title'));
   }
 
-  public function store(request $request)
-  {
-    /* $user = new User();
-      $user->name = $request->name;
-      $user->email = $request->email;
-      $user->password = bcrypt($request->password);
-      $user->save(); */
-
-    $data = $request->all();
-    $data['password'] = bcrypt($request->password);
-
-    $this->model->create($data);
-
-    return redirect()->route('produtos.index');
-  }
+  
 
   public function edit($id)
   {
@@ -96,6 +100,8 @@ class ProductController extends Controller
 
   public function list()
   {
-    return view('product.list');
+    $produtos = Product::all();
+    //quando quiser passar alguma váriavel para a página, use o compact;
+    return view('product.list', compact('produtos'));
   }
 }

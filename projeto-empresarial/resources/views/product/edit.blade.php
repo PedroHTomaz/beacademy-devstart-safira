@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-sm-4">
                         <label for="photo">Foto</label>
-                        <input type="text" name="photo" id="photo" value='{{$produto->photo}}' class="form-control" required>
+                        <input type="file" name="photo" id="photo" class="form-control" required>
                     </div>
                 </div>
 

@@ -28,7 +28,8 @@
                   <td>{{ $produto->quantity }}</td>
                   <td>{{ $produto->cust_price }}</td>
                   <td>{{ $produto->sale_price }}</td>
-                  <td>{{ $produto->photo }}</td>
+                  <td><img src="{{asset('storage/'.$produto->photo) }}" width="50px" height="50px" class="rounded-circle"></td>
+
                   <td>{{ $produto->description }}</td>
                   <td> <a href="{{ route('produtos.idGet', $produto->id) }}" class='btn btn-info text-white'>Visualizar</a> </td>
             </tr>

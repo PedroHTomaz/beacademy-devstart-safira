@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center mt-4 text-primary">CADASTRO DE PRODUTO</h1>
-        <form action="{{route('produtos.store')}}" method="POST">
+        <form action="{{route('produtos.store')}}" method="POST" enctype="multipart/form-data">
             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
             <div class="row mt-5">
                 <div class="col-sm-4">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-sm-4">
                     <label for="photo">Foto</label>
-                    <input type="text" name="photo" id="photo" class="form-control" required>
+                    <input type="file" name="photo" id="photo" class="form-control" required>
                 </div>
             </div>
 

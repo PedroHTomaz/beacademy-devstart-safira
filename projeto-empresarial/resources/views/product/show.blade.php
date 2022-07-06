@@ -26,7 +26,7 @@
                   <td>{{ $produtos->quantity }}</td>
                   <td>{{ $produtos->cust_price }}</td>
                   <td>{{ $produtos->sale_price }}</td>
-                  <td>{{ $produtos->photo }}</td>
+                  <td><img src="{{asset('storage/'.$produtos->photo) }}" width="50px" height="50px" class="rounded-circle"></td>
                   <td>{{ $produtos->description }}</td>
               
               <td> <a href="{{ route('produtos.edit', $produtos->id) }}" class='btn btn-warning'>Editar</a> </td>
