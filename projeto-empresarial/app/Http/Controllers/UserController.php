@@ -42,5 +42,12 @@ class UserController extends Controller
         $this->model->create($data);
 
         return redirect()->route('users.index');
+
+        return view('index');
+    }
+
+    public function showLogin()
+    {
+        return view('users.login');
     }
 }

@@ -17,7 +17,7 @@ Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('user
 Route::post('/usuarios/cadastrar', [UserController::class, 'registered'])->name('users.registered');
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
 Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
-
+Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('users.login');
 
 //Adm
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
@@ -31,3 +31,6 @@ Route::get('/produtos', [ProductController::class, 'index'])->name('produtos.ind
 Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('produtos.edit');
 Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
 Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
+
+//Catalogo
+Route::get('/catalago', [ProductController::class,'list'])->name('catalago.list');
