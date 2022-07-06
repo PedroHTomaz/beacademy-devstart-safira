@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProductFormRequest;
 
 class ProductController extends Controller
-{
-  public function __construct(Product $produto)
+ {
+
+  public function __construct(Product $product)
   {
-    $this->model = $produto;
+    $this->model = $product;
   }
 
   public function add()
@@ -24,31 +26,29 @@ class ProductController extends Controller
 
   public function index()
   {
-    $produtos = Product::all();
+    $products = Product::all();
 
-    //quando quiser passar alguma váriavel para a página, use o compact;
-    return view('product.index', compact('produtos'));
+    return view('product.index', compact('products'));
   }
 
   public function idGet($id)
   {
-    if (!$produtos = Product::find($id)) {
+    if (!$products = Product::find($id))
+     {
       return redirect()->route('produtos.index');
-    }
 
-    $title = 'Produto ' . $produtos->name;
-    return view('product.show', compact('produtos', 'title'));
+     }
+
+    $title = 'Produto ' . $products->name;
+
+    return view('product.show', compact('products', 'title'));
   }
 
-  public function store(request $request)
+  public function store(CreateProductFormRequest $request)
   {
-    /* $user = new User();
-      $user->name = $request->name;
-      $user->email = $request->email;
-      $user->password = bcrypt($request->password);
-      $user->save(); */
-
+  
     $data = $request->all();
+
     $data['password'] = bcrypt($request->password);
 
     $this->model->create($data);
@@ -58,25 +58,28 @@ class ProductController extends Controller
 
   public function edit($id)
   {
-    if (!$produto = Product::find($id)) {
+    if(!$products = Product::find($id)) 
+    {
       return redirect()->route('users.index');
     }
 
-    $title = 'Editar produto ' . $produto->name;
-    return view('product.edit', compact('produto', 'title'));
+    $title = 'Editar produto ' . $products->name;
+    return view('product.edit', compact('products', 'title'));
   }
 
-  public function update(Request $Request, $id)
+  public function update(CreateProductFormRequest $Request, $id)
   {
-    if (!$produto = Product::find($id)) {
+    if (!$produto = Product::find($id)) 
+    {
       return redirect()->route('produtos.index');
     };
 
-    if ($Request->password) {
+    if ($Request->password) 
+    {
       $data['password'] = bcrypt($Request->password);
     };
 
-    /* $data = $Request->only('name, email'); */
+    
     $data = $Request->all();
 
     $produto->update($data);
@@ -86,10 +89,10 @@ class ProductController extends Controller
 
   public function destroy($id)
   {
-    if (!$produto = $this->model->find($id))
+    if (!$products = $this->model->find($id))
       return redirect()->route('produtos.index');
 
-    $produto->delete();
+      $products->delete();
 
     return redirect()->route('produtos.index');
   }

@@ -22,5 +22,7 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
         $this->model->create($data);
+
+        return view('index');
     }
 }
