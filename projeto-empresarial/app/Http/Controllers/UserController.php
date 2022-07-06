@@ -23,4 +23,9 @@ class UserController extends Controller
         $data['password'] = bcrypt($request->password);
         $this->model->create($data);
     }
+
+    public function showLogin()
+    {
+        return view('users.login');
+    }
 }
