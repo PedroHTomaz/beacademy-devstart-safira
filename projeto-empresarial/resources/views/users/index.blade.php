@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title','Usuários')
+@section('title','Usuário')
 
 @section('content')
 
@@ -21,14 +21,14 @@
         <tbody class="text-center">
         @foreach($users as $user)
             <tr>
-            <td scope="row">{{ $user->id }}</td>
+            <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->tel }}</td>
-            <td>{{ $user->birth_date }}</td>
+            <td>{{ date('d/m/Y', strtotime($user->birth_date)) }}</td>
             <td>{{ $user->cpf }}</td>
             <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
-            <td><a href="" class="btn btn-info text-white">Visualizar</a></td>
+            <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-info text-white">Visualizar</a></td>
             </tr>
         @endforeach
         </tbody>

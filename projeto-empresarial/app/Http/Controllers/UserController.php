@@ -19,15 +19,28 @@ class UserController extends Controller
         return view('users.index', compact('users'));
     }
 
+
+    public function show($id)
+    {
+        if(!$user = Registered::find($id))
+            return redirect()->route('users.index');
+        
+        return view('users.show', compact('user'));
+    }
+
+
     public function create()
     {
         return view('users.create');
     }
+
 
     public function registered(Request $request)
     {
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
         $this->model->create($data);
+
+        return redirect()->route('users.index');
     }
 }
