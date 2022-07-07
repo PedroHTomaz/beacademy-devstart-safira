@@ -18,7 +18,7 @@
 <div class="container" style='max-width:768px;'>
     <div class="my-4">
         <span>Já possui uma conta?<span>
-        <a href="#" class="btn text-primary">Faça login!</a>
+        <a href="{{ route('users.login') }}" class="btn text-primary">Faça login!</a>
     </div>
     <form action="{{ route('users.registered') }}" method="POST" class='rounded shadow p-3 p-md-5 text-start' style='background-color:#fff;'>
         @csrf

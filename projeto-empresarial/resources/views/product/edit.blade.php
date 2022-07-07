@@ -2,9 +2,9 @@
 @section('title', $title)
 @section('content')
 
-   <h1 class='text-primary' style="margin: 30px">Editar Usuário  {{ $products->name }} </h1>
+   <h1 class='text-primary'>Editar {{ $products->name }} </h1>
 
-    <form style="margin: 30px" action="{{ route('produtos.update', $products->id) }}" method='post' >
+    <form action="{{ route('produtos.update', $products->id) }}" method='post' >
         @method('PUT')  
         @csrf
         

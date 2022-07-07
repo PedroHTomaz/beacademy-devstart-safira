@@ -17,10 +17,12 @@ Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('user
 Route::post('/usuarios/cadastrar', [UserController::class, 'registered'])->name('users.registered');
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
 Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
-Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('users.login');
+Route::get('/usuario/entrar', [UserController::class, 'showLogin'])->name('users.login');
 
 //Adm
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin/dashboard/usuarios', [AdminController::class, 'dashboardUsers'])->name('admin.dashboardUsers');
 
 
 //Produtos

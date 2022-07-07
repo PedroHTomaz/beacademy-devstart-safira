@@ -2,7 +2,7 @@
 @section('title', 'Listagem de Produtos')
 @section('content')
 
-      <h1 class='text-primary mt-4'>Listagem de Produtos </h1>
+      <h1 class='text-primary'>Listagem de Produtos </h1>
       <a href="{{ route('produtos.add') }}" class="btn btn-warning my-3">+ Adicionar Novo Produto</a>
       <table class="table table-striped">
             <thead>
