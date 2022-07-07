@@ -8,8 +8,7 @@ use App\Http\Requests\CreateProductFormRequest;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
- {
-
+{
   public function __construct(Product $product)
   {
     $this->model = $product;

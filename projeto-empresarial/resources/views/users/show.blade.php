@@ -29,7 +29,9 @@
                 <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
                 <td><a href="" class="btn btn-warning ">Editar</a></td>
                 <td>
-                <form action="" method="">
+                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
                     <button type="submit" class="btn btn-danger">Deletar</button>
                 </form>
                 </td>
