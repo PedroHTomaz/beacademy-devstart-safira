@@ -1,5 +1,5 @@
 @extends('layouts.template-main')
-@section('title', 'catalogo two')
+@section('title', 'Catálogo')
 
 <div class='py-3 shadow-sm'>
 <div class='d-flex justify-content-between container'>
@@ -18,9 +18,9 @@
                     <div class="card">
                         <img src="{{asset('storage/'.$product->photo) }}">
                         <div class="card-body">
-                            <h6 class="card-title">{{$produto->name}}</h6>
-                            <h6 class="card-title">R$ {{$produto->sale_price}}</h6>
-                            <a href="{{ route('produtos.idGet', $produto->id) }}" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
+                            <h6 class="card-title">{{$product->name}}</h6>
+                            <h6 class="card-title">R$ {{$product->sale_price}}</h6>
+                            <a href="#" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
                         </div>
                     </div>
                 </div>

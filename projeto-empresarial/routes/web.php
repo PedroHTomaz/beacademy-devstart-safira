@@ -20,7 +20,6 @@ Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('user
 Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
 
 //Adm
-Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/dashboard/usuarios', [AdminController::class, 'dashboardUsers'])->name('admin.dashboardUsers');
 
@@ -35,4 +34,4 @@ Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produt
 Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
 
 //Catalogo
-Route::get('/catalago', [ProductController::class,'list'])->name('catalago.list');
+Route::get('/catalogo', [ProductController::class,'list'])->name('catalogo.list');
