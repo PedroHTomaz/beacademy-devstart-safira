@@ -3,10 +3,10 @@
 
 @section('content')
 
-    <h1 class="text-primary mt-4">- Usuário - <spam class="text-dark">{{ $user->name }}</spam></h1>
+    <h1 class="text-primary mt-4">Detalhes do usuário <spam class="text-dark">{{ $user->name }}</spam></h1>
 
-    <table class="table table-striped border-dark table-light table-hover table-bordered mt-4">
-        <thead class="text-center table-primary border-dark">
+    <table class="table table-striped mt-4">
+        <thead class="text-center">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
@@ -36,9 +36,9 @@
             </tr>
         </tbody>
     </table>
-    <h1 class="text-primary mt-4">- Endereço do usuário cadastrado -</h1>
-        <table class="table table-striped border-dark table-light table-hover table-bordered mt-4">
-        <thead class="text-center table-primary border-dark">
+    <h1 class="text-primary mt-4">Endereço do usuário</h1>
+        <table class="table table-striped mt-4">
+        <thead class="text-center">
             <tr>
                 <th scope="col">CEP</th>
                 <th scope="col">Logradouro</th>

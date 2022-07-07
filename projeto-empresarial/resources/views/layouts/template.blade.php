@@ -11,7 +11,7 @@
     <title>SAFIRA - @yield('title')</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <nav class="navbar navbar-expand-sm navbar-dark shadow-sm" style="background-color:#fff">
             <div class="container">
                 <a class="navbar-brand text-primary fw-bold" href="/"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
@@ -33,9 +33,9 @@
                 </nav>
             </div>
         </nav>
-    </header>
+    </header> -->
 
-    <article class="container">
+    <article class="">
         @yield('content')
     </article>
 
