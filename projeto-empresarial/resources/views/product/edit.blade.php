@@ -4,7 +4,7 @@
 
    <h1 class='text-primary' style="margin: 30px">Editar Usuário  {{ $products->name }} </h1>
 
-    <form style="margin: 30px" action="{{ route('produtos.update', $products->id) }}" method='post' >
+    <form style="margin: 30px" action="{{ route('produtos.update', $products->id) }}" method='post' enctype="multipart/form-data">
         @method('PUT')  
         @csrf
         
@@ -35,7 +35,7 @@
         </div>  
         <div class="row mt-3">
             <div class="col-sm-12">
-                <label for="photo">Foto</label>
+                <label for="photo">Insira a foto</label>
                 <input type="file" name="photo" id="photo" class="form-control" required>
             </div>
         </div>

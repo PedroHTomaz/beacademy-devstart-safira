@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('title', 'catalogo two')
 @section('content')
-    <h1 class="mt-5 mb-4">catalogo</h1> 
+    <h1 class="mt-5 mb-4">catálogo</h1> 
         <div class="row">
             @foreach ($products as $product)
                 <div class="col-sm-3">

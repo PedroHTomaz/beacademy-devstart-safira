@@ -16,8 +16,8 @@ Route::get('/', function () {
 Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
 Route::post('/usuarios/cadastrar', [UserController::class, 'registered'])->name('users.registered');
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
-Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
 Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('users.login');
+Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
 
 //Adm
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
