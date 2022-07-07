@@ -111,8 +111,8 @@ class ProductController extends Controller
   }
 
   public function list()
-  {
-
-    return view('product.list', compact('products'));
+  {  
+      $products = Product::all();
+      return view('product.list', compact('products'));
   }
 }
