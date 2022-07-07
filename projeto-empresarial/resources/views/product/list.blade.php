@@ -13,10 +13,10 @@
    <div class='container'>
    <h1 class="mt-5 mb-4 text-primary">Catálogo</h1> 
         <div class="row">
-            @foreach ($produtos as $produto)
+            @foreach ($products as $product)
                 <div class="col-sm-3">
                     <div class="card">
-                        <img src="{{asset('storage/'.$produto->photo) }}">
+                        <img src="{{asset('storage/'.$product->photo) }}">
                         <div class="card-body">
                             <h6 class="card-title">{{$produto->name}}</h6>
                             <h6 class="card-title">R$ {{$produto->sale_price}}</h6>

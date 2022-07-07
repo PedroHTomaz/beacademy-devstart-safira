@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProductFormRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
  {
@@ -47,11 +48,12 @@ class ProductController extends Controller
 
     $data['password'] = bcrypt($request->password);
 
-    $filePhoto = $request['photo'];//capturando a img obtida pelo o objeto resquest
-    $path = $filePhoto->store('profile','public');//armazenando a imagem na pasta profile, que irá ser criado dentro do diretorio public
-    $data['photo'] = $path;
-    $this->model->create($data);
+    if ($request->photo)
+     {
+      $data['photo'] = $request->photo->store('profile','public');
+    }
     
+    $this->model->create($data);
     return redirect()->route('produtos.index');
   }
 
@@ -66,22 +68,34 @@ class ProductController extends Controller
     return view('product.edit', compact('products', 'title'));
   }
 
-  public function update(CreateProductFormRequest $Request, $id)
+  public function update(CreateProductFormRequest $request, $id)
   {
-    if (!$produto = Product::find($id)) 
+
+    if (!$product = Product::find($id)) 
     {
       return redirect()->route('produtos.index');
     };
 
-    if ($Request->password) 
+
+    $data = $request->all();
+
+    if ($request->password) 
     {
-      $data['password'] = bcrypt($Request->password);
+      $data['password'] = bcrypt($request->password);
     };
 
-    
-    $data = $Request->all();
 
-    $produto->update($data);
+    if ($request->photo) 
+      {
+          if ($product->photo && Storage::exists($product->photo)) 
+          {
+              Storage::delete($product->photo);
+          }
+
+      $data['photo'] = $request->photo->store('profile','public');
+  }
+
+    $product->update($data);
 
     return redirect()->route('produtos.index');
   }
@@ -98,8 +112,7 @@ class ProductController extends Controller
 
   public function list()
   {
-    $produtos = Product::all();
-    //quando quiser passar alguma váriavel para a página, use o compact;
-    return view('product.list', compact('produtos'));
+
+    return view('product.list', compact('products'));
   }
 }
