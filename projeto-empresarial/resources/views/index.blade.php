@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class='col-6'>
-            <img class='img-fluid' src="https://media.istockphoto.com/vectors/icon-of-gem-shining-crystal-vector-id1064892912?k=20&m=1064892912&s=612x612&w=0&h=v7NT6mrfgXGu85iiV9oiWS1al6q1TBooxrgLMWN5tIw=">
+            <img class='img-fluid' title="A jóia mais bela SZ" src="https://media.istockphoto.com/vectors/icon-of-gem-shining-crystal-vector-id1064892912?k=20&m=1064892912&s=612x612&w=0&h=v7NT6mrfgXGu85iiV9oiWS1al6q1TBooxrgLMWN5tIw=">
         </div>
     </main>
 </body>

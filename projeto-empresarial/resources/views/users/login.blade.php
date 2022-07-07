@@ -20,7 +20,7 @@
 
         <main class="container d-flex gap-5 align-items-center flex-lg-row flex-column justify-content-center">
     	    <div class="col-6">
-        	    <img class="img-fluid" src="https://i.imgur.com/Gnd0nAf_d.webp?maxwidth=760&fidelity=grand">
+        	    <img class="img-fluid" title='Foto da pedra mais linda SZ'src="https://i.imgur.com/Gnd0nAf_d.webp?maxwidth=760&fidelity=grand">
     	    </div>
    	        <div class="w-100">
    		        <div class="text-center">
