@@ -2,7 +2,7 @@
 @section('title','novo produto')
 @section('content')
 
-    <h1 class="text-center mt-4 text-primary">CADASTRO DE PRODUTO</h1>
+    <h1 class="text-primary">Cadastro de Produto</h1>
     <form action="{{route('produtos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
         @if($errors->any())

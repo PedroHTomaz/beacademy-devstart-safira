@@ -21,6 +21,8 @@ Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show'
 
 //Adm
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin/dashboard/usuarios', [AdminController::class, 'dashboardUsers'])->name('admin.dashboardUsers');
 
 
 //Produtos

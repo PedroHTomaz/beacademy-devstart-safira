@@ -5,8 +5,8 @@
 
     <h1 class="text-primary mt-4">Listagem de Usuários</h1>
 
-    <table class="table table-striped table-light table-hover table-bordered border-dark mt-4">
-        <thead class="text-center table-primary border-dark">
+    <table class="table table-striped mt-4">
+        <thead class="text-center">
             <tr>
                <th scope="col">ID</th> 
                <th scope="col">Nome</th> 
