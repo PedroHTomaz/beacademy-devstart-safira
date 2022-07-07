@@ -98,8 +98,8 @@ class ProductController extends Controller
 
   public function list()
   {
-    $produtos = Product::all();
+    $products = Product::all();
     //quando quiser passar alguma váriavel para a página, use o compact;
-    return view('product.list', compact('produtos'));
+    return view('product.list', compact('products'));
   }
 }
