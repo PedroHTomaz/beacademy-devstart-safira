@@ -15,10 +15,13 @@ Route::get('/', function () {
 //Usuários
 Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
 Route::post('/usuarios/cadastrar', [UserController::class, 'registered'])->name('users.registered');
+Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
+Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
 Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('users.login');
 
 //Adm
 Route::get('/admin/login', [AdminController::class, 'index'])->name('admin.index');
+
 
 //Produtos
 Route::delete('/produtos/{id}', [ProductController::class, 'destroy'])->name('produtos.destroy');
