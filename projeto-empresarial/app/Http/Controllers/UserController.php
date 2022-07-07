@@ -19,7 +19,6 @@ class UserController extends Controller
         return view('users.index', compact('users'));
     }
 
-
     public function show($id)
     {
         if(!$user = Registered::find($id))
@@ -28,12 +27,10 @@ class UserController extends Controller
         return view('users.show', compact('user'));
     }
 
-
     public function create()
     {
         return view('users.create');
     }
-
 
     public function registered(Request $request)
     {
@@ -41,11 +38,21 @@ class UserController extends Controller
         $data['password'] = bcrypt($request->password);
         $this->model->create($data);
 
-        return view('index');
+        return view('users.login');
     }
 
     public function showLogin()
     {
         return view('users.login');
+    }
+
+    public function destroy($id)
+    {
+        if(!$users = $this->model->find($id)){
+            return redirect()->route('/');
+        }
+        
+        $users->delete();
+        return redirect()->route('users.index');
     }
 }
