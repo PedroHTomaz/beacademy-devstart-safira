@@ -59,4 +59,14 @@ class OrdersContoller extends Controller
 
         return redirect()->route('orders.index');
     }
+
+    public function destroy($id)
+    {
+        if (!$order = $this->order->find($id))
+            return redirect()->route('orders.index');
+
+        $order->delete();
+
+        return redirect()->route('orders.index');
+    }
 }

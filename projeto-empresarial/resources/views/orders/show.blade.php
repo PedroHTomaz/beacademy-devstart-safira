@@ -27,7 +27,7 @@
                 <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
                 <td><a href="{{ route('orders.edit', $order->id) }}" class="btn btn-warning ">Editar</a></td>
                 <td>
-                <form action="" method="POST">
+                <form action="{{route('orders.destroy', $order->id)}}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-danger">Deletar</button>
