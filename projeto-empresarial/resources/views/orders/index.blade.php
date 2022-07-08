@@ -21,8 +21,8 @@
             <tr>
             <td>{{ $order->id }}</td>
             <td>{{ $order->user->name }}</td>
-            <td>{{ $order->product->name ?? 'None' }}</td>
-            <td>{{ $order->value }}</td>
+            <td>{{ $order->product->name}}</td>
+            <td>{{ $order->product->sale_price }}</td>
             <td>{{ $order->status }}</td>
             <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
             <td><a href="" class="btn btn-info text-white">Visualizar</a></td>
