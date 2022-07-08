@@ -27,7 +27,7 @@
                 <td>{{ $user->birth_date }}</td>
                 <td>{{ $user->cpf }}</td>
                 <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
-                <td><a href="" class="btn btn-warning ">Editar</a></td>
+                <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning ">Editar</a></td>
                 <td>
                 <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                     @method('DELETE')
