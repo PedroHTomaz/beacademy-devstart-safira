@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ProductController,
     AdminController,
+    OrdersContoller,
     UserController
 };
 
@@ -13,7 +14,7 @@ Route::get('/', function () {
 });
 
 //Catalogo
-Route::get('/catalogo', [ProductController::class,'list'])->name('catalogo.list');
+Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
 //Usuários
 Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
@@ -23,9 +24,14 @@ Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('user
 Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
 Route::delete('/usuarios/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
+//Pedidos
+Route::get('/orders', [OrdersContoller::class, 'index'])->name('orders.index');
+
 //Adm
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/dashboard/usuarios', [AdminController::class, 'dashboardUsers'])->name('admin.dashboardUsers');
+Route::get('/admin/dashboard/orders', [AdminController::class, 'dashboardOrders'])->name('admin.dashboardOrders');
+
 
 //Produtos
 Route::delete('/produtos/{id}', [ProductController::class, 'destroy'])->name('produtos.destroy');

@@ -23,4 +23,9 @@ class Registered extends Model
         'state',
         'cep'
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Orders::class);
+    }
 }
