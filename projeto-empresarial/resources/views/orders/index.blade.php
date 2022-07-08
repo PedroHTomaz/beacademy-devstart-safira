@@ -25,7 +25,7 @@
             <td>{{ $order->product->sale_price }}</td>
             <td>{{ $order->status }}</td>
             <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
-            <td><a href="" class="btn btn-info text-white">Visualizar</a></td>
+            <td><a href="{{ route('orders.show', $order->id) }}" class="btn btn-info text-white">Visualizar</a></td>
             </tr>
         @endforeach
         </tbody>

@@ -29,4 +29,34 @@ class OrdersContoller extends Controller
 
         return view('orders.index', compact('orders'));
     }
+
+    public function show($id)
+    {
+        if (!$order = Orders::find($id))
+            return redirect()->route('orders.index');
+
+        return view('orders.show', compact('order'));
+    }
+
+    public function edit($id)
+    {
+        if (!$order = Orders::find($id)) {
+            return redirect()->route('orders.index');
+        }
+
+        $title = 'Editar produto Nº ' . $order->id;
+        return view('orders.edit', compact('order', 'title'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        if (!$order = Orders::find($id)) {
+            return redirect()->route('orders.index');
+        }
+
+        $data = $request->all();
+        $order->update($data);
+
+        return redirect()->route('orders.index');
+    }
 }

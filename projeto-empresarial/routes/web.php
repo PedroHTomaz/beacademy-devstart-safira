@@ -26,6 +26,9 @@ Route::delete('/usuarios/{id}', [UserController::class, 'destroy'])->name('users
 
 //Pedidos
 Route::get('/orders', [OrdersContoller::class, 'index'])->name('orders.index');
+Route::get('/orders/{id}', [OrdersContoller::class, 'show'])->name('orders.show');
+Route::put('/orders/{id}', [OrdersContoller::class, 'update'])->name('orders.update');
+Route::get('/orders/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
 
 //Adm
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
