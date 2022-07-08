@@ -16,6 +16,7 @@ class Registered extends Model
         'tel',
         'birth_date',
         'cpf',
+        'photo',
         'street',
         'number',
         'neighborhood',
