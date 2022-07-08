@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Registered;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -36,6 +37,12 @@ class UserController extends Controller
     {
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
+        
+        if ($request->photo)
+        {
+            $data['photo'] = $request->photo->store('profile','public');  
+        }
+        
         $this->model->create($data);
 
         return view('users.login');
@@ -65,7 +72,16 @@ class UserController extends Controller
         if($request->password)
         $data['password'] = bcrypt($request->password);
         
-        
+        if ($request->photo) 
+      {
+          if ($users->photo && Storage::exists($users->photo)) 
+          {
+              Storage::delete($users->photo);
+          }
+
+        $data['photo'] = $request->photo->store('profile','public');
+  }
+
         $users->update($data);
 
         return redirect()->route('users.index');

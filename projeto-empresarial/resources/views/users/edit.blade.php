@@ -29,8 +29,8 @@
             <input type="tel" id="tel" name="tel" placeholder='Telefone' class='form-control mb-3' value="{{ $user->tel }}">
 
             <input type="date" id="birth_date" name="birth_date" placeholder='Data de Nascimento' class='form-control mb-3' value="{{ $user->birth_date }}">
-            <label for="image" class="form-label">Selecione uma Imagem para o seu perfil.</label>
-            <input type="file" class="form-control form control-md" id="image" name="image">
+            <label for="photo" class="form-label">Selecione uma Foto para o seu perfil.</label>
+            <input type="file" class="form-control form control-md" id="photo" name="photo">
         </div>
         <div>
             <label for="" class='form-label text-primary h3'>Endereço</label>
