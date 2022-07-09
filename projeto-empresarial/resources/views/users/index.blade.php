@@ -8,6 +8,7 @@
     <table class="table table-striped mt-4">
         <thead class="text-center">
             <tr>
+               <th scope="col">Foto</th> 
                <th scope="col">ID</th> 
                <th scope="col">Nome</th> 
                <th scope="col">Email</th> 
@@ -21,6 +22,11 @@
         <tbody class="text-center">
         @foreach($users as $user)
             <tr>
+            @if($user->photo)
+                <th><img src="{{ asset('storage/'.$user->photo) }}" width="50px" height="50px" class="rounded-circle"></th>
+            @else    
+                <th><img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px"class="rounded-circle"></th>
+            @endif
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>

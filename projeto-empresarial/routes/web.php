@@ -17,12 +17,16 @@ Route::get('/', function () {
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
 //Usuários
+
+Route::delete('/usuarios/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
 Route::post('/usuarios/cadastrar', [UserController::class, 'registered'])->name('users.registered');
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
-Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('users.login');
+Route::get('/usuarios/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::put('/usuarios/{id}', [UserController::class, 'update'])->name('users.update');
 Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
-Route::delete('/usuarios/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
+Route::get('/usuarios/entrar', [UserController::class, 'showLogin'])->name('users.login');
 
 //Pedidos
 Route::get('/orders', [OrdersContoller::class, 'index'])->name('orders.index');
