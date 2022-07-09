@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Orders;
-use App\Models\Product;
-use App\Models\Registered;
-use App\Models\User;
+use App\Models\{
+    Orders, 
+    Product,
+    Registered,
+    User,
+    };
+    
 use Illuminate\Http\Request;
 
 class OrdersContoller extends Controller
@@ -23,9 +26,11 @@ class OrdersContoller extends Controller
         $this->order = $order;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $orders = $this->order->all();
+        $orders = $this->order->getOrders(
+            $request->search ?? ''
+        );    
 
         return view('orders.index', compact('orders'));
     }

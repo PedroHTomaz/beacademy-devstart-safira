@@ -3,7 +3,18 @@
 @section('content')
 
       <h1 class='text-primary'>Listagem de Produtos </h1>
-      <a href="{{ route('produtos.add') }}" class="btn btn-warning my-3">+ Adicionar Novo Produto</a>
+
+      <div>
+            <a href="{{ route('produtos.add') }}" class="btn btn-warning my-3">+ Adicionar Novo Produto</a>
+            <form action="{{ route('produtos.index') }}" method="get" class='d-flex'>
+            @csrf
+            <div class='form-group w-50 me-3' >
+                <input type="search" id="form1" name='search' class="form-control rounded "/>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+            </button> 
+      </div>
       <table class="table table-striped">
             <thead>
                   <tr>
@@ -33,4 +44,8 @@
             @endforeach
             </tbody>
       </table>
+
+      <div class="justify-content-center pagination">
+         {{ $products->links('pagination::bootstrap-4') }}
+      </div>
 @endsection      

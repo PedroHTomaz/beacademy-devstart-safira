@@ -13,9 +13,12 @@ class UserController extends Controller
         $this->model = $registered; 
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = Registered::all();
+        $users = $this->model->getUsers(
+            $request->search ?? ''
+        );      
+        
 
         return view('users.index', compact('users'));
     }

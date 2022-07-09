@@ -3,9 +3,19 @@
 
 @section('content')
 
+    <div class='mx-3'>
     <h1 class="text-primary mt-4">Listagem de Usuários</h1>
 
-    <table class="table table-striped mt-4">
+    <form action="{{ route('users.index') }}" method="get" class='d-flex'>
+            @csrf
+            <div class='form-group w-50 me-3' >
+                <input type="search" id="form1" name='search' class="form-control rounded "/>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+            </button> 
+    </form>
+    <table class="table table-striped ">
         <thead class="text-center">
             <tr>
                <th scope="col">Foto</th> 
@@ -39,4 +49,8 @@
         @endforeach
         </tbody>
     </table>
+    </div>
+    <div class="justify-content-center pagination">
+         {{ $users->links('pagination::bootstrap-4') }}
+      </div>
 @endsection

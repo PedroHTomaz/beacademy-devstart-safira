@@ -20,9 +20,11 @@ class ProductController extends Controller
   }
   
 
-  public function index()
+  public function index(Request $request)
   {
-    $products = Product::all();
+    $products = $this->model->getUsers(
+        $request->search ?? ''
+    );
 
     return view('product.index', compact('products'));
   }

@@ -25,4 +25,18 @@ class Orders extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function getOrders(string $search = null)
+    {
+      $orders = $this->where(function ($query) use ($search)
+      {
+        if($search){
+        $query->where('email', $search);
+        $query->orWhere('name', 'LIKE', "%{$search}%");
+        
+        };
+      })->paginate(5);
+
+      return $orders;
+    }
 }
