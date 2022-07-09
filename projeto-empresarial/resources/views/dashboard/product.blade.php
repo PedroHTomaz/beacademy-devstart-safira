@@ -27,7 +27,7 @@
     <div class='d-flex flex-column w-25 shadow-sm p-3 rounded'>
         <a href="{{ route('admin.dashboard') }}" class='btn btn-outline-primary mb-1'>Produtos</a>
         <a href="{{ route('admin.dashboardUsers') }}" class='btn btn-outline-primary mb-1'>Usuários</a>
-        <a href="" class='btn btn-outline-primary'>Pedidos</a>
+        <a href="{{route('admin.dashboardOrders')}}" class='btn btn-outline-primary'>Pedidos</a>
     </div>
     <div class='shadow-sm p-3 rounded w-100'>
         <div>

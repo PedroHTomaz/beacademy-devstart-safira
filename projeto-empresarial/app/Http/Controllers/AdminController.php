@@ -14,4 +14,9 @@ class AdminController extends Controller
     {
         return view('dashboard.users');
     }
+
+    public function dashboardOrders()
+    {
+        return view('dashboard.orders');
+    }
 }
