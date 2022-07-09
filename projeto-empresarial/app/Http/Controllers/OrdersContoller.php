@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Orders;
-use App\Models\Product;
-use App\Models\Registered;
-use App\Models\User;
+use App\Models\{
+    Orders, 
+    Product,
+    Registered,
+    User,
+    };
+    
 use Illuminate\Http\Request;
 
 class OrdersContoller extends Controller

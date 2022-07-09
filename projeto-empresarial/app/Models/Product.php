@@ -22,4 +22,19 @@ class Product extends Model
     {
         return $this->hasMany(Orders::class);
     }
+
+    public function getUsers(string $search = null)
+    {
+      $products = $this->where(function ($query) use ($search)
+      {
+        if($search){
+        $query->where('id', $search);
+        $query->orWhere('name', 'LIKE', "%{$search}%");
+        
+        };
+      })->paginate(5);
+
+      return $products;
+}
+
 }
