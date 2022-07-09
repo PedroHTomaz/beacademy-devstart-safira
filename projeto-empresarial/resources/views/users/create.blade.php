@@ -35,7 +35,7 @@
         </div>
         <div>
             <label for="" class='form-label text-primary h3'>Endereço</label>
-            <input type="text" id="cep" name="cep" placeholder='CEP' class='form-control mb-3' required>
+            <input type="text" id="cep" name="cep" placeholder='CEP' class='form-control mb-3' onblur="pesquisacep(this.value);" required>
             <input type="text" id="street" name="street" placeholder='Rua' class='form-control mb-3' required>
             <input type="text" id="number" name="number" placeholder='Número' class='form-control mb-3' required>
             <input type="text" id="neighborhood" name="neighborhood" placeholder='Bairro' class='form-control mb-3' required>
