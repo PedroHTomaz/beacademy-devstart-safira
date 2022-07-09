@@ -5,6 +5,16 @@
 
     <h1 class="text-primary mt-4">Listagem de Pedidos</h1>
 
+    <form action="{{ route('orders.index') }}" method="get" class='d-flex'>
+            @csrf
+            <div class='form-group w-50 me-3' >
+                <input type="search" id="form1" name='search' class="form-control rounded "/>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+            </button> 
+    </form>
+
     <table class="table table-striped mt-4">
         <thead class="text-center">
             <tr>
@@ -30,4 +40,7 @@
         @endforeach
         </tbody>
     </table>
+    <div class="justify-content-center pagination">
+         {{ $orders->links('pagination::bootstrap-4') }}
+      </div>
 @endsection

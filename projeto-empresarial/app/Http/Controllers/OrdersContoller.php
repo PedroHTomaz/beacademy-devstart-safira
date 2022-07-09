@@ -26,9 +26,11 @@ class OrdersContoller extends Controller
         $this->order = $order;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $orders = $this->order->all();
+        $orders = $this->order->getUsers(
+            $request->search ?? ''
+        );    
 
         return view('orders.index', compact('orders'));
     }
