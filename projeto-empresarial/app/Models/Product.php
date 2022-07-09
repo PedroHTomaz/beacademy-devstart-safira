@@ -23,7 +23,7 @@ class Product extends Model
         return $this->hasMany(Orders::class);
     }
 
-    public function getUsers(string $search = null)
+    public function getProducts(string $search = null)
     {
       $products = $this->where(function ($query) use ($search)
       {

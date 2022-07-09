@@ -28,7 +28,7 @@ class OrdersContoller extends Controller
 
     public function index(Request $request)
     {
-        $orders = $this->order->getUsers(
+        $orders = $this->order->getOrders(
             $request->search ?? ''
         );    
 

@@ -26,9 +26,9 @@ class Orders extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public function getUsers(string $search = null)
+    public function getOrders(string $search = null)
     {
-      $users = $this->where(function ($query) use ($search)
+      $orders = $this->where(function ($query) use ($search)
       {
         if($search){
         $query->where('email', $search);
@@ -37,6 +37,6 @@ class Orders extends Model
         };
       })->paginate(5);
 
-      return $users;
+      return $orders;
     }
 }
