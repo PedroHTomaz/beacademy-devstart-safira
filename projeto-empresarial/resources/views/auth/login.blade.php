@@ -33,22 +33,22 @@
         		    <input type="password" placeholder="Senha" class="form-control mb-3" name="password" required>
         		    <button type='submit' class='btn btn-primary d-block w-100'> {{ __('Log in') }}</button>
     		    
-                     <div class='py-3'>
+                     <!-- <div class='py-3'>
                         <label for="remember_me" class="text-primary">
                             <input id="remember_me" type="checkbox" name="remember">
                             <span class="">{{ __('Remember me') }}</span>
                         </label>
-   	                 </div>
+   	                 </div> -->
 
 
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between pt-2">
                         @if (Route::has('password.request'))
                             <a class="nav-link text-primary p-0" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
 
-                        <a href="/register" class='nav-link text-primary p-0'>Cadastre-se</a>
+                        <a href="/register" class='nav-link text-primary p-0'>Cadastre-se!</a>
                      </div> 
                 </form>
 				</div>                                 
