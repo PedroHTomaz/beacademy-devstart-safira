@@ -22,7 +22,7 @@ class ProductController extends Controller
 
   public function index(Request $request)
   {
-    $products = $this->model->getUsers(
+    $products = $this->model->getProducts(
         $request->search ?? ''
     );
 

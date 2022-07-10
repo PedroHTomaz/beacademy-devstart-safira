@@ -18,10 +18,20 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'photo',
         'name',
+        'is_admin',
         'email',
         'password',
+        'tel',
+        'birth_date',
+        'cpf',
+        'photo',
+        'street',
+        'number',
+        'neighborhood',
+        'city',
+        'state',
+        'cep',
     ];
 
     /**
@@ -42,4 +52,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Orders::class);
+    }
+
+    public function getUsers(string $search = null)
+    {
+      $users = $this->where(function ($query) use ($search)
+      {
+        if($search){
+        $query->where('email', $search);
+        $query->orWhere('name', 'LIKE', "%{$search}%");
+        
+        };
+      })->paginate(5);
+
+      return $users;
+    }
 }

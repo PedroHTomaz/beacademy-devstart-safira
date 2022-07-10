@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Registered;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public function __construct(Registered $registered)
+    public function __construct(User $user)
     {
-        $this->model = $registered; 
+        $this->model = $user; 
     }
 
     public function index(Request $request)
@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        if(!$user = Registered::find($id))
+        if(!$user = User::find($id))
             return redirect()->route('users.index');
         
         return view('users.show', compact('user'));

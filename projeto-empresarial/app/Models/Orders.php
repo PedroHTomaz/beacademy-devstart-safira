@@ -18,7 +18,7 @@ class Orders extends Model
 
     public function user()
     {
-        return $this->belongsTo(Registered::class);
+        return $this->belongsTo(User::class);
     }
 
     public function product()
