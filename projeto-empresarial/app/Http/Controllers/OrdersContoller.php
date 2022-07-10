@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\{
     Orders, 
     Product,
-    Registered,
     User,
     };
     
@@ -19,7 +18,7 @@ class OrdersContoller extends Controller
     protected $product;
     protected $order;
 
-    public function __construct(Registered $user, Product $product, Orders $order)
+    public function __construct(User $user, Product $product, Orders $order)
     {
         $this->user = $user;
         $this->product = $product;

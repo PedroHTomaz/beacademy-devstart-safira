@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__.'/auth.php';
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ProductController,
@@ -8,14 +9,20 @@ use App\Http\Controllers\{
     UserController
 };
 
-//Home
-Route::get('/', function () {
-    return view('index');
-});
-
+//                                 Rotas do cliente
 //Catalogo
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
+//Home
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+//                                 Rotas do administrador
+
+Route::middleware(['auth', 'admin'])->group(function()
+{
 //Usuários
 
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
@@ -50,3 +57,5 @@ Route::get('/produtos', [ProductController::class, 'index'])->name('produtos.ind
 Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('produtos.edit');
 Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
 Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
+
+}); 

@@ -20,15 +20,37 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                <a class="nav-link fw-bold" aria-current="page" href="#">Início</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link mx-3" href="{{route('users.login')}}">Entrar</a>
-                </li>
-                <li class="nav-item">
-                <a class="btn btn-primary" href="{{route('users.create')}}">Cadastrar</a>
-                </li>
+                
+                     @if(Auth::User())
+                        <li class='nav-item'>
+                            <a href="#" class="nav-link text-dark">{{ Auth::User()->name }}</a>
+                        </li>
+                        <!-- 
+                             Quero colocar uma foto ao lado do nome, porém não consegui fazer :{
+                              Por favor se puderem coloque SZ
+
+                        <li class='nav-item'>
+                            <a href="#" class="nav-link text-dark">{{ Auth::User()->photo }}</a>
+                        </li> -->
+                             @if(Auth::user()->is_admin == 1)
+                             <li class='nav-item'>
+                               <a href="{{ route('admin.dashboard')}}" class="nav-link text-dark">Dashboard</a>
+                             </li>
+                             @endif
+                        <li class='nav-item'>
+                             <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                          <button type="submit" class="text-white" >Sair</button>                         
+                                        </form>
+                         </li>
+                        @else
+                        <li class='nav-item'>
+                            <a href="{{ route('login') }}" class=" btn btn-primary ">Entrar</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a href="{{ route('register') }}" class=" btn btn-primary ">Cadastrar</a> 
+                        </li>
+                        @endif
             </ul>
             </div>
         </div>
