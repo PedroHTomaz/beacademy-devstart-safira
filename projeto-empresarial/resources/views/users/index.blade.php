@@ -9,7 +9,7 @@
     <form action="{{ route('users.index') }}" method="get" class='d-flex'>
             @csrf
             <div class='form-group w-50 me-3' >
-                <input type="search" id="form1" name='search' class="form-control rounded "/>
+                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar'/>
             </div>
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-search"></i>
