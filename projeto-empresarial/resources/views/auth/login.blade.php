@@ -1,56 +1,55 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.template-main')
+@section('title','Entrar')
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('content')
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+		<div class='py-3 shadow-sm'>
+			<div class='d-flex justify-content-between container'>
+				<div>
+					<a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
+				</div>
+			</div>
+		</div>
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+        <main class="container d-flex gap-5 align-items-center flex-lg-row flex-column justify-content-center">
+    	    <div class="col-6">
+                <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        	    <img class="img-fluid" title='Foto da pedra mais linda SZ'src="https://i.imgur.com/Gnd0nAf_d.webp?maxwidth=760&fidelity=grand">
+    	    </div>
+   	        <div class="w-100">
+   		        <div class="text-center">
+        	        <i class="fa-solid fa-diamond h1 text-primary"></i>
+        	        <h1 class="text-primary h1 my-5">Entrar</h1>
+    	        </div>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+               
             </div>
+    		    <form action="{{ route('login') }}" class="rounded shadow p-3" method="POST">
+					@csrf
+        		    <input type="email" placeholder="E-mail" class="form-control mb-3" name="email" required>
+        		    <input type="password" placeholder="Senha" class="form-control mb-3" name="password" required>
+        		    <button type='submit' class='btn btn-primary d-block w-100'> {{ __('Log in') }}</button>
+    		    
+                     <div class=''>
+                        <label for="remember_me" class="">
+                            <input id="remember_me" type="checkbox" name="remember">
+                            <span class="">{{ __('Remember me') }}</span>
+                        </label>
+   	                 </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
+                      <div class="">
+                        @if (Route::has('password.request'))
+                            <a class="" href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                        @endif
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+                        <a href="/register">se registre</a>
+                     </div> 
+                </form>                                  
+           </main>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+@endsection

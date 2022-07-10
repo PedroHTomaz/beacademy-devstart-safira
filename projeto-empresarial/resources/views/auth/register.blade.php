@@ -1,67 +1,52 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.template-main')
+@section('title','Novo Usuário')
+@section('content')
 
-        <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <div class='d-flex'>
+                <a class="navbar-brand text-primary fw-bold" href="/"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
+            </div>       
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
 
-        <form method="POST" >
-            @csrf
+<div class="container" style='max-width:768px;'>
+    <div class="my-4">
+        <span>Já possui uma conta?<span>
+        <a href="{{ route('users.login') }}" class="btn text-primary">Faça login!</a>
+    </div>
+    <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" class='rounded shadow p-3 p-md-5 text-start' style='background-color:#fff;'>
+        @csrf
+        <div>
+            <label for="" class='form-label text-primary h3'>Dados básicos</label>
+            <input type="text" id="name" name="name" placeholder='Nome completo' class='form-control mb-3' required>
+            <input type="email" id="email" name="email" placeholder='E-mail' class='form-control mb-3' required>
+            <input type="password" id="password" name="password" placeholder='Senha' class='form-control mb-3' required>
+            <input type="password" id="password" name="password_confirmation" required placeholder='Confirme sua senha' class='form-control mb-3' required>
+            <input type="tel" id="tel" name="tel" placeholder='Telefone' class='form-control mb-3' required>
+            <input type="date" id="birth_date" name="birth_date" placeholder='Data de nascimento' class='form-control mb-3' required>
+            <input type="text" id="cpf" name="cpf" placeholder='CPF' class='form-control mb-3' required>
+            <label for="photo" class="form-label">Selecione uma foto para o seu perfil.</label>
+            <input type="file" id="photo" name="photo" class="form-control form control-md">
+        </div>
+        <div>
+            <label for="" class='form-label text-primary h3'>Endereço</label>
+            <input type="text" id="cep" name="cep" placeholder='CEP' class='form-control mb-3' onblur="pesquisacep(this.value);" required>
+            <input type="text" id="street" name="street" placeholder='Rua' class='form-control mb-3' required>
+            <input type="text" id="number" name="number" placeholder='Número' class='form-control mb-3' required>
+            <input type="text" id="neighborhood" name="neighborhood" placeholder='Bairro' class='form-control mb-3' required>
+            <input type="text" id="city" name="city" placeholder='Cidade' class='form-control mb-3' required>
+            <input type="text" id="state" name="state" placeholder='Estado' class='form-control mb-3' required>
+        </div>
+        <button type='submit' class='btn btn-primary d-block w-100'>{{ __('Register') }}</button>
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-           
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
-
-
-
-
-<!-- Salvar essas informações pra passar pro novo layout -->
-<div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-
-                action="{{ route('register') }}"
+    </form>
+</div>
+@endsection

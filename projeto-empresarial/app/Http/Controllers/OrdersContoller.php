@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\{
     Orders, 
     Product,
-    Registered,
     User,
     };
     
