@@ -9,30 +9,20 @@ use App\Http\Controllers\{
     UserController
 };
 
-/* Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard'); */
-
-
-//middleware
-/* Route::middleware(['auth'])->group(function()
-{ */
+//                                 Rotas do cliente
+//Catalogo
+Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
 //Home
 Route::get('/', function () {
     return view('welcome');
 });
 
-//Rotas do cliente
 
+//                                 Rotas do administrador
 
-//Catalogo
-Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
-
-
-
-//Rotas do administrador
-
+Route::middleware(['auth', 'admin'])->group(function()
+{
 //Usuários
 
 Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
@@ -68,4 +58,4 @@ Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('pro
 Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
 Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
 
-/* }); */
+}); 
