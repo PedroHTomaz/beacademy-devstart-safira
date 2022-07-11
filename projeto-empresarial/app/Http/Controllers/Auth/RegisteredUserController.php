@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
             'street' => ['required'],
             'number' => ['required'],
             'neighborhood' => ['required'],
-            'city'=> ['required'],
+            'city' => ['required'],
             'state' => ['required'],
             'cep' => ['required'],
         ]);
@@ -53,15 +53,15 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'tel'=> $request->tel,
-             'birth_date' => $request->birth_date,
-             'cpf' => $request->cpf,
-             'street' => $request->street,
-             'number' => $request->number,
-             'neighborhood' => $request->neighborhood,
-             'city' => $request->city,
-             'state'=> $request->state,
-             'cep' => $request->cep,
+            'tel' => $request->tel,
+            'birth_date' => $request->birth_date,
+            'cpf' => $request->cpf,
+            'street' => $request->street,
+            'number' => $request->number,
+            'neighborhood' => $request->neighborhood,
+            'city' => $request->city,
+            'state' => $request->state,
+            'cep' => $request->cep,
 
 
         ]);
@@ -70,6 +70,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        if (Auth::user()->is_admin == 1) {
+            return redirect()->intended(RouteServiceProvider::DASHBOARD);
+        } else {
+            return redirect()->intended(RouteServiceProvider::CATALOGO);
+        }
     }
 }
