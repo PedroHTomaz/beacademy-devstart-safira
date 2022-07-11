@@ -23,7 +23,7 @@
                    
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="btn btn-primary ms-3" >Sair</button>                         
+                            <button type="submit" class="btn btn-primary  btn-sm" >Sair</button>                         
                         </form>
                 @endif
             </div>
