@@ -9,7 +9,10 @@
     </div>
     <div class='d-flex align-items-center gap-3'>
         <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" style='height:20px;'>
-        <span>Admin</span>
+        <!-- <span>Admin</span> -->
+        @if(Auth::User())                        
+            <span>{{ Auth::User()->name }} - ADMIN</span>
+        @endif
     </div>
 </div>
 </div>
