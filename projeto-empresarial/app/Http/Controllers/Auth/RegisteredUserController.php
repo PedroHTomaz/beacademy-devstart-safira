@@ -46,7 +46,7 @@ class RegisteredUserController extends Controller
             'city'=> ['required'],
             'state' => ['required'],
             'cep' => ['required'],
-            'photo' => ['photo'],
+            'photo' => ['required'],
         ]);
 
         $user = User::create([
