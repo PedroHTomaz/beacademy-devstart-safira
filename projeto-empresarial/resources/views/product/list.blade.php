@@ -2,10 +2,18 @@
 @section('title', 'Catálogo')
 
 <div class='py-3 shadow-sm'>
-<div class='d-flex justify-content-between container'>
+<div class='d-flex justify-content-between container align-items-center'>
     <div>
         <a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
     </div>
+    @if(Auth::user()->is_admin !== 1)
+    <a href='#' type="button" class="btn btn-primary position-relative">
+    <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+    0
+    </span>
+    </a>
+    @endif
 </div>
 </div>
 
