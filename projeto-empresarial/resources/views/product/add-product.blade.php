@@ -4,7 +4,7 @@
 
     <h1 class="text-primary">Cadastro de Produto</h1>
     <form action="{{route('produtos.store')}}" method="POST" enctype="multipart/form-data">
-        @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
+        @csrf
         @if($errors->any())
             <div class='alert alert-danger' role="alert">
                     @foreach($errors->all() as $error)

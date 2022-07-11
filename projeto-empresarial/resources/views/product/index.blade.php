@@ -9,7 +9,7 @@
             <form action="{{ route('produtos.index') }}" method="get" class='d-flex'>
             @csrf
             <div class='form-group w-50 me-3' >
-                <input type="search" id="form1" name='search' class="form-control rounded "/>
+                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar'/>
             </div>
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-search"></i>
@@ -37,7 +37,7 @@
                   <td>{{ $product->quantity }}</td>
                   <td>{{ $product->cust_price }}</td>
                   <td>{{ $product->sale_price }}</td>
-                  <td><img src="{{asset('storage/'.$product->photo)}}" width="50" height="50" class="rounde-circle"></td>
+                  <td><img src="{{asset('storage/'.$product->photo)}}" width="50" height="50" class="border border-primary border-3 rounded-circle"></td>
                   <td>{{ $product->description }}</td>
                   <td> <a href="{{ route('produtos.idGet', $product->id) }}" class='btn btn-info text-white'>Visualizar</a> </td>
             </tr>

@@ -9,7 +9,7 @@
     <form action="{{ route('users.index') }}" method="get" class='d-flex'>
             @csrf
             <div class='form-group w-50 me-3' >
-                <input type="search" id="form1" name='search' class="form-control rounded "/>
+                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar'/>
             </div>
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-search"></i>
@@ -33,9 +33,9 @@
         @foreach($users as $user)
             <tr>
             @if($user->photo)
-                <th><img src="{{ asset('storage/'.$user->photo) }}" width="50px" height="50px" class="rounded-circle"></th>
+                <th><img src="{{ asset('storage/'.$user->photo) }}" width="50px" height="50px" class="border border-primary border-3 rounded-circle"></th>
             @else    
-                <th><img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px"class="rounded-circle"></th>
+                <th><img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px"class="border border-primary border-3 rounded-circle"></th>
             @endif
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>

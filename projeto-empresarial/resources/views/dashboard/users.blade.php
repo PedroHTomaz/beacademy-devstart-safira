@@ -25,9 +25,9 @@
 
 <div class='d-flex gap-3 mt-3'>
     <div class='d-flex flex-column w-25 shadow-sm p-3 rounded'>
-        <a href="{{ route('admin.dashboard') }}" class='btn btn-outline-primary mb-1'>Produtos</a>
-        <a href="{{ route('admin.dashboardUsers') }}" class='btn btn-outline-primary mb-1'>Usuários</a>
-        <a href="{{route('admin.dashboardOrders')}}" class='btn btn-outline-primary'>Pedidos</a>
+        <a href="{{ route('admin.dashboard') }}" class='btn btn-outline-primary mb-1'><i class="fa-solid fa-box-open"></i> Produtos</a>
+        <a href="{{ route('admin.dashboardUsers') }}" class='btn btn-outline-primary mb-1'><i class="fa-solid fa-user-large"></i> Usuários</a>
+        <a href="{{route('admin.dashboardOrders')}}" class='btn btn-outline-primary'><i class="fa-solid fa-basket-shopping"></i> Pedidos</a>
     </div>
     <div class='shadow-sm p-3 rounded w-100'>
         <div>

@@ -22,7 +22,7 @@
                   <td>{{ $products->quantity }}</td>
                   <td>{{ $products->cust_price }}</td>
                   <td>{{ $products->sale_price }}</td>
-                  <td><img src="{{asset('storage/'.$products->photo)}}" width="50" height="50" class="rounde-circle"></td>
+                  <td><img src="{{asset('storage/'.$products->photo)}}" width="50" height="50" class="border border-primary border-3 rounded-circle"></td>
                   <td>{{ $products->description }}</td>
               
                   <td><a href="{{ route('produtos.edit', $products->id) }}" class='btn btn-warning'>Editar</a> </td>

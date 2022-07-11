@@ -14,11 +14,14 @@
         </div>
     </nav>
 
-<div class="container" style='max-width:768px;'>
+    <h1 class='text-primary h1 text-center mt-3'>Cadastre-se</h1>
+
+    <div class="container" style='max-width:768px;'>
     <div class="my-4">
         <span>Já possui uma conta?<span>
-        <a href="{{ route('users.login') }}" class="btn text-primary">Faça login!</a>
-    </div>
+        <a class="text-decoration-none ps-3" href="{{ route('login') }}">
+            {{ __('Faça login!') }}
+        </a>    </div>
     <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" class='rounded shadow p-3 p-md-5 text-start' style='background-color:#fff;'>
         @csrf
         <div>
@@ -31,7 +34,7 @@
             <input type="date" id="birth_date" name="birth_date" placeholder='Data de nascimento' class='form-control mb-3' required>
             <input type="text" id="cpf" name="cpf" placeholder='CPF' class='form-control mb-3' required>
             <label for="photo" class="form-label">Selecione uma foto para o seu perfil.</label>
-            <input type="file" id="photo" name="photo" class="form-control form control-md">
+            <input type="file" id="photo" name="photo" class="form-control form control-md mb-3">
         </div>
         <div>
             <label for="" class='form-label text-primary h3'>Endereço</label>
@@ -42,11 +45,7 @@
             <input type="text" id="city" name="city" placeholder='Cidade' class='form-control mb-3' required>
             <input type="text" id="state" name="state" placeholder='Estado' class='form-control mb-3' required>
         </div>
-        <button type='submit' class='btn btn-primary d-block w-100'>{{ __('Register') }}</button>
-
-        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+        <button type='submit' class='btn btn-primary d-block w-100'>{{ __('Cadastrar') }}</button>
     </form>
 </div>
 @endsection
