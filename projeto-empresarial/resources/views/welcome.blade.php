@@ -25,7 +25,7 @@
                      @if(Auth::user())
                      
                           <li class='nav-item'>
-                              <img class='rounded-circle mt-1 border border-primary border-1' width='36px' height='36px'src="{{ asset('storage/'.Auth::User()->photo) }}">
+                              <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/'.Auth::User()->photo) }}">
                           </li>
                      
                             <li class='nav-item'>
@@ -44,7 +44,7 @@
 
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button type="submit" class="btn btn-primary ms-1 mt-1 btn-sm" >Sair</button>                         
+                                        <button type="submit" class="btn btn-primary ms-2 mt-1" ><i class="fa-solid fa-right-from-bracket"></i> Sair</button>                         
                                     </form>
 
                                     </li>

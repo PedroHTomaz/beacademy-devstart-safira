@@ -7,23 +7,24 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="https://i.imgur.com/0MqV1gr_d.webp?maxwidth=760&fidelity=grand">    <title>SAFIRA - @yield('title')</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/0MqV1gr_d.webp?maxwidth=760&fidelity=grand">
+    <title>SAFIRA - @yield('title')</title>
 </head>
 <body>
-    <div class='py-3 shadow-sm'>
-        <div class='d-flex justify-content-between container'>
+    <div class='py-2 shadow-sm'>
+        <div class='d-flex justify-content-between container align-items-center'>
             <div>
                 <a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
             </div>
             <div class='d-flex align-items-center gap-3'>
-                <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" style='height:20px;'>
+                <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" style='height:25px;'>
                 <!-- <span>Admin</span> -->
                 @if(Auth::User())                        
                     <span>{{ Auth::User()->name }} - ADMIN</span>
                    
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="btn btn-primary  btn-sm" >Sair</button>                         
+                            <button type="submit" class="btn btn-primary" ><i class="fa-solid fa-right-from-bracket"></i> Sair</button>                         
                         </form>
                 @endif
             </div>
