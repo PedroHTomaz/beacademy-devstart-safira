@@ -55,7 +55,10 @@ class ProductController extends Controller
     }
     
     $this->model->create($data);
-    return redirect()->route('produtos.index');
+    $message = 'Produto adicionado com sucesso';
+    $route = '/produtos';
+    return view ('layouts.message', compact('message','route'));
+    // return redirect()->route('produtos.index');
   }
 
   public function edit($id)
@@ -98,7 +101,11 @@ class ProductController extends Controller
 
     $product->update($data);
 
-    return redirect()->route('produtos.index');
+    $message = 'Produto atualizado com sucesso';
+    $route = '/produtos';
+    return view ('layouts.message', compact('message','route'));
+
+    // return redirect()->route('produtos.index');
   }
 
   public function destroy($id)
@@ -107,8 +114,12 @@ class ProductController extends Controller
       return redirect()->route('produtos.index');
 
       $products->delete();
+      
+      $message = 'Produto excluído com sucesso';
+      $route = '/produtos';
+      return view ('layouts.message', compact('message','route'));
 
-    return redirect()->route('produtos.index');
+    //return redirect()->route('produtos.index');
   }
 
   public function list()
@@ -116,4 +127,9 @@ class ProductController extends Controller
       $products = Product::all();
       return view('product.list', compact('products'));
   }
+  // public function success ()
+  // {
+  //   $message = "";
+  //   return view ('layouts.message', compact('message'));
+  // }
 }

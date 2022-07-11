@@ -58,4 +58,6 @@ Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('pro
 Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
 Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
 
+Route::get('/sucesso', [ProductController::class, 'success'])->name('success');
+
 }); 
