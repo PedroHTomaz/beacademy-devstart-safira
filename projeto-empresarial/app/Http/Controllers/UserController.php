@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class UserController extends Controller
 {
@@ -105,5 +106,10 @@ class UserController extends Controller
         $route = '/usuarios';
         return view ('layouts.message', compact('message','route'));
         // return redirect()->route('users.index');
+    }
+
+    public function loginRequired()
+    {
+        return view('users.login');
     }
 }

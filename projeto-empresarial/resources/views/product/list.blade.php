@@ -20,7 +20,12 @@
                         <div class="card-body">
                             <h6 class="card-title">{{$product->name}}</h6>
                             <h6 class="card-title">R$ {{$product->sale_price}}</h6>
+
+                            @if(Auth::user())
                             <a href="#" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
+                            @else
+                            <a href="{{ route('catalogo.loginRequired') }}" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
+                            @endif
                         </div>
                     </div>
                 </div>

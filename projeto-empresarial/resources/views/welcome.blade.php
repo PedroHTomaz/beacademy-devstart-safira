@@ -29,7 +29,7 @@
                           </li>
                      
                             <li class='nav-item'>
-                                <a href="#" class="nav-link text-dark">{{ Auth::User()->name }}</a>
+                                <a href="#" class="nav-link ms-1 text-dark">{{ Auth::User()->name }}</a>
                             </li>
                              
 
@@ -44,7 +44,7 @@
 
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-                                        <button type="submit" class="btn btn-primary ms-3 mt-1 btn-sm" >Sair</button>                         
+                                        <button type="submit" class="btn btn-primary ms-1 mt-1 btn-sm" >Sair</button>                         
                                     </form>
 
                                     </li>

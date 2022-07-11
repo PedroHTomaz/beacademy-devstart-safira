@@ -12,6 +12,7 @@ use App\Http\Controllers\{
 //                                 Rotas do cliente
 //Catalogo
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
+Route::get('/catalogo/loginRequired', [UserController::class, 'loginRequired'])->name('catalogo.loginRequired');
 
 //Home
 Route::get('/', function () {
