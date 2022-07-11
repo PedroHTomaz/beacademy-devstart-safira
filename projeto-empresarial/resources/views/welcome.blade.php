@@ -32,20 +32,20 @@
                                 <a href="#" class="nav-link text-dark">{{ Auth::User()->name }}</a>
                             </li>
                              
-                             <li class='nav-item'>
-                            <a href="{{ route('admin.dashboard')}}" class="nav-link  text-dark">Painel</a>
+
+                            <li class='nav-item'>
+
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary ms-3 mt-1 btn-sm" >Sair</button>                         
+                                </form>
+
                             </li>
 
                                  @if(Auth::user()->is_admin == 1)
-                          <li class='nav-item'>
-
-                            <form method="POST" action="{{ route('logout') }}">
-                                 @csrf
-                                <button type="submit" class="btn btn-primary ms-3 mt-1 btn-sm" >Sair</button>                         
-                             </form>
-
-                           
-                        </li>
+                                 <li class='nav-item'>
+                                      <a href="{{ route('admin.dashboard')}}" class="nav-link  text-dark">Painel</a>
+                                 </li>
                                 @endif
             
                         @else
