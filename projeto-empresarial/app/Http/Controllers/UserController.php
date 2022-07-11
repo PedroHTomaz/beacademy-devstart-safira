@@ -84,7 +84,7 @@ class UserController extends Controller
 
         $data['photo'] = $request->photo->store('profile','public');
   }
-
+        $data['is_admin'] = $request->admin?1:0;
         $users->update($data);
 
         $message = 'Usuário atualizado com sucesso';
