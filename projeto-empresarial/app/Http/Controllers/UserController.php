@@ -110,6 +110,6 @@ class UserController extends Controller
 
     public function loginRequired()
     {
-        return view('users.login');
+        return view('auth.login');
     }
 }
