@@ -87,7 +87,11 @@ class UserController extends Controller
 
         $users->update($data);
 
-        return redirect()->route('users.index');
+        $message = 'Usuário atualizado com sucesso';
+        $route = '/usuarios';
+        return view ('layouts.message', compact('message','route'));
+
+        // return redirect()->route('users.index');
     }
 
     public function destroy($id)
@@ -97,6 +101,9 @@ class UserController extends Controller
         }
         
         $users->delete();
-        return redirect()->route('users.index');
+        $message = 'Usuário excluído com sucesso';
+        $route = '/usuarios';
+        return view ('layouts.message', compact('message','route'));
+        // return redirect()->route('users.index');
     }
 }
