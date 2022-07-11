@@ -22,17 +22,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 
-                     @if(Auth::User())
-                        <li class='nav-item'>
-                            <a href="#" class="nav-link text-dark">{{ Auth::User()->name }}</a>
-                        </li>
-                        <!-- 
-                             Quero colocar uma foto ao lado do nome, porém não consegui fazer :{
-                              Por favor se puderem coloque SZ
-
-                        <li class='nav-item'>
-                            <a href="#" class="nav-link text-dark">{{ Auth::User()->photo }}</a>
-                        </li> -->
+                     @if(Auth::user())
+                     
+                          <li class='nav-item'>
+                              <img class='rounded-circle mt-1 border border-primary border-1' width='36px' height='36px'src="{{ asset('storage/'.Auth::User()->photo) }}">
+                          </li>
+                     
+                            <li class='nav-item'>
+                                <a href="#" class="nav-link text-dark">{{ Auth::User()->name }}</a>
+                            </li>
+                     
                              @if(Auth::user()->is_admin == 1)
                              <li class='nav-item'>
                                <a href="{{ route('admin.dashboard')}}" class="nav-link text-dark">Painel</a>
@@ -41,7 +40,7 @@
                         <li class='nav-item'>
                              <form method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                          <button type="submit" class="btn btn-primary ms-3" >Sair</button>                         
+                                          <button type="submit" class="btn btn-primary ms-3 mt-1 btn-sm" >Sair</button>                         
                                         </form>
                          </li>
                         @else
