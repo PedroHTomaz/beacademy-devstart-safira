@@ -132,4 +132,9 @@ class ProductController extends Controller
   //   $message = "";
   //   return view ('layouts.message', compact('message'));
   // }
+
+  public function carrinho ()
+  {
+    return view ('product.carrinho');
+  }
 }
