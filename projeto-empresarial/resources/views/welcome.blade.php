@@ -20,13 +20,13 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-center">
                 
                      @if(Auth::user())
                      
-                          <li class='nav-item'>
-                              <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/'.Auth::User()->photo) }}">
-                          </li>
+                          <!-- <li class='nav-item'>
+                              <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/'.Auth::User()->phpphoto) }}">
+                          </li> -->
                      
                             <li class='nav-item'>
                                 <a href="#" class="nav-link ms-1 text-dark">{{ Auth::User()->name }}</a>
