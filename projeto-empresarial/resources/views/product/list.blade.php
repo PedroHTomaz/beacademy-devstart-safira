@@ -7,9 +7,9 @@
         <a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
     </div>
     @if(Auth::user()->is_admin !== 1)
-    <a href='#' type="button" class="btn btn-primary position-relative">
+    <a href="{{ route('produtos.carrinho')}}" type="button" class="btn btn-primary position-relative">
     <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+    <span id='add' class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
     0
     </span>
     </a>
@@ -30,9 +30,9 @@
                             <h6 class="card-title">R$ {{$product->sale_price}}</h6>
 
                             @if(Auth::user())
-                            <a href="#" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
+                            <a onclick='addToCart()' href="#" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
                             @else
-                            <a href="{{ route('catalogo.loginRequired') }}" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
+                            <a onclick="addToCart()" href="{{ route('catalogo.loginRequired') }}" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
                             @endif
                         </div>
                     </div>

@@ -14,6 +14,7 @@ use App\Http\Controllers\{
 //Catalogo
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 Route::get('/catalogo/loginRequired', [UserController::class, 'loginRequired'])->name('catalogo.loginRequired');
+Route::get('/produtos/carrinho', [ProductController::class, 'carrinho'])->name('produtos.carrinho');
 
 //Home
 Route::get('/', function () {
