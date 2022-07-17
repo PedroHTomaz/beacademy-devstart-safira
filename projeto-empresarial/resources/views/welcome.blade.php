@@ -23,22 +23,26 @@
             <ul class="navbar-nav ms-auto">
                 
                      @if(Auth::user())
-                     
-                          <li class='nav-item'>
-                              <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/'.Auth::User()->photo) }}">
-                          </li>
+                        
+                     @if(Auth::user()->photo)
+                        <li class='nav-item'>
+                            <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/'.Auth::User()->photo) }}">
+                        </li>
+                        @else
+                        <li class='nav-item'>
+                            <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/profile/avatar.jpg') }}">
+                        </li>
+                        @endif
                      
                             <li class='nav-item'>
                                 <a href="#" class="nav-link ms-1 text-dark">{{ Auth::User()->name }}</a>
                             </li>
                              
-
-                           
-                                 @if(Auth::user()->is_admin == 1)
-                                 <li class='nav-item'>
-                                      <a href="{{ route('admin.dashboard')}}" class="nav-link  text-dark">Painel</a>
-                                 </li>
-                                @endif
+                            @if(Auth::user()->is_admin == 1)
+                                <li class='nav-item'>
+                                    <a href="{{ route('admin.dashboard')}}" class="nav-link  text-dark">Painel</a>
+                                </li>
+                            @endif
 
                                 <li class='nav-item'>
 
@@ -49,7 +53,6 @@
 
                                     </li>
 
-            
                         @else
                             <li class='nav-item'>
                                  <a href="{{ route('login') }}" class="nav-link px-3">Entrar</a>
