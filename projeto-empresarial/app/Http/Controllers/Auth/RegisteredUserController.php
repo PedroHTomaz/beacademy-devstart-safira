@@ -33,6 +33,15 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
+        if ($request->photo) {
+
+            $file = $request['photo'];
+            $path = $file->store('profile', 'public');
+        } else {
+            $path = $request['photo'];
+        }
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -46,7 +55,7 @@ class RegisteredUserController extends Controller
             'city' => ['required'],
             'state' => ['required'],
             'cep' => ['required'],
-            'photo' => ['required'],
+            'photo' => ['file'],
         ]);
 
         $user = User::create([
@@ -63,6 +72,7 @@ class RegisteredUserController extends Controller
             'city' => $request->city,
             'state' => $request->state,
             'cep' => $request->cep,
+            'photo' => $path
 
 
         ]);
