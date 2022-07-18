@@ -10,16 +10,11 @@ class CartController extends Controller
 {
     public function index()
     {
-        $order = Orders::where([
+        $orders = Orders::where([
             'status' => 'RE',
             'user_id' => Auth::id()
         ])->get();
 
-        dd([
-            $order,
-            $order[0]->order_products,
-            $order[0]->order_products[0]->product
-
-        ]);
+        return view('product.carrinho', compact('orders'));
     }
 }
