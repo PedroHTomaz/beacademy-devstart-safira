@@ -7,7 +7,7 @@
         <a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
     </div>
     @if(Auth::user()->is_admin !== 1)
-    <a href="{{ route('produtos.carrinho')}}" type="button" class="btn btn-primary position-relative">
+    <a href="{{ route('cart.index')}}" type="button" class="btn btn-primary position-relative">
     <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
     <span id='add' class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
     0
