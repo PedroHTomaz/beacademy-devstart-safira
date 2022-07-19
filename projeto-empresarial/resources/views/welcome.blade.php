@@ -53,11 +53,11 @@
                         </li>
                         @else
                             <li class='nav-item'>
-                                 <a href="{{ route('login') }}" class=" btn nav-link px-3">Entrar</a>
+                                 <a href="{{ route('login') }}" class=" btn btn-primary px-3">Entrar</a>
                             </li>
 
                             <li class='nav-item'>
-                                   <a href="{{ route('register') }}" class=" btn nav-link px-3 ">Cadastrar</a> 
+                                   <a href="{{ route('register') }}" class=" btn btn-primary px-3">Cadastrar</a> 
                             </li>
                         @endif
             </ul>
