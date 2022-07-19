@@ -21,10 +21,10 @@
             <label for="photo" class="form-label">Selecione uma Foto para o seu perfil.</label>
             <input type="file" class="form-control form control-md" id="photo" name="photo">
 
-            <!-- <div class="form-check mt-2">
+             <!-- <div class="form-check mt-2">
             <input class="form-check-input" type="radio" name="is_admin" value='1'id="flexRadioDefault1"/>
             <label class="form-check-label" for="flexRadioDefault1"> is_admin? </label>
-            </div> -->
+             </div> -->
         </div>
         <div class='mt-3'>
             <label for="" class='form-label text-primary h3'>Endereço</label>
