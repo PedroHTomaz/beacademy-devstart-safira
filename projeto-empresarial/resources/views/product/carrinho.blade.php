@@ -81,7 +81,7 @@
             </div>
             @php
               $total_products = $order_product->valores;
-              $total_order +=  $total_products
+              $total_order +=  $total_products;
             @endphp
             
             @endforeach
@@ -118,7 +118,7 @@
            
 
             @empty
-              <h5>NÃO HÁ NENHUM PEDIDO NO CARRINHO</h5>
+              <h6 class="mt-3 text-center" >NÃO HÁ NENHUM PEDIDO NO CARRINHO  :}</h6>
             @endforelse
           </div>
         </div>

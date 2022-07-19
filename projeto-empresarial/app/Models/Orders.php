@@ -23,9 +23,9 @@ class Orders extends Model
       ->orderBy('product_id', 'desc');
   }
 
-  public static function searchId($where)
+  public static function searchId($id)
   {
-    $order = self::where($where)->first(['id']);
+    $order = self::where($id, 'id');
     return !empty($order->id) ? $order->id : null;
   }
 

@@ -2,19 +2,19 @@
 @section('title','Novo Usuário')
 @section('content')
 
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-<nav class="navbar navbar-expand-lg shadow-sm">
+    <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container">
             <div class='d-flex'>
                 <a class="navbar-brand text-primary fw-bold" href="/"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
             </div>       
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
 
     <h1 class='text-primary h1 text-center mt-3'>Cadastre-se</h1>
+    <x-auth-validation-errors class="alert alert-danger container" :errors="$errors" />
 
     <div class="container" style='max-width:768px;'>
     <div class="my-4">
