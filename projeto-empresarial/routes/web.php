@@ -11,23 +11,17 @@ use App\Http\Controllers\{
     UserController
 };
 
-//                                 Rotas do cliente
-//Catalogo
-
-
 //Home
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
     Route::get('/carrinho', [CartController::class, 'index'])->name('cart.index');
     Route::post('/carrinho/adicionar', [CartController::class, 'add'])->name('cart.add');
 });
-
-//                                 Rotas do administrador
 
 Route::middleware(['auth', 'admin'])->group(function () {
     //Usuários
