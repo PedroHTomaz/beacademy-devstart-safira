@@ -33,6 +33,15 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
+        if ($request->photo) {
+
+            $file = $request['photo'];
+            $path = $file->store('profile', 'public');
+        } else {
+            $path = $request['photo'];
+        }
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -43,10 +52,14 @@ class RegisteredUserController extends Controller
             'street' => ['required'],
             'number' => ['required'],
             'neighborhood' => ['required'],
-            'city'=> ['required'],
+            'city' => ['required'],
             'state' => ['required'],
             'cep' => ['required'],
+<<<<<<< HEAD
             'photo' => ['required'],
+=======
+            'photo' => ['file'],
+>>>>>>> 374019fe48dc1aaf2e4cda920a90a8458ea1d00a
         ]);
 
         $user = User::create([
@@ -54,15 +67,16 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'tel'=> $request->tel,
-             'birth_date' => $request->birth_date,
-             'cpf' => $request->cpf,
-             'street' => $request->street,
-             'number' => $request->number,
-             'neighborhood' => $request->neighborhood,
-             'city' => $request->city,
-             'state'=> $request->state,
-             'cep' => $request->cep,
+            'tel' => $request->tel,
+            'birth_date' => $request->birth_date,
+            'cpf' => $request->cpf,
+            'street' => $request->street,
+            'number' => $request->number,
+            'neighborhood' => $request->neighborhood,
+            'city' => $request->city,
+            'state' => $request->state,
+            'cep' => $request->cep,
+            'photo' => $path
 
 
         ]);
@@ -71,6 +85,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        if (Auth::user()->is_admin == 1) {
+            return redirect()->intended(RouteServiceProvider::DASHBOARD);
+        } else {
+            return redirect()->intended(RouteServiceProvider::CATALOGO);
+        }
     }
 }

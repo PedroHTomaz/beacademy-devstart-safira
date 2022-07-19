@@ -20,7 +20,6 @@
             <input type="date" id="birth_date" name="birth_date" placeholder='Data de Nascimento' class='form-control mb-3' value="{{ $user->birth_date }}">
             <label for="photo" class="form-label">Selecione uma Foto para o seu perfil.</label>
             <input type="file" class="form-control form control-md" id="photo" name="photo">
-
             <div class="form-check">
              <input class="form-check-input" type="checkbox" value="1" name='admin' id="flexCheckDefault">
                  <label class="form-check-label" for="flexCheckDefault">
