@@ -72,6 +72,9 @@
 
                 <!-- Preço -->
                 <p class="text-start text-md-center">
+                  <strong>R$ 000.00 (Unidade)</strong>
+                </p>
+                <p class="text-start text-md-center">
                   <strong>R$ {{number_format($order_product->valores, 2, ',', '.')}}</strong>
                 </p>
 
@@ -101,7 +104,7 @@
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                 Produtos
-                <span></span>
+                <span>R$ {{number_format($total_order, 2, ',', '.')}}</span>
               </li>
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
@@ -118,7 +121,8 @@
            
 
             @empty
-              <h5>NÃO HÁ NENHUM PEDIDO NO CARRINHO</h5>
+            <h5 class='text-center p-3'>Poxa! Seu carrinho está vazio! <i class="fa-solid fa-heart-crack"></i></h5>
+            <a href="{{ route('catalogo.list') }}" class='btn btn-primary mx-auto mb-3'>Catálogo</a>
             @endforelse
           </div>
         </div>

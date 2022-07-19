@@ -17,7 +17,7 @@
     </div>
 
   </div>
-  <div class='d-flex flex-lg-row flex-column align-items-center justify-content-center mt-5'>
+  <div class='d-flex flex-lg-row flex-column align-items-center justify-content-center mt-5' style='height:75vh;'>
     <img class='img-fluid my-5 me-lg-5' src="https://i.imgur.com/oTwMuQB.gif">
     
     <div class='text-center text-lg-start'>
