@@ -29,11 +29,13 @@
                             <h6 class="card-title">{{$product->name}}</h6>
                             <h6 class="card-title">R$ {{$product->sale_price}}</h6>
 
-                            @if(Auth::user())
-                            <a onclick='addToCart()' href="#" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
-                            @else
-                            <a onclick="addToCart()" href="{{ route('catalogo.loginRequired') }}" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
-                            @endif
+                            <form action="{{route('cart.add')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$product->id}}">
+                            <button onclick='addToCart()' type="submit" class="btn btn-primary btn-sm">Adicionar ao carrinho</button>
+                            </form>
+                            
+                           
                         </div>
                     </div>
                 </div>
