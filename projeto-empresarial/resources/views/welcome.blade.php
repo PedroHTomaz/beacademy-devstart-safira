@@ -1,71 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link rel="shortcut icon" href="https://i.imgur.com/0MqV1gr_d.webp?maxwidth=760&fidelity=grand">
-    <title>Safira Squad - Projeto Empresarial</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg shadow-sm">
-        <div class="container">
-            <div class='d-flex'>
-                <a class="navbar-brand text-primary fw-bold" href="#"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
-            </div>       
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-center">
-                
-                     @if(Auth::user())
-                        
-                        @if(Auth::user()->photo)
-                            <li class='nav-item'>
-                                <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/'.Auth::User()->photo) }}">
-                            </li>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <link rel="shortcut icon" href="https://i.imgur.com/0MqV1gr_d.webp?maxwidth=760&fidelity=grand">
+        <title>Safira Squad - Projeto Empresarial</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg shadow-sm">
+            <div class="container">
+                <div class='d-flex'>
+                    <a class="navbar-brand text-primary fw-bold" href="#"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
+                </div>       
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        @if(Auth::user()) 
+                            @if(Auth::user()->photo)
+                                <li class='nav-item'>
+                                    <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/'.Auth::User()->photo) }}">
+                                </li>
                             @else
-                            <li class='nav-item'>
-                                <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/profile/avatar.jpg') }}">
-                            </li>
+                                <li class='nav-item'>
+                                    <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('storage/profile/avatar.jpg') }}">
+                                </li>
                             @endif
-                     
                             <li class='nav-item'>
                                 <a href="#" class="nav-link ms-1 text-dark">{{ Auth::User()->name }}</a>
-                            </li>
-                             
+                            </li>        
                             @if(Auth::user()->is_admin == 1)
                                 <li class='nav-item'>
                                     <a href="{{ route('admin.dashboard')}}" class="nav-link  text-dark">Painel</a>
                                 </li>
                             @endif
+                            <li class='nav-item'>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary ms-2 mt-1" ><i class="fa-solid fa-right-from-bracket"></i> Sair</button>                         
+                                </form>
+                            </li>
+                            @else
+                                <li class='nav-item'>
+                                    <a href="{{ route('login') }}" class="nav-link px-3">Entrar</a>
+                                </li>
 
                                 <li class='nav-item'>
-
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary ms-2 mt-1" ><i class="fa-solid fa-right-from-bracket"></i> Sair</button>                         
-                                    </form>
-
-                                    </li>
-
-                        @else
-                            <li class='nav-item'>
-                                 <a href="{{ route('login') }}" class="nav-link px-3">Entrar</a>
-                            </li>
-
-                            <li class='nav-item'>
-                                   <a href="{{ route('register') }}" class=" btn btn-primary ">Cadastrar</a> 
-                            </li>
+                                    <a href="{{ route('register') }}" class=" btn btn-primary ">Cadastrar</a> 
+                                </li>
                         @endif
-            </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     <main class='container d-flex align-items-center my-5 flex-column text-center flex-lg-row text-lg-start' style='height:90vh;'>
         <div>
             <div>

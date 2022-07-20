@@ -28,7 +28,8 @@ class OrderProduct extends Model
         $id_user = Auth::id();
         $order = Orders::where('user_id', $id_user)->first('id');
 
-        if (!empty($order)) {
+        if (!empty($order))
+        {
             $qtdProduct = DB::table('order_products')
                 ->select(DB::raw('count(1) as qtd'))
                 ->where('order_id', $order->id)
