@@ -135,11 +135,11 @@
               </li>
             </ul>
 
-            <button type="button" class="btn btn-primary d-block w-100 mb-3">
-              Checkout
-            </button>
-            <a href="{{route('catalogo.list')}}" type="button" class="btn btn-primary d-block w-100 ">
+            <a href="{{route('catalogo.list')}}" type="button" class="btn btn-outline-primary mb-3 d-block w-100 ">
               Continuar comprando
+            </a>
+            <a href="{{route('cart.checkout')}}" type="button" class="btn btn-primary d-block w-100 ">
+              Checkout
             </a>
            
 

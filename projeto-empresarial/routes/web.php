@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/carrinho', [CartController::class, 'index'])->name('cart.index');
     Route::post('/carrinho/adicionar', [CartController::class, 'add'])->name('cart.add');
     Route::delete('carinho/remover', [CartController::class, 'destroy'])->name('cart.destroy');
+    Route::get('/carrinho/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
