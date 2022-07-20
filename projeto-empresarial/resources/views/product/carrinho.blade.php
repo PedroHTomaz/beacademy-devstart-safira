@@ -16,7 +16,7 @@
       <div class="col-md-8">
         <div class="card mb-4">
           <div class="card-header py-3">
-            <h5 class="mb-0">Carrinho - Itens</h5>
+            <h5 class="mb-0">Carrinho - {{$qtdProduct}} Itens</h5>
           </div>
           @forelse($orders as $order)
           <div class="card-body">
@@ -72,10 +72,10 @@
 
                 <!-- Preço -->
                 <p class="text-start text-md-center">
-                  <strong>R$ 000.00 (Unidade)</strong>
+                  <strong>Unidade - R$ {{number_format($order_product->product->sale_price, 2, ',', '.')}}  </strong>
                 </p>
                 <p class="text-start text-md-center">
-                  <strong>R$ {{number_format($order_product->valores, 2, ',', '.')}}</strong>
+                  <strong>Total - R$ {{number_format($order_product->valores, 2, ',', '.')}}</strong>
                 </p>
 
                
