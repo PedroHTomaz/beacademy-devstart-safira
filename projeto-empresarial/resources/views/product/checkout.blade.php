@@ -51,7 +51,7 @@
               </div>
               <span class="text-muted">$0</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-flex justify-content-between bg-info">
               <span>Total</span>
               <strong>$0</strong>
             </li>
