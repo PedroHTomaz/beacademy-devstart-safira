@@ -64,4 +64,65 @@ class CartController extends Controller
 
         return redirect()->route('cart.index');
     }
+
+    public function destroy(Request $request)
+    {
+
+        $id_order = $request->input('order_id');
+        $id_product = $request->input('product_id');
+        $remove_only_items = (bool)$request->input('items');
+        $id_user = Auth::id();
+
+        // dd([
+        //     $id_order,
+        //     $id_product,
+        //     $remove_only_items
+
+        // ]);
+
+        $id_order = Orders::searchId([
+            'id' => $id_order,
+            'user_id' => $id_user,
+            'status' => 'RE'
+        ]);
+
+        if (empty($id_order)) {
+            //adicionar flash mensage de não encontrado no carrinho
+            return redirect()->route('cart.index');
+        }
+
+        $where_product = [
+            'order_id' => $id_order,
+            'product_id' => $id_product
+        ];
+
+        $product = OrderProduct::where($where_product)
+            ->orderBy('id', 'desc')
+            ->first();
+
+        if (empty($product->id)) {
+            //adicionar flash mensage de não encontrado no carrinho
+            return redirect()->route('cart.index');
+        }
+
+        if ($remove_only_items) {
+            $where_product['id'] = $product->id;
+        }
+
+        OrderProduct::where($where_product)->delete();
+
+        $check_order = OrderProduct::where([
+            'order_id' => $product->order_id
+        ])->exists();
+
+        if (!$check_order) {
+            Orders::where([
+                'id' => $product->order_id
+            ])->delete();
+        }
+
+        //adicionar flash mensage de removido com sucesso! 
+
+        return redirect()->route('cart.index');
+    }
 }
