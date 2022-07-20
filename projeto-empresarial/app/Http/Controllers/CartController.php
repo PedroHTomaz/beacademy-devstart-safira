@@ -25,17 +25,9 @@ class CartController extends Controller
     public function add(Request $request)
     {
 
-        $id_product = $request->input('id');
-
-
+        $id_product = $request->id;
 
         $product = Product::find($id_product);
-
-
-
-        // if (empty($id_product->id)) {
-        //     return redirect()->route('cart.index');
-        // }
 
         $id_user = Auth::id();
 
@@ -44,7 +36,8 @@ class CartController extends Controller
             'status' => 'RE'
         ]);
 
-        if (empty($id_order)) {
+        if (empty($id_order)) 
+        {
             $new_order = Orders::create([
                 'user_id' => $id_user,
                 'status' => 'RE'
@@ -68,17 +61,10 @@ class CartController extends Controller
     public function destroy(Request $request)
     {
 
-        $id_order = $request->input('order_id');
-        $id_product = $request->input('product_id');
-        $remove_only_items = (bool)$request->input('items');
+        $id_order = $request->order_id;
+        $id_product = $request->product_id;
+        $remove_only_items = $request->items;
         $id_user = Auth::id();
-
-        // dd([
-        //     $id_order,
-        //     $id_product,
-        //     $remove_only_items
-
-        // ]);
 
         $id_order = Orders::searchId([
             'id' => $id_order,
@@ -86,8 +72,8 @@ class CartController extends Controller
             'status' => 'RE'
         ]);
 
-        if (empty($id_order)) {
-            //adicionar flash mensage de não encontrado no carrinho
+        if (empty($id_order)) 
+        {
             return redirect()->route('cart.index');
         }
 
@@ -100,12 +86,13 @@ class CartController extends Controller
             ->orderBy('id', 'desc')
             ->first();
 
-        if (empty($product->id)) {
-            //adicionar flash mensage de não encontrado no carrinho
+        if (empty($product->id)) 
+        {
             return redirect()->route('cart.index');
         }
 
-        if ($remove_only_items) {
+        if ($remove_only_items) 
+        {
             $where_product['id'] = $product->id;
         }
 
@@ -120,8 +107,6 @@ class CartController extends Controller
                 'id' => $product->order_id
             ])->delete();
         }
-
-        //adicionar flash mensage de removido com sucesso! 
 
         return redirect()->route('cart.index');
     }
