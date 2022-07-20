@@ -135,13 +135,12 @@
               </li>
             </ul>
 
-            <button type="button" class="btn btn-primary d-block w-100 mb-3">
-              Checkout
-            </button>
-            <a href="{{route('catalogo.list')}}" type="button" class="btn btn-primary d-block w-100 ">
-              Continuar comprando
+            <a href="{{route('catalogo.list')}}" type="button" class="btn btn-primary d-block mb-3 w-100 ">
+              Continuar Comprando :}
             </a>
-           
+            <a href="#" type="button" class="btn btn-primary d-block mb-3 w-100 ">
+              Checkout
+            </a>
 
             @empty
             <h5 class='text-center p-3'>Poxa! Seu carrinho está vazio! <i class="fa-solid fa-heart-crack"></i></h5>

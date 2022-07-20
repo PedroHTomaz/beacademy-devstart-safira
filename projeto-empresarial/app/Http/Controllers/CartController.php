@@ -102,7 +102,8 @@ class CartController extends Controller
             'order_id' => $product->order_id
         ])->exists();
 
-        if (!$check_order) {
+        if (!$check_order) 
+        {
             Orders::where([
                 'id' => $product->order_id
             ])->delete();
