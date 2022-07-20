@@ -30,7 +30,7 @@
         @foreach($orders as $order)
             <tr>
             <td>{{ $order->id }}</td>
-            <td>{{ $order->user->name }}</td>
+            <td>{{ Auth::user->name }}</td>
             <td>{{ $order->product->name}}</td>
             <td>{{ $order->product->sale_price }}</td>
             <td>{{ $order->status }}</td>
@@ -41,6 +41,6 @@
         </tbody>
     </table>
     <div class="justify-content-center pagination">
-         {{ $orders->links('pagination::bootstrap-4') }}
+         {{ $orders->links('pagination::bootstrap-4') }} 
       </div>
 @endsection
