@@ -16,7 +16,7 @@
       <div class="col-md-8">
         <div class="card mb-4">
           <div class="card-header py-3">
-            <h5 class="mb-0">Carrinho - Itens</h5>
+            <h5 class="mb-0">Carrinho - {{$qtdProduct}} Itens</h5>
           </div>
           @forelse($orders as $order)
           <div class="card-body">
@@ -42,41 +42,60 @@
               <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                 <!-- Dados -->
                 <p><strong>{{$order_product->product->name}}</strong></p>
-                <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                  title="Remove item">
-                  <i class="fas fa-trash"></i>
-                </button>
-              
+                <form action="{{route('cart.destroy')}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <input type="hidden" name="order_id" value="{{$order->id}}">
+                    <input type="hidden" name="product_id" value="{{$order_product->product_id}}">
+                    <input type="hidden" name="items" value={{0}}>
+                    <button type="submit" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                      title="Remover produto">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                </form>
                 <!-- Dados -->
               </div>
 
               <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <!-- Quantidade -->
                 <div class="d-flex mb-4" style="max-width: 300px">
-                  <button class="btn btn-primary px-3 me-2 h-50"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                    <i class="fas fa-minus"></i>
-                  </button>
+
+                  <form action="{{route('cart.destroy')}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <input type="hidden" name="order_id" value="{{$order->id}}">
+                    <input type="hidden" name="product_id" value="{{$order_product->product_id}}">
+                    <input type="hidden" name="items" value={{1}}>
+
+                    <button type="submit" class="btn btn-primary px-3 me-2 h-50">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </form>
 
                   <div class="form-outline">
                     <input id="form1" min="0" name="quantity" value="{{$order_product->qtd}}" type="number" class="form-control" />
                     <label class="form-label" for="form1">Quantidade</label>
                   </div>
 
-                  <button class="btn btn-primary px-3 ms-2 h-50"
-                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                    <i class="fas fa-plus"></i>
-                  </button>
+                  <form action="{{route('cart.add')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{$order_product->product->id}}">
+                    <button type="submit" class="btn btn-primary px-3 ms-2 h-50">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </form>
+
                 </div>
                 <!-- Quantidade -->
 
                 <!-- Preço -->
                 <p class="text-start text-md-center">
-                  <strong>R$ 000.00 (Unidade)</strong>
+                  <strong>Unidade - R$ {{number_format($order_product->product->sale_price, 2, ',', '.')}}  </strong>
                 </p>
                 <p class="text-start text-md-center">
-                  <strong>R$ {{number_format($order_product->valores, 2, ',', '.')}}</strong>
+                  <strong>Total - R$ {{number_format($order_product->valores, 2, ',', '.')}}</strong>
                 </p>
+               
 
                
                 <!-- Preço -->
@@ -88,6 +107,7 @@
             @endphp
             
             @endforeach
+            <h5>Pedido n: {{$order->id}}</h5>
             <!-- Resumo pra ir pro checkout -->
           </div>
         </div>
@@ -115,9 +135,12 @@
               </li>
             </ul>
 
-            <button type="button" class="btn btn-primary d-block w-100">
+            <button type="button" class="btn btn-primary d-block w-100 mb-3">
               Checkout
             </button>
+            <a href="{{route('catalogo.list')}}" type="button" class="btn btn-primary d-block w-100 ">
+              Continuar comprando
+            </a>
            
 
             @empty

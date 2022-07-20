@@ -10,7 +10,7 @@
     <a href="{{ route('cart.index')}}" type="button" class="btn btn-primary position-relative">
     <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
     <span id='add' class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
-    0
+    {{$qtdProduct}}
     </span>
     </a>
     @endif

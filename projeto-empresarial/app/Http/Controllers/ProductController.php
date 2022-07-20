@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProductFormRequest;
+use App\Models\OrderProduct;
+use App\Models\Orders;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -18,12 +22,12 @@ class ProductController extends Controller
   {
     return view('product.add-product');
   }
-  
+
 
   public function index(Request $request)
   {
     $products = $this->model->getProducts(
-        $request->search ?? ''
+      $request->search ?? ''
     );
 
     return view('product.index', compact('products'));
@@ -31,11 +35,9 @@ class ProductController extends Controller
 
   public function idGet($id)
   {
-    if (!$products = Product::find($id))
-     {
+    if (!$products = Product::find($id)) {
       return redirect()->route('produtos.index');
-
-     }
+    }
 
     $title = 'Produto ' . $products->name;
 
@@ -44,27 +46,25 @@ class ProductController extends Controller
 
   public function store(CreateProductFormRequest $request)
   {
-  
+
     $data = $request->all();
 
     $data['password'] = bcrypt($request->password);
 
-    if ($request->photo)
-     {
-      $data['photo'] = $request->photo->store('profile','public');
+    if ($request->photo) {
+      $data['photo'] = $request->photo->store('profile', 'public');
     }
-    
+
     $this->model->create($data);
     $message = 'Produto adicionado com sucesso';
     $route = '/produtos';
-    return view ('layouts.message', compact('message','route'));
+    return view('layouts.message', compact('message', 'route'));
     // return redirect()->route('produtos.index');
   }
 
   public function edit($id)
   {
-    if(!$products = Product::find($id)) 
-    {
+    if (!$products = Product::find($id)) {
       return redirect()->route('users.index');
     }
 
@@ -75,35 +75,31 @@ class ProductController extends Controller
   public function update(CreateProductFormRequest $request, $id)
   {
 
-    if (!$product = Product::find($id)) 
-    {
+    if (!$product = Product::find($id)) {
       return redirect()->route('produtos.index');
     };
 
 
     $data = $request->all();
 
-    if ($request->password) 
-    {
+    if ($request->password) {
       $data['password'] = bcrypt($request->password);
     };
 
 
-    if ($request->photo) 
-      {
-          if ($product->photo && Storage::exists($product->photo)) 
-          {
-              Storage::delete($product->photo);
-          }
+    if ($request->photo) {
+      if ($product->photo && Storage::exists($product->photo)) {
+        Storage::delete($product->photo);
+      }
 
-      $data['photo'] = $request->photo->store('profile','public');
-  }
+      $data['photo'] = $request->photo->store('profile', 'public');
+    }
 
     $product->update($data);
 
     $message = 'Produto atualizado com sucesso';
     $route = '/produtos';
-    return view ('layouts.message', compact('message','route'));
+    return view('layouts.message', compact('message', 'route'));
 
     // return redirect()->route('produtos.index');
   }
@@ -113,28 +109,32 @@ class ProductController extends Controller
     if (!$products = $this->model->find($id))
       return redirect()->route('produtos.index');
 
-      $products->delete();
-      
-      $message = 'Produto excluído com sucesso';
-      $route = '/produtos';
-      return view ('layouts.message', compact('message','route'));
+    $products->delete();
+
+    $message = 'Produto excluído com sucesso';
+    $route = '/produtos';
+    return view('layouts.message', compact('message', 'route'));
 
     //return redirect()->route('produtos.index');
   }
 
   public function list()
-  {  
-      $products = Product::all();
-      return view('product.list', compact('products'));
-  }
-  // public function success ()
-  // {
-  //   $message = "";
-  //   return view ('layouts.message', compact('message'));
-  // }
-
-  public function carrinho ()
   {
-    return view ('product.carrinho');
+
+    $products = Product::all();
+
+    $qtdProduct = OrderProduct::getQtdProduct();
+
+    return view('product.list', compact('products', 'qtdProduct'));
+  }
+  public function success()
+  {
+    $message = "";
+    return view('layouts.message', compact('message'));
+  }
+
+  public function carrinho()
+  {
+    return view('product.carrinho');
   }
 }
