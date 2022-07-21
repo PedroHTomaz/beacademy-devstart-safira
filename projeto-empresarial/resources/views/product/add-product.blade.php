@@ -24,12 +24,12 @@
                 <input type="text" id="quantity"  name='quantity' class="form-control"  >
             </div>
             <div class="col-sm-2">
-                <label for="cust-price">Preço de custo</label>
+                <label for="cust_price">Preço de custo</label>
                 <input type="text" name="cust_price" id="cust_price" class="form-control" >
             </div>
         
             <div class="col-sm-2">
-                <label for="sale-price">Preço de venda</label>
+                <label for="sale_price">Preço de venda</label>
                 <input type="text" name="sale_price" id="sale_price" class="form-control" >
             </div>
         </div>
