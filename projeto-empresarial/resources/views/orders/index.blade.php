@@ -7,8 +7,8 @@
 
     <form action="{{ route('orders.index') }}" method="get" class='d-flex'>
             @csrf
-            <div class='form-group w-50 me-3' >
-                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar'/>
+            <div class='form-group w-20 me-3' >
+                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar pedido'/>
             </div>
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-search"></i>
@@ -20,10 +20,10 @@
             <tr>
                <th scope="col">ID</th> 
                <th scope="col">Usuário</th> 
-               <th scope="col">Produto</th> 
                <th scope="col">Valor</th> 
                <th scope="col">Status</th> 
                <th scope="col">Data do Pedido</th> 
+               <th scope="col">Ações</th> 
             </tr>
         </thead>
         <tbody class="text-center">
@@ -31,9 +31,8 @@
             <tr>
             <td>{{ $order->id }}</td>
             <td>{{ $order->user->name }}</td>
-            <td>{{ $order->product->name}}</td>
-            <td>{{ $order->product->sale_price }}</td>
-            <td>{{ $order->status }}</td>
+            <td>{{ $order->value}}</td>
+            <td>{{ $order->status}}</td>
             <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
             <td><a href="{{ route('orders.show', $order->id) }}" class="btn btn-info text-white">Visualizar</a></td>
             </tr>

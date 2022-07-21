@@ -21,16 +21,12 @@
                 <input type="text" name="name"value='{{$order->user->name}}' id="name" class="form-control" >
             </div>
             <div class="col-sm-2">
-                <label for="quantity">Produto</label>
-                <input type="text" name="name"value='{{$order->product->name}}' id="quantity" class="form-control"  >
-            </div>
-            <div class="col-sm-2">
                 <label for="cust-price">Valor</label>
-                <input type="text" name="sale_price"value='{{$order->product->sale_price}}' id="cust_price" class="form-control"  >
+                <input type="text" name="value"value='{{$order->value}}' id="value" class="form-control"  >
             </div>
             <div class="col-sm-2">
                 <label for="sale-price">Status</label>
-                <input type="text" name="status"value='{{$order->status}}' id="sale_price" class="form-control" >
+                <input type="text" name="status" value='{{$order->status}}' id="status" class="form-control" >
             </div>
         </div>  
         <button type="submit" class="btn btn-primary mt-4">Atualizar</button>

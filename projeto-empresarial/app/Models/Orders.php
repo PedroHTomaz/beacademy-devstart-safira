@@ -16,6 +16,11 @@ class Orders extends Model
     'status'
   ];
 
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
+
   public function order_products()
   {
     return $this->hasMany(OrderProduct::class, 'order_id', 'id')
@@ -34,10 +39,10 @@ class Orders extends Model
   {
     $orders = $this->where(function ($query) use ($search) {
       if ($search) {
-        $query->where('email', $search);
-        $query->orWhere('name', 'LIKE', "%{$search}%");
+        $query->where('id', $search);
       };
     })->paginate(5);
+
 
     return $orders;
   }
