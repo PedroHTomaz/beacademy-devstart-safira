@@ -19,7 +19,7 @@ class CartController extends Controller
 
         $qtdProduct = OrderProduct::getQtdProduct();
 
-        return view('product.carrinho', compact('orders', 'qtdProduct'));
+        return view('cart.carrinho', compact('orders', 'qtdProduct'));
     }
 
     public function add(Request $request)
@@ -146,6 +146,8 @@ class CartController extends Controller
 
     public function checkout()
     {
-        return view('product.checkout');
+        $orders = OrderProduct::all();
+
+        return view('cart.checkout', compact('orders'));
     }
 }

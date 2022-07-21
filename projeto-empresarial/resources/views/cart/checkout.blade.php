@@ -35,28 +35,20 @@
           </h4>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <strong>Produtos:</strong>
+              @foreach($orders as $OrderProduct)
               <div>
-                <h6 class="my-0">Nome do produto</h6>
+                <h6 class="my-0">{{ $OrderProduct->product->name }}</h6>
               </div>
-              <span class="text-muted">$0</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Nome do produto 2</h6>
-              </div>
-              <span class="text-muted">$0</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Nome do produto 3</h6>
-              </div>
-              <span class="text-muted">$0</span>
+              <span class="text-muted">${{ $OrderProduct->product->sale_price }}</span>
+              @endforeach
             </li>
             <li class="list-group-item d-flex justify-content-between bg-info">
               <span>Total</span>
               <strong>$0</strong>
             </li>
           </ul>
+          
 
         </div>
         <div class="col-md-8 order-md-1">
