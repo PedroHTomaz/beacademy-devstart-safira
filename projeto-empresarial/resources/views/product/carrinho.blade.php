@@ -143,7 +143,6 @@
               Checkout
             </a>
            
-
             @empty
             <h5 class='text-center p-3'>Poxa! Seu carrinho está vazio! <i class="fa-solid fa-heart-crack"></i></h5>
             <a href="{{ route('catalogo.list') }}" class='btn btn-primary mx-auto mb-3'>Catálogo</a>
