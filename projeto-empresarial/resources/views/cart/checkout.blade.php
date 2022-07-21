@@ -34,29 +34,26 @@
             <span class="badge badge-warning badge-pill">3</span>
           </h4>
           <ul class="list-group mb-3">
-          <div class="d-flex justify-content-between">
-              <strong> Produtos: {{$qtdProduct}} </strong> 
-              <ul class="list-group list-group-flush">
-              @forelse( $orders as $order)
-                @foreach($order->order_products as $order_products)
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                    <span>{{$order_products->qtd}} x {{ $order_products->product->name }}</span>
-                  </li>
-                @endforeach
-                @empty 
-                
-              @endforelse
-              </ul>
-            </div>
+            <li class="list-group-item justify-content-between lh-condensed">
+                <strong> <span> Produtos: {{$qtdProduct}} </span></strong> 
+                <ul class="list-group list-group-flush">
+                  @forelse( $orders as $order)
+                    @foreach($order->order_products as $order_products)
+                      <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <h6 class='mt-3'>Valor unitário: {{ $order_products->product->sale_price }} x {{$order_products->qtd}} do Produto: {{ $order_products->product->name }}</h6>
+                      </li>
+                    @endforeach
+                    @empty 
+                  @endforelse
+                </ul>
+            </li>   
             <li class="list-group-item d-flex justify-content-between bg-info">
-            @foreach( $orders as $order)   
-              <span>Total</span>
-              <strong>R$ {{number_format($order->value, 2, ',', '.')}}</strong>
-            @endforeach
+              @foreach( $orders as $order)   
+                <span>Total</span>
+                <strong>R$ {{number_format($order->value, 2, ',', '.')}}</strong>
+              @endforeach
             </li>
           </ul>
-          
-
         </div>
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3 text-primary">Dados básicos</h4>
