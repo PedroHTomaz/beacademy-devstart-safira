@@ -29,21 +29,35 @@ class CartController extends Controller
 
         $product = Product::find($id_product);
 
+        $valueProduct = $product->sale_price;
+
         $id_user = Auth::id();
+
+
 
         $id_order = Orders::searchId([
             'user_id' => $id_user,
             'status' => 'RE'
         ]);
 
-        if (empty($id_order)) 
-        {
+        if (empty($id_order)) {
             $new_order = Orders::create([
                 'user_id' => $id_user,
-                'status' => 'RE'
+                'status' => 'RE',
+                'value' =>  $valueProduct
             ]);
 
             $id_order = $new_order->id;
+        } else {
+            $order = Orders::find($id_order);
+            $new_value = $order->value + $valueProduct;
+            $valueOrder = [
+                'value' => $new_value
+            ];
+
+            $order->update($valueOrder);
+
+            $id_order = $order->id;
         }
 
         OrderProduct::create([
@@ -64,6 +78,9 @@ class CartController extends Controller
         $id_order = $request->order_id;
         $id_product = $request->product_id;
         $remove_only_items = $request->items;
+        $value_product = $request->product_value;
+        $value_order_product = $request->order_product_value;
+
         $id_user = Auth::id();
 
         $id_order = Orders::searchId([
@@ -72,8 +89,7 @@ class CartController extends Controller
             'status' => 'RE'
         ]);
 
-        if (empty($id_order)) 
-        {
+        if (empty($id_order)) {
             return redirect()->route('cart.index');
         }
 
@@ -86,24 +102,40 @@ class CartController extends Controller
             ->orderBy('id', 'desc')
             ->first();
 
-        if (empty($product->id)) 
-        {
+        if (empty($product->id)) {
             return redirect()->route('cart.index');
         }
 
-        if ($remove_only_items) 
-        {
+        if ($remove_only_items) {
             $where_product['id'] = $product->id;
         }
 
         OrderProduct::where($where_product)->delete();
 
+        if ($remove_only_items) {
+            $order = Orders::find($id_order);
+            $new_value = $order->value -  $value_product;
+            $valueOrder = [
+                'value' => $new_value
+            ];
+
+            $order->update($valueOrder);
+        } else {
+            $order = Orders::find($id_order);
+            $new_value = $order->value - $value_order_product;
+            $valueOrder = [
+                'value' => $new_value
+            ];
+
+            $order->update($valueOrder);
+        }
+
+
         $check_order = OrderProduct::where([
             'order_id' => $product->order_id
         ])->exists();
 
-        if (!$check_order) 
-        {
+        if (!$check_order) {
             Orders::where([
                 'id' => $product->order_id
             ])->delete();
@@ -112,8 +144,8 @@ class CartController extends Controller
         return redirect()->route('cart.index');
     }
 
-    public function checkout ()
+    public function checkout()
     {
-        return view ('product.checkout');
+        return view('product.checkout');
     }
 }
