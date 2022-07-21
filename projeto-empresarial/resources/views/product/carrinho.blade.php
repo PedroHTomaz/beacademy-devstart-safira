@@ -107,10 +107,11 @@
             @endphp
             
             @endforeach
-            <h5>Pedido n: {{$order->id}}</h5>
             <!-- Resumo pra ir pro checkout -->
           </div>
         </div>
+        <span class='d-block mb-4'>Pedido n.º : {{$order->id}}</span>
+
       </div>
 
       <div class="col-md-4">
@@ -135,13 +136,13 @@
               </li>
             </ul>
 
-            <a href="{{route('catalogo.list')}}" type="button" class="btn btn-primary d-block mb-3 w-100 ">
-              Continuar Comprando :}
+            <a href="{{route('catalogo.list')}}" type="button" class="btn btn-outline-primary mb-3 d-block w-100 ">
+              Continuar comprando
             </a>
-            <a href="#" type="button" class="btn btn-primary d-block mb-3 w-100 ">
+            <a href="{{route('cart.checkout')}}" type="button" class="btn btn-primary d-block w-100 ">
               Checkout
             </a>
-
+           
             @empty
             <h5 class='text-center p-3'>Poxa! Seu carrinho está vazio! <i class="fa-solid fa-heart-crack"></i></h5>
             <a href="{{ route('catalogo.list') }}" class='btn btn-primary mx-auto mb-3'>Catálogo</a>
