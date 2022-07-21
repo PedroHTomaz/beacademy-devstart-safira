@@ -21,9 +21,6 @@
           @forelse($orders as $order)
           <div class="card-body">
             <!-- item -->
-            @php
-              $total_order = 0;
-            @endphp
             @foreach($order->order_products as $order_product)
             <div class="row"> 
               <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
@@ -48,6 +45,7 @@
                     <input type="hidden" name="order_id" value="{{$order->id}}">
                     <input type="hidden" name="product_id" value="{{$order_product->product_id}}">
                     <input type="hidden" name="items" value={{0}}>
+                    <input type="hidden" name="order_product_value" value={{$order_product->valores}}>
                     <button type="submit" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
                       title="Remover produto">
                       <i class="fas fa-trash"></i>
@@ -66,7 +64,7 @@
                     <input type="hidden" name="order_id" value="{{$order->id}}">
                     <input type="hidden" name="product_id" value="{{$order_product->product_id}}">
                     <input type="hidden" name="items" value={{1}}>
-
+                    <input type="hidden" name="product_value" value={{$order_product->product->sale_price}}>
                     <button type="submit" class="btn btn-primary px-3 me-2 h-50">
                       <i class="fas fa-minus"></i>
                     </button>
@@ -101,10 +99,6 @@
                 <!-- Preço -->
               </div>
             </div>
-            @php
-              $total_products = $order_product->valores;
-              $total_order +=  $total_products
-            @endphp
             
             @endforeach
             <!-- Resumo pra ir pro checkout -->
@@ -121,21 +115,27 @@
           </div>
 
           <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <strong> Produtos </strong> 
+              <ul class="list-group list-group-flush">
+                @foreach( $order->order_products as $order_product)
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                  <span>{{$order_product->qtd}} x {{$order_product->product->name}}</span>
+                </li>
+                @endforeach
+              </ul>
+            </div>
+            
             <ul class="list-group list-group-flush">
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                Produtos
-                <span>R$ {{number_format($total_order, 2, ',', '.')}}</span>
-              </li>
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                 <div>
                   <strong>Total</strong>
                 </div>
-                <span><strong>R$ {{number_format($total_order, 2, ',', '.')}}</strong></span>
+                <span><strong>R$ {{number_format($order->value, 2, ',', '.')}}</strong></span>
               </li>
             </ul>
-
             <a href="{{route('catalogo.list')}}" type="button" class="btn btn-outline-primary mb-3 d-block w-100 ">
               Continuar comprando
             </a>
@@ -157,3 +157,8 @@
 
 
 @endsection
+          
+             
+                
+             
+              
