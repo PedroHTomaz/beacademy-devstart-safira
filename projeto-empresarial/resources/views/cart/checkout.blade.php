@@ -34,18 +34,25 @@
             <span class="badge badge-warning badge-pill">3</span>
           </h4>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <strong>Produtos:</strong>
-              @foreach($orders as $OrderProduct)
-              <div>
-                <h6 class="my-0">{{ $OrderProduct->product->name }}</h6>
-              </div>
-              <span class="text-muted">${{ $OrderProduct->product->sale_price }}</span>
-              @endforeach
-            </li>
+          <div class="d-flex justify-content-between">
+              <strong> Produtos: {{$qtdProduct}} </strong> 
+              <ul class="list-group list-group-flush">
+              @forelse( $orders as $order)
+                @foreach($order->order_products as $order_products)
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    <span>{{$order_products->qtd}} x {{ $order_products->product->name }}</span>
+                  </li>
+                @endforeach
+                @empty 
+                
+              @endforelse
+              </ul>
+            </div>
             <li class="list-group-item d-flex justify-content-between bg-info">
+            @foreach( $orders as $order)   
               <span>Total</span>
-              <strong>$0</strong>
+              <strong>R$ {{number_format($order->value, 2, ',', '.')}}</strong>
+            @endforeach
             </li>
           </ul>
           
