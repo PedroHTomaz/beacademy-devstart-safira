@@ -32,7 +32,7 @@ class UserLoginTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_users_can_be_login_with_invalid_password()
+    public function test_users_can_not_authenticate_with_invalid_password()
     {
         $user = User::factory()->create();
 

@@ -23,6 +23,7 @@ class UserFactory extends Factory
             'neighborhood' => 'Granja',
             'city' => 'Fortaleza',
             'state' => 'Ceará',
+            'is_admin' => 1,
         ];
     }
 
