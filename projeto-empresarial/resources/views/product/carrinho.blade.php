@@ -107,10 +107,11 @@
             @endphp
             
             @endforeach
-            <h5>Pedido n: {{$order->id}}</h5>
             <!-- Resumo pra ir pro checkout -->
           </div>
         </div>
+        <span class='d-block mb-4'>Pedido n.º : {{$order->id}}</span>
+
       </div>
 
       <div class="col-md-4">
