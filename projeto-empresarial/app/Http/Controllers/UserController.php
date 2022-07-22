@@ -20,7 +20,6 @@ class UserController extends Controller
             $request->search ?? ''
         );
 
-
         return view('users.index', compact('users'));
     }
 
@@ -106,4 +105,5 @@ class UserController extends Controller
         return view('layouts.message', compact('message', 'route'));
         
     }
+
 }
