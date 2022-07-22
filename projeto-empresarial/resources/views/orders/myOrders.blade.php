@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.template-main')
 @section('title','Meus Pedidos')
 
 @section('content')

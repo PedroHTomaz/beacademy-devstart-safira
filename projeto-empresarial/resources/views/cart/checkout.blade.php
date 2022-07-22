@@ -39,7 +39,7 @@
                 <ul class="list-group list-group-flush">
                   @forelse( $orders as $order)
                     @foreach($order->order_products as $order_products)
-                      <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                      <li class="list-group-item d-flex justify-content-end align-items-center border-0 px-0 pb-0">
                         <h6 class='mt-3'>{{$order_products->qtd}} x {{ $order_products->product->name }}</h6>
                       </li>
                     @endforeach
@@ -56,7 +56,7 @@
           </ul>
         </div>
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3 text-primary">Dados básicos</h4>
+          <h4 class="mb-3 text-primary">Confirme seus dados</h4>
           <form class="needs-validation" novalidate="">
             <div class="row">
               <div class="col-md-12 mb-3">
