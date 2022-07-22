@@ -14,12 +14,12 @@ class CartController extends Controller
     {
         $orders = Orders::where([
             'status' => 'RE',
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
         ])->get();
 
         $qtdProduct = OrderProduct::getQtdProduct();
 
-        return view('product.carrinho', compact('orders', 'qtdProduct'));
+        return view('cart.carrinho', compact('orders', 'qtdProduct'));
     }
 
     public function add(Request $request)
@@ -146,6 +146,13 @@ class CartController extends Controller
 
     public function checkout()
     {
-        return view('product.checkout');
+        $orders = Orders::where([
+            'status' => 'RE',
+            'user_id' => Auth::id(),
+        ])->get();
+
+        $qtdProduct = OrderProduct::getQtdProduct();
+
+        return view('cart.checkout', compact('orders', 'qtdProduct'));
     }
 }
