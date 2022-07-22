@@ -14,7 +14,7 @@ class CartController extends Controller
     {
         $orders = Orders::where([
             'status' => 'RE',
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
         ])->get();
 
         $qtdProduct = OrderProduct::getQtdProduct();
@@ -24,7 +24,6 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-
         $id_product = $request->id;
 
         $product = Product::find($id_product);
@@ -74,7 +73,6 @@ class CartController extends Controller
 
     public function destroy(Request $request)
     {
-
         $id_order = $request->order_id;
         $id_product = $request->product_id;
         $remove_only_items = $request->items;
@@ -146,8 +144,13 @@ class CartController extends Controller
 
     public function checkout()
     {
-        $orders = OrderProduct::all();
+        $orders = Orders::where([
+            'status' => 'RE',
+            'user_id' => Auth::id(),
+        ])->get();
 
-        return view('cart.checkout', compact('orders'));
+        $qtdProduct = OrderProduct::getQtdProduct();
+
+        return view('cart.checkout', compact('orders', 'qtdProduct'));
     }
 }

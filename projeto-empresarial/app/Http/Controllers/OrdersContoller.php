@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 class OrdersContoller extends Controller
 
 {
-
     protected $user;
     protected $product;
     protected $order;
@@ -72,5 +71,10 @@ class OrdersContoller extends Controller
         $order->delete();
 
         return redirect()->route('orders.index');
+    }
+
+    public function myOrders ()
+    {
+        return view ('orders.myOrders');
     }
 }

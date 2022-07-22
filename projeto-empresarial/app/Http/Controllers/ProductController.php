@@ -23,7 +23,6 @@ class ProductController extends Controller
     return view('product.add-product');
   }
 
-
   public function index(Request $request)
   {
     $products = $this->model->getProducts(
@@ -46,9 +45,7 @@ class ProductController extends Controller
 
   public function store(CreateProductFormRequest $request)
   {
-
     $data = $request->all();
-
     $data['password'] = bcrypt($request->password);
 
     if ($request->photo) {
@@ -59,7 +56,6 @@ class ProductController extends Controller
     $message = 'Produto adicionado com sucesso';
     $route = '/produtos';
     return view('layouts.message', compact('message', 'route'));
-    // return redirect()->route('produtos.index');
   }
 
   public function edit($id)
@@ -74,18 +70,15 @@ class ProductController extends Controller
 
   public function update(CreateProductFormRequest $request, $id)
   {
-
     if (!$product = Product::find($id)) {
       return redirect()->route('produtos.index');
     };
-
 
     $data = $request->all();
 
     if ($request->password) {
       $data['password'] = bcrypt($request->password);
     };
-
 
     if ($request->photo) {
       if ($product->photo && Storage::exists($product->photo)) {
@@ -101,7 +94,6 @@ class ProductController extends Controller
     $route = '/produtos';
     return view('layouts.message', compact('message', 'route'));
 
-    // return redirect()->route('produtos.index');
   }
 
   public function destroy($id)
@@ -115,18 +107,16 @@ class ProductController extends Controller
     $route = '/produtos';
     return view('layouts.message', compact('message', 'route'));
 
-    //return redirect()->route('produtos.index');
   }
 
   public function list()
   {
-
     $products = Product::all();
-
     $qtdProduct = OrderProduct::getQtdProduct();
 
     return view('product.list', compact('products', 'qtdProduct'));
   }
+
   public function success()
   {
     $message = "";
@@ -137,4 +127,5 @@ class ProductController extends Controller
   {
     return view('product.carrinho');
   }
+
 }
