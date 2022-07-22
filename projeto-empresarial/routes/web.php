@@ -40,6 +40,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Pedidos
     Route::get('/orders', [OrdersContoller::class, 'index'])->name('orders.index');
+    Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
     Route::get('/orders/{id}', [OrdersContoller::class, 'show'])->name('orders.show');
     Route::put('/orders/{id}', [OrdersContoller::class, 'update'])->name('orders.update');
     Route::get('/orders/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
