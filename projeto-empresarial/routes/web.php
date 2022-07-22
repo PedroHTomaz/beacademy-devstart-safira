@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contato', [ContactController::class ,'index'])->name('suport.contact');
+Route::get('/contato', [ContactController::class ,'index'])->name('suport.index');
+Route::get('/contato/store', [ContactController::class ,'store'])->name('suport.store');
 
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
