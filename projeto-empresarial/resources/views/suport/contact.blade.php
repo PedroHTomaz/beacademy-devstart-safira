@@ -26,7 +26,7 @@
                     <div class="alert alert-info" role="alert">
                         @foreach($errors->all() as $error)
                              <li>{{ $error }}</li>
-                        @endforeach
+                        @endforeach 
                     </div>
                     @endif
                     <label for="" class='form-label text-primary h3 mb-3'>Fale conosco</label>
