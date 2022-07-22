@@ -56,7 +56,7 @@
           </ul>
         </div>
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3 text-primary">Dados básicos</h4>
+          <h4 class="mb-3 text-primary">Confirme seus dados</h4>
           <form class="needs-validation" novalidate="">
             <div class="row">
               <div class="col-md-12 mb-3">
