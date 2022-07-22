@@ -73,4 +73,9 @@ class OrdersContoller extends Controller
 
         return redirect()->route('orders.index');
     }
+
+    public function myOrders ()
+    {
+        return view ('orders.myOrders');
+    }
 }
