@@ -7,8 +7,8 @@
 
     <form action="{{ route('orders.index') }}" method="get" class='d-flex'>
             @csrf
-            <div class='form-group w-20 me-3' >
-                <input type="search" id="form1" name='search' class="form-control rounded " placeholder='Pesquisar pedido'/>
+            <div class='form-group w-50 me-3' >
+                <input type="search" id="form1" name='search' class="form-control rounded" placeholder='Pesquisar pedido'/>
             </div>
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-search"></i>
