@@ -20,13 +20,18 @@
     <main class='container '>
         <div class='row mt-5'>
             <div class='col-md-6 jumbotron mx-auto'>
-                <form action='{{  }}' method='POST' class='rounded shadow p-3 p-md-5 text-start form-group' style='background-color:#fff;'>
+                <form action="{{ route('suport.store') }}" method='POST' class='rounded shadow p-3 p-md-5 text-start form-group' style='background-color:#fff;'>
                     @csrf
                     @if($errors->any())
                     <div class="alert alert-info" role="alert">
                         @foreach($errors->all() as $error)
                              <li>{{ $error }}</li>
                         @endforeach 
+                    </div>
+                    @endif
+                    @if(session()->has('success'))
+                    <div class="alert alert-info" role="alert">
+                             <li>{{ session()->get('success') }}</li>
                     </div>
                     @endif
                     <label for="" class='form-label text-primary h3 mb-3'>Fale conosco</label>

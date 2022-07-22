@@ -23,8 +23,31 @@ class ContactForm extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $rules = [
+
+            'name' => [               
+                        'min:3',
+                        'max:25',
+                        'required',
+                        'string',
+                    ],
+
+            'email' => [               
+                        'min:4',
+                        'max:35',
+                        'required',
+                        'string', 
+                    
+                        ];
+           'tel' = [
+             'min:6',
+             'max:15'
+             'number'
+           ],             
+
+        ]            
+    
+            return $rules;
+     }
+
     }
-}

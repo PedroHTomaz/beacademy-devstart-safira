@@ -20,6 +20,7 @@ class SendMailContact extends Mailable
 
     public function build()
     {
-        return $this->from(config('mail.from.address'))->subject('Contato do Site Safira SZ')->view('data', $data);
+        return $this->from(config('mail.from.address'))->subject('Contato do Site Safira SZ')->view('suport.messageContact')->with('data', $this->data);
     }
 }
+  
