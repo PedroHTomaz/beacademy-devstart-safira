@@ -12,10 +12,7 @@ class CartController extends Controller
 {
     public function index()
     {
-        $orders = Orders::where([
-            'status' => 'RE',
-            'user_id' => Auth::id()
-        ])->get();
+        $orders = Orders::all();
 
         $qtdProduct = OrderProduct::getQtdProduct();
 
@@ -146,8 +143,10 @@ class CartController extends Controller
 
     public function checkout()
     {
-        $orders = OrderProduct::all();
+        $orders = Orders::all(); 
 
-        return view('cart.checkout', compact('orders'));
+        $qtdProduct = OrderProduct::getQtdProduct();
+
+        return view('cart.checkout', compact('orders', 'qtdProduct'));
     }
 }

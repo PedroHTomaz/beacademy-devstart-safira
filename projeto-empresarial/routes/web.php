@@ -8,13 +8,16 @@ use App\Http\Controllers\{
     AdminController,
     CartController,
     OrdersContoller,
-    UserController
+    UserController,
+    ContactController,
 };
 
 //Home
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contato', [ContactController::class ,'index'])->name('suport.contact');
 
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
