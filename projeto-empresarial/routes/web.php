@@ -46,6 +46,17 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/orders/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
     Route::delete('/orders/{id}', [OrdersContoller::class, 'destroy'])->name('orders.destroy');
 
+    Route::get('/pedidos', [OrdersContoller::class, 'index'])->name('orders.index');
+    Route::get('/pedidos/{id}', [OrdersContoller::class, 'show'])->name('orders.show');
+    Route::put('/pedidos/{id}', [OrdersContoller::class, 'update'])->name('orders.update');
+    Route::get('/pedidos/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
+    Route::delete('/pedidos/{id}', [OrdersContoller::class, 'destroy'])->name('orders.destroy');
+
+    Route::get('/pedidos', [OrdersContoller::class, 'index'])->name('orders.index');
+    Route::get('/pedidos/{id}', [OrdersContoller::class, 'show'])->name('orders.show');
+    Route::put('/pedidos/{id}', [OrdersContoller::class, 'update'])->name('orders.update');
+    Route::get('/pedidos/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
+    Route::delete('/pedidos/{id}', [OrdersContoller::class, 'destroy'])->name('orders.destroy');
 
 
     //Adm
