@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\{
-    Orders, 
+    Orders,
     Product,
     User,
-    };
-    
+};
+
 use Illuminate\Http\Request;
 
 class OrdersContoller extends Controller
@@ -29,7 +29,7 @@ class OrdersContoller extends Controller
     {
         $orders = $this->order->getOrders(
             $request->search ?? ''
-        );    
+        );
 
         return view('orders.index', compact('orders'));
     }
