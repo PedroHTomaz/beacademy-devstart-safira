@@ -73,7 +73,7 @@
             </div>
             <div>
                 <a href="{{route('catalogo.list')}}" class='btn btn-outline-primary me-lg-3'>Veja nosso catálogo</a>
-                <a href="{{ route('suport.contact') }}" class='btn text-dark'>ou nos dê um oi</a>
+                <a href="{{ route('suport.index') }}" class='btn text-dark'>ou nos dê um oi</a>
             </div>
         </div>
         <div class='col-6'>

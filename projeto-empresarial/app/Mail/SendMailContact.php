@@ -23,4 +23,3 @@ class SendMailContact extends Mailable
         return $this->from(config('mail.from.address'))->subject('Contato do Site Safira SZ')->view('suport.messageContact')->with('data', $this->data);
     }
 }
-  
