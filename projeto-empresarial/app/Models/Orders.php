@@ -43,7 +43,6 @@ class Orders extends Model
       };
     })->paginate(5);
 
-
     return $orders;
   }
 }

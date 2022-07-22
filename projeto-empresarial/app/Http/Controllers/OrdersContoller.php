@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 class OrdersContoller extends Controller
 
 {
-
     protected $user;
     protected $product;
     protected $order;
