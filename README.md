@@ -1,8 +1,8 @@
 <p align="center">
-<img src="https://www.beacademy.com.br/wp-content/uploads/2019/11/Logo-Topo.png">
+   <img src="https://www.beacademy.com.br/wp-content/uploads/2019/11/Logo-Topo.png">
 </p>
 
-# DevStart - Projeto Empresarial | Squad Safira - Integrantes
+# DevStart - Projeto Empresarial | Squad Safira
 * [Eleazar Freitas](https://github.com/EleazarFreitas)
 * [Felipe Erick](https://github.com/Felipeerick)
 * [Eduardo Henrique](https://github.com/eduardohor)
