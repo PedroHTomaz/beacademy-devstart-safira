@@ -146,7 +146,10 @@ class CartController extends Controller
 
     public function checkout()
     {
-        $orders = Orders::all(); 
+        $orders = Orders::where([
+            'status' => 'RE',
+            'user_id' => Auth::id(),
+        ])->get();
 
         $qtdProduct = OrderProduct::getQtdProduct();
 
