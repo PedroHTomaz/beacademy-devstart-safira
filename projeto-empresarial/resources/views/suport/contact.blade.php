@@ -17,7 +17,7 @@
     <main class='container '>
         <div class='row mt-5'>
             <div class='col-md-6 jumbotron mx-auto'>
-                <form action="{{ route('suport.store') }}" method='POST' class='rounded shadow p-3 p-md-5 text-start form-group' style='background-color:#fff;'>
+                <form action="{{ route('suport.store') }}" method='POST' class='rounded shadow p-3 p-lg-5 form-group' style='background-color:#fff;'>
                     @csrf
                     @if($errors->any())
                     <div class="alert alert-info" role="alert">
@@ -36,7 +36,9 @@
                     <input type="email" id="email" name="email" placeholder='E-mail' class='form-control mb-3' required>
                     <input type="tel" id="tel" name="tel" placeholder='Telefone' class='form-control mb-3' required>
                     <textarea class='form-control mb-3' placeholder='Deixe sua mensagem' required name='message'></textarea>
-                    <button type="submit" class='btn btn-primary'>Enviar</button>
+                    <div class='text-end'>
+                        <button type="submit" class='btn btn-primary'>Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>

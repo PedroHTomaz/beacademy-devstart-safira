@@ -47,7 +47,7 @@
                             </li>
                             @else
                                 <li class='nav-item'>
-                                    <a href="{{ route('login') }}" class=" btn btn-primary ">Entrar</a>
+                                    <a href="{{ route('login') }}" class=" nav-link me-3 ">Entrar</a>
                                 </li>
 
                                 <li class='nav-item'>
