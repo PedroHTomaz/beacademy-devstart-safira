@@ -18,7 +18,7 @@
         <tbody>
            <tr>
               <th scope="row">{{ $products->id }}</th>
-                  <td>{{ $products->name }}</td>
+                  <td id="identifier">{{ $products->name }}</td>
                   <td>{{ $products->quantity }}</td>
                   <td>{{ $products->cust_price }}</td>
                   <td>{{ $products->sale_price }}</td>
@@ -27,10 +27,10 @@
               
                   <td><a href="{{ route('produtos.edit', $products->id) }}" class='btn btn-warning'>Editar</a> </td>
               <td> 
-                <form action="{{route('produtos.destroy', $products->id)}}" method="POST">
+                <form action="{{route('produtos.destroy', $products->id)}}" method="POST" id="form">
                     @method('delete')
                     @csrf
-                    <button class='btn btn-danger'>Delete</button> 
+                    <button class='btn btn-danger'>Delete</button>
                 </form>
                 </td>
           </tr>
