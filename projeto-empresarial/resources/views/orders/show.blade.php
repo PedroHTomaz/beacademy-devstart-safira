@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <h2 class="text-primary mt-4">Pedido nº: <spam class="text-dark">{{ $order->id }}</spam></h2>
+    <h2 class="text-primary mt-4" id="identifier">Pedido nº : <spam class="text-dark">{{ $order->id }}</spam></h2>
 
     <table class="table table-striped mt-4">
         <thead class="text-center">
@@ -19,7 +19,7 @@
         <tbody class="text-center">
             <tr>
                 <th scope="row">{{ $order->id }}</th>
-                <td id="identifier">{{ $order->user->name }}</td>
+                <td>{{ $order->user->name }}</td>
                 <td>{{ $order->value }}</td>
                 <td>{{ $order->status }}</td>
                 <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
