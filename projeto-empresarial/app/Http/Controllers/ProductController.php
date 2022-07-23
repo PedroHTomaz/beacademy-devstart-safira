@@ -93,7 +93,6 @@ class ProductController extends Controller
     $message = 'Produto atualizado com sucesso';
     $route = '/produtos';
     return view('layouts.message', compact('message', 'route'));
-
   }
 
   public function destroy($id)
@@ -106,7 +105,6 @@ class ProductController extends Controller
     $message = 'Produto excluído com sucesso';
     $route = '/produtos';
     return view('layouts.message', compact('message', 'route'));
-
   }
 
   public function list()
