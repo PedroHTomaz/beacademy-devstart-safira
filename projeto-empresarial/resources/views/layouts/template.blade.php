@@ -18,7 +18,7 @@
     <footer>
 
     </footer>
-
+    <script src="{{asset('assets/js/confirmDelete.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/scriptFormatCoin.js')}}"></script>
 </body>

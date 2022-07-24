@@ -7,7 +7,7 @@
 
 <div class='d-flex justify-content-between'>
     <div>
-        <span class='h1 text-primary'>Painel de Controle</span>
+        <span class='h1 text-primary'>Painel de Controle <i class="fa-solid fa-screwdriver-wrench"></i></span>
     </div>
 </div>
 

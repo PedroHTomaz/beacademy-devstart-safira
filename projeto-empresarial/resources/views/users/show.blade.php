@@ -27,7 +27,7 @@
                 <th><img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px"class="border border-primary border-3 rounded-circle"></th>
             @endif
                 <th scope="row">{{ $user->id }}</th>
-                <td>{{ $user->name }}</td>
+                <td id="identifier">{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->tel }}</td>
                 <td>{{ $user->birth_date }}</td>
@@ -35,7 +35,7 @@
                 <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
                 <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning ">Editar</a></td>
                 <td>
-                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                <form action="{{ route('users.destroy', $user->id) }}" method="POST" id="form">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-danger">Deletar</button>

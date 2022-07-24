@@ -12,11 +12,15 @@
 
 <section class="h-100 gradient-custom">
   <div class="container py-5">
+    <div>
+      <h1 class='text-primary h1'>Meu carrinho <i class="fa-solid fa-cart-shopping"></i></h1>
+      <hr>
+    </div>
     <div class="row d-flex justify-content-center my-4">
       <div class="col-md-8">
         <div class="card mb-4">
           <div class="card-header py-3">
-            <h5 class="mb-0">Carrinho - {{$qtdProduct}} Itens</h5>
+            <h5 class="mb-0">{{$qtdProduct}} Itens</h5>
           </div>
           @forelse($orders as $order)
           <div class="card-body">

@@ -32,5 +32,6 @@
         </div>
     @yield('content')
     <script src="{{asset('assets/js/viaCepApi.js')}}"></script>
+    <script src="{{asset('assets/js/confirmDelete.js')}}"></script>
 </body>
 </html>
