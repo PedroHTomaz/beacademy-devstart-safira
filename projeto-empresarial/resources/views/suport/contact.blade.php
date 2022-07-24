@@ -31,7 +31,7 @@
                              <li>{{ session()->get('success') }}</li>
                     </div>
                     @endif
-                    <label for="" class='form-label text-primary h3 mb-3'>Fale conosco</label>
+                    <label for="" class='form-label text-primary h3 mb-3'>Fale conosco <i class="fa-solid fa-envelope"></i></label>
                     <input type="text" id="name" name="name" placeholder='Nome completo' class='form-control mb-3' required>
                     <input type="email" id="email" name="email" placeholder='E-mail' class='form-control mb-3' required>
                     <input type="tel" id="tel" name="tel" placeholder='Telefone' class='form-control mb-3' required>
