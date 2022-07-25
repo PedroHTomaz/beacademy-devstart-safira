@@ -19,7 +19,10 @@
 
 @section('content')
    <div class='container'>
-   <h1 class="mt-5 mb-4 text-primary">Catálogo</h1> 
+   <h1 class="mt-5 mb-4 text-primary">Catálogo <i class="fa-solid fa-store"></i></h1>
+        <div class="mb-4">
+            <hr class='text-primary'>
+        </div>
         <div class="row">
             @foreach ($products as $product)
                 <div class="col-sm-3">

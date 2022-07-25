@@ -23,7 +23,10 @@
       </div>
     </div>
 
-    <h1 class='text-primary text-center h1 pt-5'>Checkout</h1>
+    <div class='container'>
+      <h1 class='text-primary h1 pt-5'>Checkout <i class="fa-solid fa-list-ul"></i></h1>
+      <hr>
+    </div>
 
     <div class="container py-5">
 
@@ -56,7 +59,7 @@
           </ul>
         </div>
         <div class="col-md-8 order-md-1">
-          <h4 class="mb-3 text-primary">Confirme seus dados</h4>
+          <h4 class="mb-3 text-primary">Confirme seus dados <i class="fa-solid fa-check"></i></h4>
           <form class="needs-validation" novalidate="">
             <div class="row">
               <div class="col-md-12 mb-3">
@@ -110,7 +113,7 @@
             </div>
             <hr class="mb-4">
 
-            <h4 class="mb-3 text-primary">Pagamento</h4>
+            <h4 class="mb-3 text-primary">Pagamento <i class="fa-solid fa-credit-card"></i></h4>
 
             <div class="row">
               <div class="col-md-6 mb-3">

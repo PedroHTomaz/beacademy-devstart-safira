@@ -6,13 +6,13 @@
     <h1 class="text-primary mt-4">Listagem de Pedidos</h1>
 
     <form action="{{ route('orders.index') }}" method="get" class='d-flex'>
-            @csrf
-            <div class='form-group w-50 me-3' >
-                <input type="search" id="form1" name='search' class="form-control rounded" placeholder='Pesquisar pedido'/>
-            </div>
-            <button type="submit" class="btn btn-primary">
-                <i class="fas fa-search"></i>
-            </button> 
+        @csrf
+        <div class='form-group w-50 me-3' >
+            <input type="search" id="form1" name='search' class="form-control rounded" placeholder='Pesquisar pedido'/>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button> 
     </form>
 
     <table class="table table-striped mt-4">
@@ -27,19 +27,19 @@
             </tr>
         </thead>
         <tbody class="text-center">
-        @foreach($orders as $order)
-            <tr>
-            <td>{{ $order->id }}</td>
-            <td>{{ $order->user->name }}</td>
-            <td>{{ $order->value}}</td>
-            <td>{{ $order->status}}</td>
-            <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
-            <td><a href="{{ route('orders.show', $order->id) }}" class="btn btn-info text-white">Visualizar</a></td>
-            </tr>
-        @endforeach
+            @foreach($orders as $order)
+                <tr>
+                <td>{{ $order->id }}</td>
+                <td>{{ $order->user->name }}</td>
+                <td>{{ $order->value}}</td>
+                <td>{{ $order->status}}</td>
+                <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
+                <td><a href="{{ route('orders.show', $order->id) }}" class="btn btn-info text-white">Visualizar</a></td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
     <div class="justify-content-center pagination">
-         {{ $orders->links('pagination::bootstrap-4') }} 
-      </div>
+        {{ $orders->links('pagination::bootstrap-4') }} 
+    </div>
 @endsection

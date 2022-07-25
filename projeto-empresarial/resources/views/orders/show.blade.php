@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <h2 class="text-primary mt-4">Pedido nº: <spam class="text-dark">{{ $order->id }}</spam></h2>
+    <h2 class="text-primary mt-4" id="identifier">Pedido nº : <spam class="text-dark">{{ $order->id }}</spam></h2>
 
     <table class="table table-striped mt-4">
         <thead class="text-center">
@@ -25,7 +25,7 @@
                 <td>{{ date('d/m/Y', strtotime($order->created_at)) }}</td>
                 <td><a href="{{ route('orders.edit', $order->id) }}" class="btn btn-warning ">Editar</a></td>
                 <td>
-                <form action="{{route('orders.destroy', $order->id)}}" method="POST">
+                <form action="{{route('orders.destroy', $order->id)}}" method="POST" id="form">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-danger">Deletar</button>
