@@ -120,7 +120,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="cc-name">Nome</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                <input type="text" class="form-control" id="cc-name" maxlength='36' placeholder="" required="">
                 <small class="text-muted">Nome completo exibido no cartão</small>
                 <div class="invalid-feedback">
                   Nome completo é requerido.
@@ -128,7 +128,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="cc-number">Número do cartão de crédito</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                <input type="text" maxlength='19' class="form-control" id="cc-number" placeholder="" required="">
                 <div class="invalid-feedback">
                   Número do cartão de crédito é requerido.
                 </div>
@@ -137,14 +137,14 @@
             <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">Validade</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                <input type="text" maxlength='5' class="form-control" id="cc-expiration" placeholder="" required="">
                 <div class="invalid-feedback">
                   Data de validade é requerida.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                <input type="text" maxlength='3' class="form-control" id="cc-cvv" placeholder="" required="">
                 <div class="invalid-feedback">
                   Código de segurança é requerido.
                 </div>
