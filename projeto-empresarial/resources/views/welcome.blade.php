@@ -47,11 +47,11 @@
                             </li>
                             @else
                                 <li class='nav-item'>
-                                    <a href="{{ route('login') }}" class=" btn btn-primary mx-1">Entrar</a>
+                                    <a href="{{ route('login') }}" class=" btn text-primary mx-1">Entrar</a>
                                 </li>
 
                                 <li class='nav-item'>
-                                    <a href="{{ route('register') }}" class=" btn btn-primary mx-1">Cadastrar</a> 
+                                    <a href="{{ route('register') }}" class=" btn text-primary mx-1">Cadastrar</a> 
                                 </li>
                         @endif
                     </ul>
