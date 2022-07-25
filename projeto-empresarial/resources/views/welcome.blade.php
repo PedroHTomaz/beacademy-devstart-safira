@@ -47,11 +47,11 @@
                             </li>
                             @else
                                 <li class='nav-item'>
-                                    <a href="{{ route('login') }}" class=" nav-link me-3 ">Entrar</a>
+                                    <a href="{{ route('login') }}" class=" btn btn-primary mx-1">Entrar</a>
                                 </li>
 
                                 <li class='nav-item'>
-                                    <a href="{{ route('register') }}" class=" btn btn-primary ">Cadastrar</a> 
+                                    <a href="{{ route('register') }}" class=" btn btn-primary mx-1">Cadastrar</a> 
                                 </li>
                         @endif
                     </ul>
@@ -72,7 +72,7 @@
                 </p>
             </div>
             <div>
-                <a href="{{route('catalogo.list')}}" class='btn btn-outline-primary me-lg-3'>Veja nosso catálogo</a>
+                <a href="{{route('catalogo.list')}}" class='btn text-primary me-lg-3'>Veja nosso catálogo</a>
                 <a href="{{ route('suport.index') }}" class='btn text-dark'>ou nos dê um oi</a>
             </div>
         </div>
