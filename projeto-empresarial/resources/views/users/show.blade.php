@@ -13,6 +13,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Telefone</th>
+                <th scope="col">Administrador</th>
                 <th scope="col">Data de Nascimento</th>
                 <th scope="col">CPF</th>
                 <th scope="col">Data de Cadastro</th>
@@ -30,6 +31,11 @@
                 <td id="identifier">{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->tel }}</td>
+                @if(Auth::User()->is_admin == 1)
+                    <th scope="col">Sim</th>
+                @else
+                    <th scope="col">Não</th> 
+                @endif
                 <td>{{ $user->birth_date }}</td>
                 <td>{{ $user->cpf }}</td>
                 <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
