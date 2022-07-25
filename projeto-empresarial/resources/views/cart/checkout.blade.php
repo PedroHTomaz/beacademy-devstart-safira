@@ -63,8 +63,9 @@
           <form class="needs-validation" novalidate="">
             <div class="row">
               <div class="col-md-12 mb-3">
+                @foreach($orders as $order)
                 <label for="firstName">Nome completo</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="firstName" placeholder="" value="{{ $order->user->name }}" required="">
                 <div class="invalid-feedback">
                   Nome completo válido é requerido.
                 </div>
@@ -74,7 +75,7 @@
 
             <div class="mb-3">
               <label for="email">Email <span class="text-muted">(Opcional)</span></label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" value="{{ $order->user->email }}" id="email">
               <div class="invalid-feedback">
                 <!-- nullable -->
               </div>
@@ -82,7 +83,7 @@
 
             <div class="mb-3">
               <label for="address">Endereço</label>
-              <input type="text" class="form-control" id="address" required="">
+              <input type="text" class="form-control" value="{{ $order->user->name }}" id="address" required="">
               <div class="invalid-feedback">
                 Por favor, informe o seu endereço.
               </div>
@@ -91,26 +92,27 @@
             <div class="row">
               <div class="col-md-5 mb-3">
                 <label for="state">Estado</label>
-                <input type="text" class="form-control" id="state" required="">
+                <input type="text" class="form-control" value="{{ $order->user->state }}" id="state" required="">
                 <div class="invalid-feedback">
                   Informe o seu estado.
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="city">Cidade</label>
-                <input type="text" class="form-control" id="city" required="">
+                <input type="text" class="form-control" value="{{ $order->user->city }}" id="city" required="">
                 <div class="invalid-feedback">
                   Informe a sua cidade.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="zip">CEP</label>
-                <input type="text" class="form-control" id="zip" placeholder="" required="">
+                <input type="text" class="form-control" id="zip" value="{{ $order->user->cep }}" placeholder="" required="">
                 <div class="invalid-feedback">
                   CEP é requerido.
                 </div>
               </div>
             </div>
+            @endforeach
             <hr class="mb-4">
 
             <h4 class="mb-3 text-primary">Pagamento <i class="fa-solid fa-credit-card"></i></h4>
