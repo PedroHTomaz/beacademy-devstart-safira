@@ -17,7 +17,7 @@ class CartController extends Controller
             'user_id' => Auth::id(),
         ])->get();
 
-        $qtdProduct = OrderProduct::getQtdProduct();
+        $qtdProduct = OrderProduct::getQtdProductCart();
 
         return view('cart.carrinho', compact('orders', 'qtdProduct'));
     }
