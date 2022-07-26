@@ -44,12 +44,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Pedidos
     Route::get('/orders', [OrdersContoller::class, 'index'])->name('orders.index');
     Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
+    Route::post('/pedidos/adicionar', [OrdersContoller::class, 'addProductOrder'])->name('orders.add');
+    Route::delete('peditos/remover', [OrdersContoller::class, 'destroyProductOrder'])->name('orders.product.destroy');
     Route::get('/pedidos/{id}', [OrdersContoller::class, 'show'])->name('orders.show');
     Route::put('/pedidos/{id}', [OrdersContoller::class, 'update'])->name('orders.update');
     Route::get('/pedidos/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
     Route::delete('/pedidos/{id}', [OrdersContoller::class, 'destroy'])->name('orders.destroy');
-    Route::post('/pedidos/adicionar', [OrdersContoller::class, 'addProductOrder'])->name('orders.add');
-    Route::delete('peditos/remover', [OrdersContoller::class, 'destroyProductOrder'])->name('orders.product.destroy');
 
     //Adm
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
