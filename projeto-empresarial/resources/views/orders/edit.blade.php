@@ -2,7 +2,10 @@
 @section('title', $title)
 @section('content')
 
-   <h1 class='text-primary'>Editar Pedido Nº {{ $order->id }} </h1>
+   <h1 class='text-primary'>Editar Status do Pedido Nº {{ $order->id }} </h1>
+       <a href="{{route('orders.show', $order->id)}}" class="btn btn-primary text-white">
+        Voltar 
+       </a>
    
    <form action="{{ route('orders.update', $order->id) }}" method='post' enctype="multipart/form-data">
         @method('PUT')  
@@ -15,15 +18,7 @@
                 @endforeach
             </div>  
         @endif            
-        <div class="row mt-5">
-            <div class="col-sm-6">
-                <label for="name">Usuário</label>
-                <input type="text" name="name"value='{{$order->user->name}}' id="name" class="form-control" >
-            </div>
-            <div class="col-sm-2">
-                <label for="cust-price">Valor</label>
-                <input type="text" name="value"value='{{$order->value}}' id="value" class="form-control"  >
-            </div>
+        <div class="row mt-2">
             <div class="col-sm-2">
                 <label for="sale-price">Status</label>
                 <input type="text" name="status" value='{{$order->status}}' id="status" class="form-control" >

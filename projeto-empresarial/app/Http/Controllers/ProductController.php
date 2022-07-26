@@ -110,7 +110,8 @@ class ProductController extends Controller
   public function list()
   {
     $products = Product::all();
-    $qtdProduct = OrderProduct::getQtdProduct();
+
+    $qtdProduct = OrderProduct::getQtdProductCart();
 
     return view('product.list', compact('products', 'qtdProduct'));
   }
@@ -125,5 +126,4 @@ class ProductController extends Controller
   {
     return view('product.carrinho');
   }
-
 }

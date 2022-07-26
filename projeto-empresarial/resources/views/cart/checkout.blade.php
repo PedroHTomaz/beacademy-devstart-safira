@@ -83,7 +83,7 @@
 
             <div class="mb-3">
               <label for="address">Endereço</label>
-              <input type="text" class="form-control" value="{{ $order->user->name }}" id="address" required="">
+              <input type="text" class="form-control" value="{{ $order->user->street }}" id="address" required="">
               <div class="invalid-feedback">
                 Por favor, informe o seu endereço.
               </div>
