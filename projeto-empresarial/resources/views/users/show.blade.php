@@ -4,8 +4,8 @@
 @section('content')
 
     <h4 class="text-primary mt-4">Detalhes do usuário: <spam class="text-dark">{{ $user->name }}</spam></h4>
-            <ul>
-                <li scope="col">Foto:   
+            <ul class="list-group">
+                <li scope="col" class="list-group-item list-group-item-dark">Foto:   
                     @if($user->photo)
                        <img src="{{ asset('storage/'.$user->photo) }}" width="50px" height="50px" class="border border-primary border-3 rounded-circle">
                     @else    
@@ -13,22 +13,22 @@
                     @endif
                 </li>
 
-                <li scope="col">ID: {{ $user->id }}</li>
-                <li scope="col">Nome: {{ $user->name }}</li>
-                <li scope="col">Email: {{ $user->email }}</th>
-                <li scope="col">Telefone: {{ $user->tel }}</li>
-                <li scope="col">Administrador: 
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">ID: {{ $user->id }}</li>
+                <li scope="col"class="list-group-item list-group-item-dark">Nome: {{ $user->name }}</li>
+                <li scope="col"class="list-group-item list-group-item-secondary text-dark">Email: {{ $user->email }}</th>
+                <li scope="col"class="list-group-item list-group-item-dark">Telefone: {{ $user->tel }}</li>
+                <li scope="col"class="list-group-item list-group-item-secondary text-dark">Administrador: 
                     @if(Auth::User()->is_admin == 1)
                         Sim
                     @else
                         Não
                     @endif
                 </li>
-                <li scope="col">Data de Nascimento: {{ $user->birth_date }}</li>
-                <li scope="col">CPF: {{ $user->cpf }}</li>
-                <li scope="col">Data de Cadastro: {{ date('d/m/Y', strtotime($user->created_at)) }}</li>
-                <li scope="col" class='d-flex'><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning ">Editar</a>
-                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" id="form" class='ml-3'>
+                <li scope="col" class="list-group-item list-group-item-dark">Data de Nascimento: {{ $user->birth_date }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">CPF: {{ $user->cpf }}</li>
+                <li scope="col" class="list-group-item list-group-item-dark">Data de Cadastro: {{ date('d/m/Y', strtotime($user->created_at)) }}</li>
+                <li scope="col" class='d-flex list-group-item list-group-item-secondary text-dark'><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Editar</a>
+                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" id="form">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger">Deletar</button>
@@ -36,16 +36,16 @@
                 </li>
             </ul>
                 
-            <ul>
+            <ul class="list-group">
             
                 <h4 class="text-primary mt-4">Endereço do usuário</h4>
         
-                <li scope="col">CEP: {{ $user->cep }}</li>
-                <li scope="col">Logradouro: {{ $user->street }}</li>
-                <li scope="col">Número: {{ $user->number }}</li>
-                <li scope="col">Bairro: {{ $user->neighborhood }}</li>
-                <li scope="col">Cidade: {{ $user->city }}</li>
-                <li scope="col">Estado: {{ $user->state }}</li>
+                <li scope="col" class="list-group-item list-group-item-dark">CEP: {{ $user->cep }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Logradouro: {{ $user->street }}</li>
+                <li scope="col" class="list-group-item list-group-item-dark">Número: {{ $user->number }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Bairro: {{ $user->neighborhood }}</li>
+                <li scope="col" class="list-group-item list-group-item-dark">Cidade: {{ $user->city }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Estado: {{ $user->state }}</li>
            
             </ul>
 @endsection
