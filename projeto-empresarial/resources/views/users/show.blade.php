@@ -13,11 +13,11 @@
                     @endif
                 </li>
 
-                <li scope="col" class="list-group-item list-group-item-secondary">ID: {{ $user->id }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">ID: {{ $user->id }}</li>
                 <li scope="col"class="list-group-item list-group-item-dark">Nome: {{ $user->name }}</li>
-                <li scope="col"class="list-group-item list-group-item-secondary">Email: {{ $user->email }}</th>
+                <li scope="col"class="list-group-item list-group-item-secondary text-dark">Email: {{ $user->email }}</th>
                 <li scope="col"class="list-group-item list-group-item-dark">Telefone: {{ $user->tel }}</li>
-                <li scope="col"class="list-group-item list-group-item-secondary">Administrador: 
+                <li scope="col"class="list-group-item list-group-item-secondary text-dark">Administrador: 
                     @if(Auth::User()->is_admin == 1)
                         Sim
                     @else
@@ -25,9 +25,9 @@
                     @endif
                 </li>
                 <li scope="col" class="list-group-item list-group-item-dark">Data de Nascimento: {{ $user->birth_date }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary">CPF: {{ $user->cpf }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">CPF: {{ $user->cpf }}</li>
                 <li scope="col" class="list-group-item list-group-item-dark">Data de Cadastro: {{ date('d/m/Y', strtotime($user->created_at)) }}</li>
-                <li scope="col" class='d-flex list-group-item list-group-item-secondary'><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Editar</a>
+                <li scope="col" class='d-flex list-group-item list-group-item-secondary text-dark'><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Editar</a>
                     <form action="{{ route('users.destroy', $user->id) }}" method="POST" id="form">
                         @method('DELETE')
                         @csrf
@@ -41,11 +41,11 @@
                 <h4 class="text-primary mt-4">Endereço do usuário</h4>
         
                 <li scope="col" class="list-group-item list-group-item-dark">CEP: {{ $user->cep }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary">Logradouro: {{ $user->street }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Logradouro: {{ $user->street }}</li>
                 <li scope="col" class="list-group-item list-group-item-dark">Número: {{ $user->number }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary">Bairro: {{ $user->neighborhood }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Bairro: {{ $user->neighborhood }}</li>
                 <li scope="col" class="list-group-item list-group-item-dark">Cidade: {{ $user->city }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary">Estado: {{ $user->state }}</li>
+                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Estado: {{ $user->state }}</li>
            
             </ul>
 @endsection
