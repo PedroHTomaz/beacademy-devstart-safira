@@ -52,7 +52,7 @@ class User extends Authenticatable
         $query->orWhere('name', 'LIKE', "%{$search}%");
         
         };
-      })->paginate(5);
+      })->paginate(3);
 
       return $users;
     }

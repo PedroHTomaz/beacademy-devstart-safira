@@ -25,7 +25,7 @@ class Product extends Model
         $query->where('id', $search);
         $query->orWhere('name', 'LIKE', "%{$search}%");
       };
-    })->paginate(5);
+    })->paginate(3);
 
     return $products;
   }
