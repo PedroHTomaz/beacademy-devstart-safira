@@ -5,33 +5,33 @@
 
     <h4 class="text-primary mt-4">Detalhes do usuário: <spam class="text-dark">{{ $user->name }}</spam></h4>
             <ul class="list-group">
-                <li scope="col" class="list-group-item list-group-item-dark">Foto:   
+                <li scope="col" class="list-group-item list-group-item-light">   
                     @if($user->photo)
-                       <img src="{{ asset('storage/'.$user->photo) }}" width="50px" height="50px" class="border border-primary border-3 rounded-circle">
+                       <img src="{{ asset('storage/'.$user->photo) }}" height="50px" class="border border-primary border-3 rounded-circle">
                     @else    
                         <img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px"class="border border-primary border-3 rounded-circle">
                     @endif
                 </li>
 
-                <li scope="col" class="list-group-item list-group-item-secondary text-dark">ID: {{ $user->id }}</li>
-                <li scope="col"class="list-group-item list-group-item-dark">Nome: {{ $user->name }}</li>
-                <li scope="col"class="list-group-item list-group-item-secondary text-dark">Email: {{ $user->email }}</th>
-                <li scope="col"class="list-group-item list-group-item-dark">Telefone: {{ $user->tel }}</li>
-                <li scope="col"class="list-group-item list-group-item-secondary text-dark">Administrador: 
+                <li scope="col" class="list-group-item list-group-item-light">ID: {{ $user->id }}</li>
+                <li scope="col"class="list-group-item list-group-item-light">Nome: {{ $user->name }}</li>
+                <li scope="col"class="list-group-item list-group-item-light">Email: {{ $user->email }}</th>
+                <li scope="col"class="list-group-item list-group-item-light">Telefone: {{ $user->tel }}</li>
+                <li scope="col"class="list-group-item list-group-item-light">Administrador: 
                     @if(Auth::User()->is_admin == 1)
                         Sim
                     @else
                         Não
                     @endif
                 </li>
-                <li scope="col" class="list-group-item list-group-item-dark">Data de Nascimento: {{ $user->birth_date }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary text-dark">CPF: {{ $user->cpf }}</li>
-                <li scope="col" class="list-group-item list-group-item-dark">Data de Cadastro: {{ date('d/m/Y', strtotime($user->created_at)) }}</li>
-                <li scope="col" class='d-flex list-group-item list-group-item-secondary text-dark'><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Editar</a>
+                <li scope="col" class="list-group-item list-group-item-light">Data de Nascimento: {{ $user->birth_date }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">CPF: {{ $user->cpf }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">Data de Cadastro: {{ date('d/m/Y', strtotime($user->created_at)) }}</li>
+                <li scope="col" class='d-flex list-group-item list-group-item-light'><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Editar</a>
                     <form action="{{ route('users.destroy', $user->id) }}" method="POST" id="form">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-danger">Deletar</button>
+                        <button type="submit" class="btn btn-danger ms-3">Deletar</button>
                     </form>
                 </li>
             </ul>
@@ -40,12 +40,12 @@
             
                 <h4 class="text-primary mt-4">Endereço do usuário</h4>
         
-                <li scope="col" class="list-group-item list-group-item-dark">CEP: {{ $user->cep }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Logradouro: {{ $user->street }}</li>
-                <li scope="col" class="list-group-item list-group-item-dark">Número: {{ $user->number }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Bairro: {{ $user->neighborhood }}</li>
-                <li scope="col" class="list-group-item list-group-item-dark">Cidade: {{ $user->city }}</li>
-                <li scope="col" class="list-group-item list-group-item-secondary text-dark">Estado: {{ $user->state }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">CEP: {{ $user->cep }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">Logradouro: {{ $user->street }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">Número: {{ $user->number }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">Bairro: {{ $user->neighborhood }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">Cidade: {{ $user->city }}</li>
+                <li scope="col" class="list-group-item list-group-item-light">Estado: {{ $user->state }}</li>
            
             </ul>
 @endsection
