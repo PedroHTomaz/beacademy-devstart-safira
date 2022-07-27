@@ -2,7 +2,7 @@
 @section('title', 'Carrinho')
 @section('content')
 
-    <div class='py-3 shadow-sm'>
+  <div class='py-3 shadow-sm'>
 		<div class='d-flex justify-content-between container'>
 			<div>
 				<a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
