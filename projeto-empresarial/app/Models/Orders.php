@@ -41,7 +41,7 @@ class Orders extends Model
       if ($search) {
         $query->where('id', $search);
       };
-    })->paginate(5);
+    })->paginate(3);
 
     return $orders;
   }

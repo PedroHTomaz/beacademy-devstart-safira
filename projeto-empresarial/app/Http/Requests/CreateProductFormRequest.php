@@ -15,44 +15,38 @@ class CreateProductFormRequest extends FormRequest
     {
         $id = $this->id ?? '';
 
-        if($this->method('PUT') || $this->method('POST'))
-        {
+        if ($this->method('PUT') || $this->method('POST')) {
             $rules = [
-                
-                'name' => [               
+
+                'name' => [
                     'min:3',
                     'max:25',
                     'required',
                     'string',
                 ],
 
-                'quantity' => [ 
-                        'min:1',
-                        'max:4',
-                        'required',
+                'quantity' => [
+                    'min:1',
+                    'max:4',
+                    'required',
                 ],
-        
-                'sale_price' =>[
+
+                'sale_price' => [
                     'required',
                     'min:1',
                     'max:8'
                 ],
-        
-                'photo' =>[
-                    'required'
-                ],
-        
+
                 'description' => [
-                    'required' ,
+                    'required',
                 ],
-        
+
                 'cust_price' => [
                     'required',
                     'min:1',
                     'max:8',
                 ],
             ];
-        
         }
 
         return $rules;

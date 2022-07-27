@@ -43,18 +43,18 @@ class RegisteredUserController extends Controller
         }
 
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'min:3'],
+            'email' => ['required', 'email', 'max:255', 'min:6'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'tel' => ['required'],
-            'birth_date' => ['required'],
-            'cpf' => ['required', 'max:12'],
-            'street' => ['required'],
-            'number' => ['required'],
-            'neighborhood' => ['required'],
-            'city' => ['required'],
-            'state' => ['required'],
-            'cep' => ['required'],
+            'tel' => ['required', 'numeric','min:11'],
+            'birth_date' => ['required', 'date_field' => 'before:01/01/2004'],
+            'cpf' => ['required', 'digits:11', 'numeric'],
+            'street' => ['required', 'string','min:7'],
+            'number' => ['required', 'numeric','min:1'],
+            'neighborhood' => ['required', 'string','min:3'],
+            'city' => ['required', 'string','min:3'],
+            'state' => ['required', 'string','min:2'],
+            'cep' => ['required', 'integer','digits:8'],
             'photo' => ['file'],
         ]);
 

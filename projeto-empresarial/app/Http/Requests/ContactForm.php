@@ -41,8 +41,8 @@ class ContactForm extends FormRequest
                         ];
            'tel' = [
              'min:6',
-             'max:15'
-             'number'
+             'max:15',
+             'number',
            ],             
 
         ]            

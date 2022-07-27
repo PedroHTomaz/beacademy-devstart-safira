@@ -17,9 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/contato', [ContactController::class ,'index'])->name('suport.index');
 
 Route::post('/contato/store', [ContactController::class ,'store'])->name('suport.store');
+
 
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
@@ -35,7 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    
+
     //Usuários
     Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
     Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
@@ -49,6 +51,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Pedidos
     Route::get('/orders', [OrdersContoller::class, 'index'])->name('orders.index');
     Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
+    Route::post('/pedidos/adicionar', [OrdersContoller::class, 'addProductOrder'])->name('orders.add');
+    Route::delete('peditos/remover', [OrdersContoller::class, 'destroyProductOrder'])->name('orders.product.destroy');
     Route::get('/pedidos/{id}', [OrdersContoller::class, 'show'])->name('orders.show');
     Route::put('/pedidos/{id}', [OrdersContoller::class, 'update'])->name('orders.update');
     Route::get('/pedidos/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
