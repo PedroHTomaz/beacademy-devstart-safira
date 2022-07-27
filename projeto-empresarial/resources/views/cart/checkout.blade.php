@@ -75,7 +75,7 @@
 
             <div class="mb-3">
               <label for="email">Email <span class="text-muted">(Opcional)</span></label>
-              <input type="email" class="form-control" value="{{ $order->user->email }}" id="email">
+              <input type="email" class="form-control" placeholder="exemplo@email.com" id="email">
               <div class="invalid-feedback">
                 <!-- nullable -->
               </div>
@@ -137,7 +137,7 @@
             <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">Validade</label>
-                <input type="text" maxlength='5' class="form-control" id="cc-expiration" placeholder="05/29" required="">
+                <input type="text" maxlength='5' class="form-control" id="cc-expiration" placeholder="00/00" required="">
                 <div class="invalid-feedback">
                   Data de validade é requerida.
                 </div>
