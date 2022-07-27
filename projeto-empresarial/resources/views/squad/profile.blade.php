@@ -15,7 +15,9 @@
         </div>
     </nav>
     <main class='container'>
-      <article class='tamanho-div'>
+        <article class='tamanho-div'>
+          <h3 class='titulo-safira'>Nós somos o time Squad Safira</h3>
+
         
       <div
   id="carouselMultiItemExample"
