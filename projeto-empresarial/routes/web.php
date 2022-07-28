@@ -17,10 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contato', [ContactController::class, 'index'])->name('suport.index');
-Route::post('/contato/store', [ContactController::class, 'store'])->name('suport.store');
+
+Route::get('/contato', [ContactController::class ,'index'])->name('suport.index');
+
+Route::post('/contato/store', [ContactController::class ,'store'])->name('suport.store');
+
 
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
+
+Route::get('/squadsafira', function(){
+    return view('squad.profile');
+})->name('squad.profile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/carrinho', [CartController::class, 'index'])->name('cart.index');

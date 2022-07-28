@@ -47,6 +47,7 @@
                             </li>
                             @else
                                 <li class='nav-item'>
+
                                     <a href="{{ route('login') }}" class=" btn text-primary mx-1 ">Entrar</a>
                                 </li>
 
@@ -72,7 +73,9 @@
                 </p>
             </div>
             <div>
+
                 <a href="{{route('catalogo.list')}}" class='btn btn-primary me-lg-3'>Veja nosso catálogo</a>
+                
                 <a href="{{ route('suport.index') }}" class='btn text-dark'>ou nos dê um oi</a>
             </div>
         </div>
