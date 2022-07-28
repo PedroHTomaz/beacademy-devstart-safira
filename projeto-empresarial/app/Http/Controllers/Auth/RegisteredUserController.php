@@ -44,12 +44,12 @@ class RegisteredUserController extends Controller
 
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'min:3'],
-            'email' => ['required', 'email', 'max:255', 'min:6'],
+            'email' => ['required', 'unique:users', 'email', 'max:255', 'min:6'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'tel' => ['required', 'numeric','min:11'],
             'birth_date' => ['required', 'date_field' => 'before:01/01/2004'],
-            'cpf' => ['required', 'digits:11', 'numeric'],
-            'street' => ['required', 'string','min:7'],
+            'cpf' => ['required', 'unique:users', 'digits:11', 'numeric'],
+            'street' => ['required', 'string','min:1'],
             'number' => ['required', 'numeric','min:1'],
             'neighborhood' => ['required', 'string','min:3'],
             'city' => ['required', 'string','min:3'],
