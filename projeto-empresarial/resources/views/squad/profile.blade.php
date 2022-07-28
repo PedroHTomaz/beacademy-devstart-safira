@@ -1,5 +1,5 @@
 @extends('layouts.template-main')
-@section('title', 'Desenvolvedores da SquadSafira')
+@section('title', 'Nossos Devs')
 @section('content')
     
     <nav class="navbar navbar-expand-lg shadow-sm">
@@ -14,162 +14,122 @@
             </div>
         </div>
     </nav>
-    <main class='container'>
-        <article class='tamanho-div'>
-          <h3 class='titulo-safira'>Nós somos o time Squad Safira</h3>
 
+    <main class="container">
+
+      <div class="..."> {{-- <<< se o layout não quebrar, fique à vontade pra excluir essa div, Pedro --}} 
+
+        <div class="my-5">
+            <h1 class="text-primary h1">SafiraDevs <i class="fa-solid fa-laptop-code"></i></h1>
+            <hr>
+        </div>
         
-      <div
-  id="carouselMultiItemExample"
-  class="carousel slide carousel-dark text-center"
-  data-mdb-ride="carousel"
->
-  <!-- Controls -->
-  <div class="d-flex justify-content-center mb-4">
-    <button
-      class="carousel-control-prev position-relative"
-      type="button"
-      data-mdb-target="#carouselMultiItemExample"
-      data-mdb-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next position-relative"
-      type="button"
-      data-mdb-target="#carouselMultiItemExample"
-      data-mdb-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <!-- Inner -->
-  <div class="carousel-inner py-4">
-    <!-- Single item -->
-    <div class="carousel-item active">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="card">
-              <img height='300px'
-                src="{{ asset('/storage/profile/felipe.jpg') }}"
-                class="card-img-top"
-                alt="Waterfall"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Developer back-end: Felipe Erick</h5>
-                <p class="card-text">
-                Graduando no curso de Análise e desenvolvimento de sistemas que possui a previsão de término em junho de 2024; trabalhei como técnico em manutenção e conserto de placas no ano de 2020 até 2021. Em 2021 comecei um curso de especialização em arduino na linguagem de C++ e criei muitos projetos. Decidi migrar para desenvolvimento web, onde atualmente estou como desenvolvedor back-end com as hardskills: HTML, CSS, JAVASCRIPT, SQL, PHP 8.1.6, BOOTSTRAP e o Framework LARAVEL 9.
-                </p>
-                <a href="https://www.linkedin.com/in/felipe-erick-amoedo-993925201/" class="btn btn-primary">linkedin</a>
-              </div>
-            </div>
-          </div>
+        <div class="d-flex flex-wrap gap-5 justify-content-center mx-auto mb-5" style="max-width:1024px">
 
-          <div class="col-lg-4 d-none d-lg-block">
-            <div class="card">
-              <img height='300px'
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp"
-                class="card-img-top"
-                alt="Sunset Over the Sea"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Developer back-end: Eleazar</h5>
-                <p class="card-text">
-                Estudante de programação Front-End. Apaixonado por tecnologia, música e documentários.
-                </p>
-                <a href="https://www.linkedin.com/in/eleazarsf/" class="btn btn-primary">linkedin</a>
-              </div>
-            </div>
-          </div>
+                <div class="card px-3 border-0">
+                    <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Estudante autodidata de desenvolvimento web,
+                                                                                                porém se apaixonando pelo universo back-end!"
+                             class="h-100 border border-5 border-light card-img-top rounded-circle"
+                             src="https://media.gettyimages.com/photos/uma-thurman-in-les-miserables-directed-by-bille-august-prague-1997-picture-id1302436898?s=2048x2048">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="text-primary">Eleazar Freitas</h5>
+                        <span>PHP | Laravel</span>
+                        <div class="mt-2">
+                            <a href="https://github.com/EleazarFreitas"><i class="text-dark me-2 fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/eleazarsf/"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
 
-          <div class="col-lg-4 d-none d-lg-block">
-            <div class="card">
-              <img height='300px'
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp"
-                class="card-img-top"
-                alt="Sunset over the Sea"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Developer back-end: Pedro Tomaz</h5>
-                <p class="card-text">
-                Depois de uma longa busca por uma área com a qual me identificasse, encontrei a TI. Conheci a área através de algumas pessoas que me falaram sobre e então decidi pesquisar mais. Gostei muito e iniciei cursos e um tecnólogo na área.
-Sigo estudando e desenvolvendo projetos para me aprimorar cada vez mais.
-                </p>
-                <a href="https://www.linkedin.com/in/pedro-henrique-tomaz-vieira-ti/" class="btn btn-primary">linkedin</a>
-              </div>
-            </div>
-          </div>
-        </div>
+                <div class="card px-3 border-0">
+                    <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                             class="h-100 border border-5 border-light card-img-top rounded-circle"
+                             src="https://media.gettyimages.com/photos/uma-thurman-in-les-miserables-directed-by-bille-august-prague-1997-picture-id1302436898?s=2048x2048">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="text-primary">Pedro Tomaz</h5>
+                        <span>PHP | Laravel</span>
+                        <div class="mt-2">
+                            <a href=""><i class="text-dark me-2 fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card px-3 border-0">
+                    <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                             class="h-100 border border-5 border-light card-img-top rounded-circle"
+                             src="https://media.gettyimages.com/photos/uma-thurman-in-les-miserables-directed-by-bille-august-prague-1997-picture-id1302436898?s=2048x2048">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="text-primary">Eduardo Sobrenome</h5>
+                        <span>PHP | Laravel | MySQL</span>
+                        <div class="mt-2">
+                            <a href=""><i class="text-dark me-2 fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card px-3 border-0">
+                    <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                             class="h-100 border border-5 border-light card-img-top rounded-circle"
+                             src="https://media.gettyimages.com/photos/uma-thurman-in-les-miserables-directed-by-bille-august-prague-1997-picture-id1302436898?s=2048x2048">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="text-primary">Felipe Sobrenome</h5>
+                        <span>PHP | Laravel</span>
+                        <div class="mt-2">
+                            <a href=""><i class="text-dark me-2 fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card px-3 border-0">
+                    <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                             class="h-100 border border-5 border-light card-img-top rounded-circle"
+                             src="https://media.gettyimages.com/photos/uma-thurman-in-les-miserables-directed-by-bille-august-prague-1997-picture-id1302436898?s=2048x2048">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="text-primary">Gustavo Sobrenome</h5>
+                        <span>PHP | Laravel</span>
+                        <div class="mt-2">
+                            <a href=""><i class="text-dark me-2 fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card px-3 border-0">
+                    <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+                             class="h-100 border border-5 border-light card-img-top rounded-circle"
+                             src="https://media.gettyimages.com/photos/uma-thurman-in-les-miserables-directed-by-bille-august-prague-1997-picture-id1302436898?s=2048x2048">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="text-primary">Odenilson Sobrenome</h5>
+                        <span>PHP | Laravel</span>
+                        <div class="mt-2">
+                            <a href=""><i class="text-dark me-2 fa-brands fa-github"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+        </div>   
       </div>
-    </div>
 
-    <!-- Single item -->
-    <div class="carousel-item">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-12">
-            <div class="card">
-              <img height='300px'
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
-                class="card-img-top"
-                alt="Fissure in Sandstone"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Developer back-end: Odenilson</h5>
-                <p class="card-text">
-                PHP | SQL | LARAVEL | CSS | HTML | BOOTSTRAP | JAVASCRIPT 
-
-Sou uma pessoa que diariamente busco por me tornar sempre um ser humano melhor, seja através das minhas atitudes, ou através das minhas buscas por conteúdos que me façam um Bom profissional! :}
-                </p>
-                <a href="https://www.linkedin.com/in/odenilsonmarques" class="btn btn-primary">linkedin</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 d-none d-lg-block">
-            <div class="card">
-              <img height='300px'
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/185.webp"
-                class="card-img-top"
-                alt="Storm Clouds"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Developer back-end: Gustavo</h5>
-                <p class="card-text">
-                  Tá sem biografia no linkedin :{
-                </p>
-                <a href="https://www.linkedin.com/in/gustavo-rodrigues-9386a9214/" class="btn btn-primary">linkedin</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 d-none d-lg-block">
-            <div class="card">
-              <img height='300px'
-                src="https://mdbcdn.b-cdn.net/img/new/standard/nature/186.webp"
-                class="card-img-top"
-                alt="Hot Air Balloons"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Developer back-end: Eduardo</h5>
-                <p class="card-text">
-                Oi! Meu nome é Eduardo Henrique, e sou graduado em Análise e Desenvolvimento de Sitemas pela UNIFACEMA. Também tenho um curso técnico em informática pelo IFMA que foi realizado integrado com o ensino médio, e portanto desde a minha adolescência estou ligado a tecnologia. 
-                </p>
-                <a href="https://www.linkedin.com/in/eduardo-henrique-dev/" class="btn btn-primary">linkedin</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
-></script>
+    </main>
 
 @endsection
