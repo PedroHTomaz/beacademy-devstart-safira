@@ -3,9 +3,7 @@
 @section('content')
 
    <h1 class='text-primary'>Editar Status do Pedido Nº {{ $order->id }} </h1>
-       <a href="{{route('orders.show', $order->id)}}" class="btn btn-primary text-white">
-        Voltar 
-       </a>
+    <a href="{{route('orders.show', $order->id)}}" class="btn btn-primary text-white">Voltar</a>
    
    <form action="{{ route('orders.update', $order->id) }}" method='post' enctype="multipart/form-data">
         @method('PUT')  

@@ -18,8 +18,8 @@
 </div>
 
 @section('content')
-   <div class='container'>
-   <h1 class="mt-5 mb-4 text-primary">Catálogo <i class="fa-solid fa-store"></i></h1>
+    <div class='container'>
+        <h1 class="mt-5 mb-4 text-primary">Catálogo <i class="fa-solid fa-store"></i></h1>
         <div class="mb-4">
             <hr class='text-primary'>
         </div>
@@ -31,18 +31,15 @@
                         <div class="card-body">
                             <h6 class="card-title">{{$product->name}}</h6>
                             <h6 class="card-title">R$ {{$product->sale_price}}</h6>
-
                             <form action="{{route('cart.add')}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="id" value="{{$product->id}}">
-                            <button onclick='addToCart()' type="submit" class="btn btn-primary btn-sm">Adicionar ao carrinho</button>
+                                @csrf
+                                <input type="hidden" name="id" value="{{$product->id}}">
+                                <button onclick='addToCart()' type="submit" class="btn btn-primary btn-sm">Adicionar ao carrinho</button>
                             </form>
-                            
-                           
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-   </div>
+    </div>
 @endsection

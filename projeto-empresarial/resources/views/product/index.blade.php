@@ -28,7 +28,6 @@
                   <th scope="col">Ações</th>
                   </tr>
             </thead>
-
             <tbody>
              @foreach ($products as $product)
             <tr>
@@ -48,4 +47,4 @@
       <div class="justify-content-center pagination">
          {{ $products->links('pagination::bootstrap-4') }}
       </div>
-@endsection      
+@endsection

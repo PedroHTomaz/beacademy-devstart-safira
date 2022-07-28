@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="https://i.imgur.com/0MqV1gr_d.webp?maxwidth=760&fidelity=grand">
 
@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/form-validation.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
   </head>
 
   <body>
@@ -38,17 +36,17 @@
           </h4>
           <ul class="list-group mb-3">
             <li class="list-group-item justify-content-between lh-condensed">
-                <strong> <span> Produtos: {{$qtdProduct}} </span></strong> 
-                <ul class="list-group list-group-flush">
-                  @forelse( $orders as $order)
-                    @foreach($order->order_products as $order_products)
-                      <li class="list-group-item d-flex justify-content-end align-items-center border-0 px-0 pb-0">
-                        <h6 class='mt-3'>{{$order_products->qtd}} x {{ $order_products->product->name }}</h6>
-                      </li>
-                    @endforeach
-                    @empty 
-                  @endforelse
-                </ul>
+              <strong> <span> Produtos: {{$qtdProduct}} </span></strong> 
+              <ul class="list-group list-group-flush">
+                @forelse( $orders as $order)
+                  @foreach($order->order_products as $order_products)
+                    <li class="list-group-item d-flex justify-content-end align-items-center border-0 px-0 pb-0">
+                      <h6 class='mt-3'>{{$order_products->qtd}} x {{ $order_products->product->name }}</h6>
+                    </li>
+                  @endforeach
+                  @empty 
+                @endforelse
+              </ul>
             </li>   
             <li class="list-group-item d-flex justify-content-between bg-info">
               @foreach( $orders as $order)   
@@ -70,7 +68,6 @@
                   Nome completo válido é requerido.
                 </div>
               </div>
-             
             </div>
 
             <div class="mb-3">
