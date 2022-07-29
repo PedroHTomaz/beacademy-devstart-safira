@@ -30,6 +30,9 @@
                             @endif
                             <li class='nav-item'>
                                 <a href="#" class="nav-link ms-1 text-dark">{{ Auth::User()->name }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('orders.myOrders') }}" class="nav-link text-dark me-1">Meus pedidos</a>
                             </li>        
                             @if(Auth::user()->is_admin == 1)
                                 <li class='nav-item'>
