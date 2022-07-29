@@ -26,7 +26,7 @@
         
         <div class="d-flex flex-wrap gap-5 justify-content-center mx-auto mb-5" style="max-width:1024px">
 
-                <div class="card px-3 border-0">
+                <div class="devCard card px-3 border-0">
                     <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
                         <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Estudante autodidata de desenvolvimento web,
                                                                                                 porém se apaixonando pelo universo back-end!"
@@ -43,10 +43,10 @@
                     </div>
                 </div>
 
-                <div class="card px-3 border-0">
+                <div class="devCard card px-3 border-0">
                     <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Developer back-end Pedro Henrique
-                                                                            HTML | CSS | Bootstrap | JavaScript | PHP | Laravel"
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
                              class="h-100 border border-5 border-light card-img-top rounded-circle"
                              src="https://media-exp1.licdn.com/dms/image/C4E03AQFC1QgZ-1WjIA/profile-displayphoto-shrink_200_200/0/1643899673913?e=1664409600&v=beta&t=-wIzIjGjhewamjHxx2fadoRE4CZPiIrgY-pSjFbUy1w">
                     </div>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="card px-3 border-0">
+                <div class="devCard card px-3 border-0">
                     <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
                         <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                                                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
@@ -77,10 +77,10 @@
                     </div>
                 </div>
 
-                <div class="card px-3 border-0">
+                <div class="devCard card px-3 border-0">
                     <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
                         <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Developer back-end 
-                        apaixonado por programação e solucionar conflitos :}"
+                                                                                                apaixonado por programação e solucionar problemas"
                              class="h-100 border border-5 border-light card-img-top rounded-circle"
                              src="https://media-exp1.licdn.com/dms/image/C4E03AQH7lVKClSynTQ/profile-displayphoto-shrink_200_200/0/1650301808731?e=1664409600&v=beta&t=F3v7LiJXXKF9_dwUICgfrzYs7_0FCI__9cnZBgTAV0s">
                     </div>
@@ -94,10 +94,10 @@
                     </div>
                 </div>
 
-                <div class="card px-3 border-0">
+                <div class="devCard card px-3 border-0">
                     <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="
-                                                            Gustavo não tem publicado ultimamente"
+                        <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
                              class="h-100 border border-5 border-light card-img-top rounded-circle"
                              src="https://media-exp1.licdn.com/dms/image/C4D03AQGbPRKY_BYhUA/profile-displayphoto-shrink_200_200/0/1644438376406?e=1664409600&v=beta&t=LKA1ged45ed6d60LOoAMymwWLZmAgKSf0vpt0O2DAUg">
                     </div>
@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <div class="card px-3 border-0">
+                <div class="devCard card px-3 border-0">
                     <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
                         <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                                                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
