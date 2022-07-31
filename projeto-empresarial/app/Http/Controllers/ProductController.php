@@ -109,7 +109,7 @@ class ProductController extends Controller
 
   public function list()
   {
-    $products = Product::all();
+    $products = Product::paginate(8);
 
     $qtdProduct = OrderProduct::getQtdProductCart();
 
