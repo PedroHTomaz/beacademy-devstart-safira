@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/carrinho/adicionar', [CartController::class, 'add'])->name('cart.add');
     Route::delete('carinho/remover', [CartController::class, 'destroy'])->name('cart.destroy');
     Route::get('/carrinho/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+    Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -50,7 +51,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Pedidos
     Route::get('/orders', [OrdersContoller::class, 'index'])->name('orders.index');
-    Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
     Route::post('/pedidos/adicionar', [OrdersContoller::class, 'addProductOrder'])->name('orders.add');
     Route::delete('peditos/remover', [OrdersContoller::class, 'destroyProductOrder'])->name('orders.product.destroy');
     Route::get('/pedidos/{id}', [OrdersContoller::class, 'show'])->name('orders.show');

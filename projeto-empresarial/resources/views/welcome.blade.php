@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <link rel="shortcut icon" href="https://i.imgur.com/0MqV1gr_d.webp?maxwidth=760&fidelity=grand">
-        <title>Safira Squad - Projeto Empresarial</title>
+        <title>Loja Safira - Home</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg shadow-sm">
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </nav>
-    <main class='container d-flex align-items-center my-5 flex-column text-center flex-lg-row text-lg-start' style='height:90vh;'>
+    <main class='container d-flex align-items-center my-3 flex-column text-center flex-lg-row text-lg-start' style='height:90vh;'>
         <div>
             <div>
                 <h1 class='display-3'>
