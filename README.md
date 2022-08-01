@@ -9,7 +9,6 @@
 * [Pedro Tomaz](https://github.com/PedroHTomaz)
 * [Gustavo Oliveira](https://github.com/sguiLo)
 * [Odenilson Marques](https://github.com/odenilsonmarques)
-* [Jonathan Rodrigues](https://github.com/JotaRodrigues)
 
 ### Criar um CHECKOUT para uma PLATAFORMA de VENDAS ONLINE
 * Este checkout será criado em PHP, utilizando a Framework Laravel.
