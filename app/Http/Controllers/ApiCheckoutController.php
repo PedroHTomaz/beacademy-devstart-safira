@@ -12,6 +12,8 @@ class ApiCheckoutController extends Controller
     {
         $id_order = $request->orders_id;
 
+        $data = $request->all();
+
         $order = Orders::find($id_order);
 
         $response = Http::withHeaders([
@@ -36,6 +38,8 @@ class ApiCheckoutController extends Controller
                 'status' => 'PA'
             ];
         };
+
+        Mail::to(Auth::mail(), Auth::name())->send( new SendMailPayment($data) );
 
         $order->update($orders_status);
 
