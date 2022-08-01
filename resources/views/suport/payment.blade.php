@@ -1,19 +1,19 @@
-@if($status == 'paid')
+@if($data == 'paid')
 
-Olá $data['name'] já foi pago!
-
-@endif
-
-
-@if($status == 'Processing')
-
-Olá $data['name'] está processando!
+Olá $data['customer_name'] já foi pago por meio de: $data['transaction_type']!
 
 @endif
 
 
-@if($status == 'Refused')
+@if($data == 'reserved')
 
-Olá $data['name'] foi recusado!
+Olá $data['customer_name'], o produto está processando!
+
+@endif
+
+
+@if($data == 'canceled')
+
+Olá $data['customer_name'], o produto foi recusado!
 
 @endif

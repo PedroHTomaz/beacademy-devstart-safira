@@ -11,6 +11,8 @@ class SendMailPayment extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
+
     public function __construct($data)
     {
       $this->data = $data;  
@@ -18,6 +20,6 @@ class SendMailPayment extends Mailable
 
     public function build()
     {
-        return $this->from(Auth::mail(), Auth::name())->subject('Contato do Site Safira SZ')->view('suport.payment')->with('data', $this->data);
+        return $this->to(config('mail.from.address'))->subject('Contato do Site Safira SZ')->view('suport.payment')->with('data', $this->data);
     }
 }

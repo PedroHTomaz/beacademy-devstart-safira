@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Auth;
+use Mail;
+use App\Mail\SendMailPayment;
 class ApiCheckoutController extends Controller
 {
     public function checkout(Request $request)
     {
         $id_order = $request->orders_id;
-
-        $data = $request->all();
 
         $order = Orders::find($id_order);
 
@@ -39,7 +39,9 @@ class ApiCheckoutController extends Controller
             ];
         };
 
-        Mail::to(Auth::mail(), Auth::name())->send( new SendMailPayment($data) );
+        $data = $request->all();
+
+        Mail::to(config(['mail.from.address' => Auth::user()->email]))->send( new SendMailPayment($data) );
 
         $order->update($orders_status);
 
