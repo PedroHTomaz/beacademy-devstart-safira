@@ -48,21 +48,18 @@
         </div>
     </div>
 </nav>
-<main>
-    <div class="card text-center fs-3">
+<main class="container mt-5">
+    <div class="card text-center fs-3" style="max-height:250px;">
         <div class="card-header">
           Perfeito!
         </div>
-        <div class="card-body si">
+        <div class="card-body">
           <h2 class="card-title">Pedido feito, obrigado!</h2>
           <p class="card-text">A confirmação será enviada para o seu e-mail.</p>
           <a href="{{route('catalogo.list')}}" type="button" class="btn btn-primary">
             Continuar comprando
           </a>
         </div>
-        <div class="card-footer text-muted">
-          
-        </div>
-      </div>
+    </div>
 </main>
 @section('content')

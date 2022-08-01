@@ -12,7 +12,7 @@
             <a href="{{ route('orders.myOrders') }}" class="nav-link text-dark me-3">Meus pedidos</a>
         </li>
         <li class='nav-item me-3'>
-            <a href="{{ route('cart.index')}}" type="button" class="btn btn-primary">
+            <a href="{{ route('cart.index')}}" type="button" class="btn btn-primary pe-0 pt-2">
                 <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
                 <span id='add' class="translate-middle badge rounded-pill bg-warning">
                     {{$qtdProduct}}
