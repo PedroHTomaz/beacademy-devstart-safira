@@ -43,7 +43,7 @@
             <hr>
             @foreach($order->order_products as $order_product)
             <li class='d-flex py-3 align-items-center'>
-                <img style='max-height:150px;' src="{{asset('storage/'.$order_product->product->photo)}}">
+                <img style='max-height:150px;' src="{{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/'. $order_product->product->photo)}}">
                 <div class='d-flex w-100'>
                     <div>
                         <h5 class='h5 text-primary fw-bold'>

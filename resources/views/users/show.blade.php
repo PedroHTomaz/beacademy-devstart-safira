@@ -7,7 +7,7 @@
     <ul class="list-group">
         <li scope="col" class="list-group-item list-group-item-light">   
             @if($user->photo)
-                <img src="{{ asset('storage/'.$user->photo) }}" height="50px" class="border border-primary border-3 rounded-circle">
+                <img src="{{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/' . $user->photo)}}" height="50px" class="border border-primary border-3 rounded-circle">
             @else    
                 <img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px"class="border border-primary border-3 rounded-circle">
             @endif
