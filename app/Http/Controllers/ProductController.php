@@ -49,7 +49,8 @@ class ProductController extends Controller
     $data['password'] = bcrypt($request->password);
 
     if ($request->photo) {
-      $data['photo'] = $request->photo->store('profile', 'public');
+      $path = $request->photo->store('/images', 's3');
+      $data['photo'] = $path;
     }
 
     $this->model->create($data);
@@ -83,9 +84,11 @@ class ProductController extends Controller
     if ($request->photo) {
       if ($product->photo && Storage::exists($product->photo)) {
         Storage::delete($product->photo);
+        Storage::delete('https://teste-laravel9.s3.sa-east-1.amazonaws.com/' . $product->photo);
       }
 
-      $data['photo'] = $request->photo->store('profile', 'public');
+      $path = $request->photo->store('/images', 's3');
+      $data['photo'] = $path;
     }
 
     $product->update($data);

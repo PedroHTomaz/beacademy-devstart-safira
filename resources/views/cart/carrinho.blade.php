@@ -50,7 +50,7 @@
                 <!-- Imagem -->
                 
                 <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                  <img src={{'storage/'. $order_product->product->photo}}
+                  <img src={{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/'. $order_product->product->photo)}}
                     class="w-100"/>
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
