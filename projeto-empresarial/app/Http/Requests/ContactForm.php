@@ -25,29 +25,28 @@ class ContactForm extends FormRequest
     {
         $rules = [
 
-            'name' => [               
-                        'min:3',
-                        'max:25',
-                        'required',
-                        'string',
-                    ],
+            'name' => [
+                'min:3',
+                'max:25',
+                'required',
+                'string',
+            ],
 
-            'email' => [               
-                        'min:4',
-                        'max:35',
-                        'required',
-                        'string', 
-                    
-                        ];
-           'tel' = [
-             'min:6',
-             'max:15',
-             'number',
-           ],             
+            'email' => [
+                'min:4',
+                'max:35',
+                'required',
+                'string',
 
-        ]            
-    
-            return $rules;
-     }
+            ],
+            'tel' => [
+                'min:6',
+                'max:15',
+                'number',
+            ]
 
+        ];
+
+        return $rules;
     }
+}

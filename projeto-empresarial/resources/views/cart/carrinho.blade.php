@@ -7,6 +7,25 @@
 			<div>
 				<a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
 			</div>
+      <ul class="navbar-nav ms-auto align-items-center flex-row">
+        <li class='nav-item me-3'>
+            <a href="{{ route('orders.myOrders') }}" class="nav-link text-dark me-3">Meus pedidos</a>
+        </li>
+        <li class='nav-item me-3'>
+            <a href="{{ route('cart.index')}}" type="button" class="btn btn-primary">
+                <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
+                <span id='add' class="translate-middle badge rounded-pill bg-warning">
+                    {{$qtdProduct}}
+                </span>
+            </a>
+        </li>
+        <li class='nav-item'>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-primary ms-2" ><i class="fa-solid fa-right-from-bracket"></i> Sair</button>                         
+            </form> 
+        </li>
+    </ul>
 		</div>
 	</div>
 

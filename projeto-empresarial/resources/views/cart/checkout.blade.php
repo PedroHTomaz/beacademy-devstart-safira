@@ -110,45 +110,67 @@
               </div>
             </div>
             @endforeach
+            </form>
             <hr class="mb-4">
+            <form class="needs-validation" method="post" action="{{route('cart.checkout')}}">
+              @method('post')
+              @csrf
+              <h4 class="mb-3 text-primary">Pagamento <i class="fa-solid fa-credit-card"></i></h4>
 
-            <h4 class="mb-3 text-primary">Pagamento <i class="fa-solid fa-credit-card"></i></h4>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="hidden" name="transaction_type" value="card">
+                  <input type="hidden" name="transaction_amount" value="{{$order->value}}">
+                  <input type="hidden" name="orders_id" value="{{$order->id}}">
 
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="cc-name">Nome</label>
-                <input type="text" class="form-control" id="cc-name" maxlength='36' placeholder="" required="">
-                <small class="text-muted">Nome completo exibido no cartão</small>
-                <div class="invalid-feedback">
-                  Nome completo é requerido.
+                  <label for="cc-name">Nome</label>
+                  <input type="text" class="form-control" name="customer_name" id="cc-name" maxlength='36' placeholder="" required="">
+                  <small class="text-muted">Nome completo exibido no cartão</small>
+                  <div class="invalid-feedback">
+                    Nome completo é requerido.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Número do cartão de crédito</label>
+                  <input type="text" name="customer_card_number" maxlength='19' class="form-control" id="cc-number" placeholder="xxxx-xxxx-xxxx-xxxx" required="">
+                  <div class="invalid-feedback">
+                    Número do cartão de crédito é requerido.
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number">Número do cartão de crédito</label>
-                <input type="text" maxlength='19' class="form-control" id="cc-number" placeholder="xxxx-xxxx-xxxx-xxxx" required="">
-                <div class="invalid-feedback">
-                  Número do cartão de crédito é requerido.
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">CPF</label>
+                  <input type="text" name="customer_document" maxlength='11' placeholder="Somente Números" class="form-control" id="cc-expiration" required="">
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">Parcelas</label>
+                  <select class="form-select" name="transaction_installments">
+                    <option selected value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                    <option value="4">4x</option>
+                    <option value="5">5x</option>
+                    <option value="6">6x</option>
+                  </select>   
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">Validade</label>
+                  <input type="text" name="customer_card_expiration_date" maxlength='5' class="form-control" id="cc-expiration" placeholder="00/00" required="">
+                  <div class="invalid-feedback">
+                    Data de validade é requerida.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">CVV</label>
+                  <input type="text" name="customer_card_cvv" maxlength='3' class="form-control" id="cc-cvv" placeholder="xxx" required="">
+                  <div class="invalid-feedback">
+                    Código de segurança é requerido.
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Validade</label>
-                <input type="text" maxlength='5' class="form-control" id="cc-expiration" placeholder="00/00" required="">
-                <div class="invalid-feedback">
-                  Data de validade é requerida.
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">CVV</label>
-                <input type="text" maxlength='3' class="form-control" id="cc-cvv" placeholder="xxx" required="">
-                <div class="invalid-feedback">
-                  Código de segurança é requerido.
-                </div>
-              </div>
-            </div>
-            <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block w-100" type="submit">Pague agora</button>
+              <hr class="mb-4">
+              <button class="btn btn-primary btn-lg btn-block w-100" type="submit">Pague agora</button>
           </form>
         </div>
       </div>

@@ -79,7 +79,12 @@ class OrdersContoller extends Controller
 
     public function myOrders()
     {
-        return view('orders.myOrders');
+        $orders = Orders::where([
+            'user_id' => Auth::id(),
+            'status' => 'PA'
+        ])->get();
+
+        return view('orders.myOrders', compact('orders'));
     }
 
     public function addProductOrder(Request $request)
@@ -164,5 +169,10 @@ class OrdersContoller extends Controller
         }
 
         return redirect()->route('orders.show', $id_order);
+    }
+
+    public function concluded()
+    {
+        return view('orders.concluded');
     }
 }
