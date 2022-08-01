@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     ProductController,
     AdminController,
+    ApiCheckoutController,
     CartController,
     OrdersContoller,
     UserController,
@@ -18,14 +19,14 @@ Route::get('/', function () {
 });
 
 
-Route::get('/contato', [ContactController::class ,'index'])->name('suport.index');
+Route::get('/contato', [ContactController::class, 'index'])->name('suport.index');
 
-Route::post('/contato/store', [ContactController::class ,'store'])->name('suport.store');
+Route::post('/contato/store', [ContactController::class, 'store'])->name('suport.store');
 
 
 Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
-Route::get('/squadsafira', function(){
+Route::get('/squadsafira', function () {
     return view('squad.profile');
 })->name('squad.profile');
 
@@ -34,7 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/carrinho/adicionar', [CartController::class, 'add'])->name('cart.add');
     Route::delete('carinho/remover', [CartController::class, 'destroy'])->name('cart.destroy');
     Route::get('/carrinho/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+    Route::post('/carrinho/checkout', [ApiCheckoutController::class, 'checkout']);
     Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
+    Route::get('/pedidos/concluded', [OrdersContoller::class, 'concluded'])->name('orders.concluded');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -57,6 +60,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/pedidos/{id}', [OrdersContoller::class, 'update'])->name('orders.update');
     Route::get('/pedidos/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
     Route::delete('/pedidos/{id}', [OrdersContoller::class, 'destroy'])->name('orders.destroy');
+
 
     //Adm
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');

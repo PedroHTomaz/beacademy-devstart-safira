@@ -1,18 +1,31 @@
 @extends('layouts.template-main')
 @section('title', 'Catálogo')
 
-<div class='py-3 shadow-sm'>
-<div class='d-flex justify-content-between container align-items-center'>
+<div class='shadow-sm'>
+<div class='d-flex justify-content-between container align-items-center p-0 '>
     <div>
         <a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
     </div>
     @if(Auth::user())
-    <a href="{{ route('cart.index')}}" type="button" class="btn btn-primary position-relative">
-    <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
-    <span id='add' class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
-    {{$qtdProduct}}
-    </span>
-    </a>
+    <ul class="navbar-nav ms-auto align-items-center flex-row">
+        <li class='nav-item me-1'>
+            <a href="{{ route('orders.myOrders') }}" class="nav-link text-dark me-3">Meus pedidos</a>
+        </li>
+        <li class='nav-item me-1'>
+            <a href="{{ route('cart.index')}}" type="button" class="btn btn-primary">
+                <i class="fa-solid fa-cart-shopping"></i> Meu Carrinho
+                <span id='add' class="translate-middle badge rounded-pill bg-warning">
+                    {{$qtdProduct}}
+                </span>
+            </a>
+        </li>
+        <li class='nav-item'>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-primary ms-2 mt-3" ><i class="fa-solid fa-right-from-bracket"></i> Sair</button>                         
+            </form> 
+        </li>
+    </ul>
     @endif
 </div>
 </div>
