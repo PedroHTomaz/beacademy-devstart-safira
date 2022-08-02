@@ -20,6 +20,6 @@ class SendMailPayment extends Mailable
 
     public function build()
     {
-        return $this->to(config('mail.from.address'))->subject('Contato do Site Safira SZ')->view('suport.payment')->with('data', $this->data);
+        return $this->from(config('mail.from.address'))->subject('Atualização da compra do produto')->view('suport.payment')->with('data', $this->data);
     }
 }

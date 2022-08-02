@@ -39,9 +39,12 @@ class ApiCheckoutController extends Controller
             ];
         };
 
-        $data = $request->all();
+        $data = [
+            $request->all(),
+            $status,
+        ];
 
-        Mail::to(config(['mail.from.address' => Auth::user()->email]))->send( new SendMailPayment($data) );
+        Mail::to(Auth::user()->email)->send( new SendMailPayment($data) );
 
         $order->update($orders_status);
 
