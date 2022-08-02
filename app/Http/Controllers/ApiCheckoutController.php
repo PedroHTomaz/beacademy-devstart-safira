@@ -50,4 +50,9 @@ class ApiCheckoutController extends Controller
 
         return redirect()->route('orders.concluded');
     }
+
+    public function ticket ()
+    {
+        return view ('cart.ticket');
+    }
 }
