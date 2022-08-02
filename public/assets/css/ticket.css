@@ -49,6 +49,7 @@ table {
 
 td {
     position: relative;
+    border: 1px solid black;
 }
 
 .title {
