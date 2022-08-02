@@ -70,9 +70,9 @@
             </div>           
         </ul>
         @empty
-        <div class="text-center mt-5 alert alert-info">
-                <span class='fw-bold d-block mt-1 fs-5'>Você não tem pedidos :{</span>
-                    <a href="/" class='btn btn-info mt-2'>Voltar</a>
+        <div class="card p-3 text-center mt-5">
+                <span class='h5 d-block mt-1'>Você não tem pedidos! <i class="fa-solid fa-heart-crack"></i></span>
+                <a href="{{ route('catalogo.list') }}" class='btn btn-primary mt-3 mx-auto'>Catálogo</a>
             </div>  
         @endforelse 
     </div>
