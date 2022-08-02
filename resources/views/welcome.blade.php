@@ -21,6 +21,7 @@
                         @if(Auth::user()) 
                             @if(Auth::user()->photo)
                                 <li class='nav-item'>
+
                                     <img class='rounded-circle mt-1 border border-primary border-2' height='35px'src="{{ asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/' . Auth::User()->photo)}}">
                                 </li>
                             @else

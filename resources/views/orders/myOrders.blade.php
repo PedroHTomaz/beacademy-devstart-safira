@@ -26,7 +26,7 @@
         <div class='mb-4'>
             <h1 class='h1 text-primary'>Meus Pedidos <i class="fa-solid fa-clipboard-check"></i></h1>
         </div>
-        @foreach($orders as $order)
+        @forelse($orders as $order)
         <ul class='shadow rounded p-3 mb-5'>
             <div class='d-flex justify-content-between'>
                 <div>
@@ -69,6 +69,11 @@
                 <span class='fw-bold d-block mt-3 fs-5'>Valor Total do Pedido: R$ {{number_format($order->value, 2, ',', '.')}}</span>
             </div>           
         </ul>
-        @endforeach  
+        @empty
+        <div class="text-center mt-5 alert alert-info">
+                <span class='fw-bold d-block mt-1 fs-5'>Você não tem pedidos :{</span>
+                    <a href="/" class='btn btn-info mt-2'>Voltar</a>
+            </div>  
+        @endforelse 
     </div>
 @endsection

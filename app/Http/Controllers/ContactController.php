@@ -17,7 +17,7 @@ class ContactController extends Controller
     {
         $data = $request->all();
         
-        Mail::to( config('mail.from.address') )->send( new SendMailContact($data) );
+        Mail::to(config('mail.from.address') )->send( new SendMailContact($data) );
         
         return back()->with('success', 'Obrigado por nos contatar :}');
     }

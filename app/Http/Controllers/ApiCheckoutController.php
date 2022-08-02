@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Orders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Auth;
+use Mail;
+use App\Mail\SendMailPayment;
 class ApiCheckoutController extends Controller
 {
     public function checkout(Request $request)
@@ -36,6 +38,13 @@ class ApiCheckoutController extends Controller
                 'status' => 'PA'
             ];
         };
+
+        $data = [
+            $request->all(),
+            $status,
+        ];
+
+        Mail::to(Auth::user()->email)->send( new SendMailPayment($data) );
 
         $order->update($orders_status);
 
