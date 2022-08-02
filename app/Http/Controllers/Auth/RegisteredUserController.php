@@ -52,7 +52,7 @@ class RegisteredUserController extends Controller
             'neighborhood' => ['required', 'string', 'min:3'],
             'city' => ['required', 'string', 'min:3'],
             'state' => ['required', 'string', 'min:2'],
-            'cep' => ['required', 'integer', 'digits:8'],
+            'cep' => ['required', 'numeric', 'digits:8'],
             'photo' => ['file'],
         ]);
 
