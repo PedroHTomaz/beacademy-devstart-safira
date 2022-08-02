@@ -35,9 +35,7 @@ class RegisteredUserController extends Controller
     {
 
         if ($request->photo) {
-
-            $file = $request['photo'];
-            $path = $file->store('profile', 'public');
+            $path = $request->photo->store('/images', 's3');
         } else {
             $path = $request['photo'];
         }
@@ -46,15 +44,15 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255', 'min:3'],
             'email' => ['required', 'unique:users', 'email', 'max:255', 'min:6'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'tel' => ['required', 'numeric','min:11'],
+            'tel' => ['required', 'numeric', 'min:11'],
             'birth_date' => ['required', 'date_field' => 'before:01/01/2004'],
             'cpf' => ['required', 'unique:users', 'digits:11', 'numeric'],
-            'street' => ['required', 'string','min:1'],
-            'number' => ['required', 'numeric','min:1'],
-            'neighborhood' => ['required', 'string','min:3'],
-            'city' => ['required', 'string','min:3'],
-            'state' => ['required', 'string','min:2'],
-            'cep' => ['required', 'integer','digits:8'],
+            'street' => ['required', 'string', 'min:1'],
+            'number' => ['required', 'numeric', 'min:1'],
+            'neighborhood' => ['required', 'string', 'min:3'],
+            'city' => ['required', 'string', 'min:3'],
+            'state' => ['required', 'string', 'min:2'],
+            'cep' => ['required', 'numeric', 'digits:8'],
             'photo' => ['file'],
         ]);
 

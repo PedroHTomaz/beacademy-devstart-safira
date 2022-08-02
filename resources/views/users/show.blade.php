@@ -7,7 +7,7 @@
     <ul class="list-group">
         <li scope="col" class="list-group-item list-group-item-light">   
             @if($user->photo)
-                <img src="{{ asset('storage/'.$user->photo) }}" height="50px" class="border border-primary border-3 rounded-circle">
+                <img src="{{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/' . $user->photo)}}" height="50px" class="border border-primary border-3 rounded-circle">
             @else    
                 <img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px"class="border border-primary border-3 rounded-circle">
             @endif
@@ -27,6 +27,12 @@
         <li scope="col" class="list-group-item list-group-item-light">Data de Nascimento: {{ $user->birth_date }}</li>
         <li scope="col" class="list-group-item list-group-item-light">CPF: {{ $user->cpf }}</li>
         <li scope="col" class="list-group-item list-group-item-light">Data de Cadastro: {{ date('d/m/Y', strtotime($user->created_at)) }}</li>
+        <li scope="col" class="list-group-item list-group-item-light">CEP: {{ $user->cep }}</li>
+        <li scope="col" class="list-group-item list-group-item-light">Logradouro: {{ $user->street }}</li>
+        <li scope="col" class="list-group-item list-group-item-light">Número: {{ $user->number }}</li>
+        <li scope="col" class="list-group-item list-group-item-light">Bairro: {{ $user->neighborhood }}</li>
+        <li scope="col" class="list-group-item list-group-item-light">Cidade: {{ $user->city }}</li>
+        <li scope="col" class="list-group-item list-group-item-light">Estado: {{ $user->state }}</li> 
         <li scope="col" class='d-flex list-group-item list-group-item-light'><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning">Editar</a>
             <form action="{{ route('users.destroy', $user->id) }}" method="POST" id="form">
                 @method('DELETE')
@@ -34,14 +40,5 @@
                 <button type="submit" class="btn btn-danger ms-3">Deletar</button>
             </form>
         </li>
-    </ul>
-    <ul class="list-group">    
-        <h4 class="text-primary mt-4">Endereço do usuário</h4>
-        <li scope="col" class="list-group-item list-group-item-light">CEP: {{ $user->cep }}</li>
-        <li scope="col" class="list-group-item list-group-item-light">Logradouro: {{ $user->street }}</li>
-        <li scope="col" class="list-group-item list-group-item-light">Número: {{ $user->number }}</li>
-        <li scope="col" class="list-group-item list-group-item-light">Bairro: {{ $user->neighborhood }}</li>
-        <li scope="col" class="list-group-item list-group-item-light">Cidade: {{ $user->city }}</li>
-        <li scope="col" class="list-group-item list-group-item-light">Estado: {{ $user->state }}</li>   
     </ul>
 @endsection

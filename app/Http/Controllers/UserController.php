@@ -67,8 +67,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        if (!$users = $this->model->find($id)) 
-        {
+        if (!$users = $this->model->find($id)) {
             return redirect()->route('users.index');
         }
 
@@ -80,22 +79,21 @@ class UserController extends Controller
                 Storage::delete($users->photo);
             }
 
-            $data['photo'] = $request->photo->store('profile', 'public');
+            $path = $request->photo->store('/images', 's3');
+            $data['photo'] = $path;
         }
-        
+
         $data['is_admin'] = $request->admin ? 1 : 0;
         $users->update($data);
 
         $message = 'Usuário atualizado com sucesso';
         $route = '/usuarios';
         return view('layouts.message', compact('message', 'route'));
-
     }
 
     public function destroy($id)
     {
-        if (!$users = $this->model->find($id)) 
-        {
+        if (!$users = $this->model->find($id)) {
             return redirect()->route('/');
         }
 
@@ -103,7 +101,5 @@ class UserController extends Controller
         $message = 'Usuário excluído com sucesso';
         $route = '/usuarios';
         return view('layouts.message', compact('message', 'route'));
-        
     }
-
 }

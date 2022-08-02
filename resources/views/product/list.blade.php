@@ -40,7 +40,7 @@
             @foreach ($products as $product)
                 <div class="col-sm-3">
                     <div class="card mb-4">
-                        <img src="{{asset('storage/'.$product->photo) }}">
+                        <img src="{{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/' . $product->photo) }}">
                         <div class="card-body">
                             <h6 class="card-title">{{$product->name}}</h6>
                             <h6 class="card-title">R$ {{$product->sale_price}}</h6>

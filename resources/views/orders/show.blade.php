@@ -37,7 +37,7 @@
                                     <th scope="row">{{$product->id}}</th>
                                     <td id="identifier">{{$product->name}}</td>
                                     <td>{{$product->sale_price}}</td>
-                                    <td><img src="{{asset('storage/'.$product->photo)}}" width="50" height="50" class="border border-primary border-3 rounded-circle"></td>
+                                    <td><img src="{{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/'. $product->photo)}}" width="50" height="50" class="border border-primary border-3 rounded-circle"></td>
                                     <td>{{$product->description}}</td>
                                     <td> 
                                         <form action="{{route('orders.add')}}" method="POST">

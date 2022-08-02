@@ -36,7 +36,7 @@
                   <td>{{ $product->quantity }}</td>
                   <td>{{ $product->cust_price }}</td>
                   <td>{{ $product->sale_price }}</td>
-                  <td><img src="{{asset('storage/'.$product->photo)}}" width="50" height="50" class="border border-primary border-3 rounded-circle"></td>
+                  <td><img src="{{asset('https://teste-laravel9.s3.sa-east-1.amazonaws.com/' . $product->photo)}}" width="50" height="50" class="border border-primary border-3 rounded-circle"></td>
                   <td>{{ $product->description }}</td>
                   <td> <a href="{{ route('produtos.idGet', $product->id) }}" class='btn btn-info text-white'>Visualizar</a> </td>
             </tr>
