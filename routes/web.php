@@ -13,22 +13,18 @@ use App\Http\Controllers\{
     ContactController,
 };
 
-//Home
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/contato', [ContactController::class, 'index'])->name('suport.index');
-
-Route::post('/contato/store', [ContactController::class, 'store'])->name('suport.store');
-
-
-Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
-
 Route::get('/squadsafira', function () {
     return view('squad.profile');
 })->name('squad.profile');
+
+Route::get('/contato', [ContactController::class, 'index'])->name('suport.index');
+Route::post('/contato/store', [ContactController::class, 'store'])->name('suport.store');
+
+Route::get('/catalogo', [ProductController::class, 'list'])->name('catalogo.list');
 
 Route::middleware('auth')->group(function () {
     Route::get('/carrinho', [CartController::class, 'index'])->name('cart.index');
@@ -38,7 +34,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/carrinho/checkout', [ApiCheckoutController::class, 'checkout']);
     Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
     Route::get('/pedidos/concluded', [OrdersContoller::class, 'concluded'])->name('orders.concluded');
-
     Route::get('/checkout/boleto', [ApiCheckoutController::class, 'ticket'])->name('checkout.ticket');
 
 });
@@ -64,7 +59,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/pedidos/{id}/edit', [OrdersContoller::class, 'edit'])->name('orders.edit');
     Route::delete('/pedidos/{id}', [OrdersContoller::class, 'destroy'])->name('orders.destroy');
 
-
     //Adm
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin/dashboard/usuarios', [AdminController::class, 'dashboardUsers'])->name('admin.dashboardUsers');
@@ -78,6 +72,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/produtos/{id}/edit', [ProductController::class, 'edit'])->name('produtos.edit');
     Route::put('/produtos/{id}', [ProductController::class, 'update'])->name('produtos.update');
     Route::get('/produtos/{id}', [ProductController::class, 'idGet'])->name('produtos.idGet');
-
     Route::get('/sucesso', [ProductController::class, 'success'])->name('success');
 });
