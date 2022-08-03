@@ -117,7 +117,7 @@
               @csrf
               <div class='d-flex justify-content-between align-items-center'>
                   <h4 class="mb-3 text-primary">Pagamento <i class="fa-solid fa-credit-card"></i></h4>
-                  <button type='submit' class='btn btn-outline-primary' style="margin-top:-15px;">Pagar com boleto</button>
+                  <a href="{{route('checkout.ticket', $order->id)}}" class='btn btn-outline-primary' style="margin-top:-15px;">Pagar com boleto</a>
               </div>
 
               <div class="row">

@@ -39,8 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/orders/myOrders', [OrdersContoller::class, 'myOrders'])->name('orders.myOrders');
     Route::get('/pedidos/concluded', [OrdersContoller::class, 'concluded'])->name('orders.concluded');
 
-    Route::get('/checkout/boleto', [ApiCheckoutController::class, 'ticket'])->name('checkout.ticket');
-
+    Route::get('/checkout/boleto/{id}', [ApiCheckoutController::class, 'ticket'])->name('checkout.ticket');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
