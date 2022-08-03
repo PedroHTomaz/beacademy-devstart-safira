@@ -34,20 +34,24 @@ class UsersRegisterTest extends TestCase
             'state' => 'Ceará',
         ]);
 
+        $response = $this->post('/login', [
+            'email' => 'test@example.com',
+            'password' => '12345678',
+        ]);
+
         $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::CATALOGO);
     }
 
     public function test_new_users_admin_can_register()
     {
         $response = $this->post('/register', [
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'User Admin',
+            'email' => 'admin@example.com',
             'password' => '12345678',
             'password_confirmation' => '12345678',
-            'tel' => '8588991122',
+            'tel' => '8588958122',
             'birth_date' => '13/02/2004',
-            'cpf' => '01122210013',
+            'cpf' => '08822210013',
             'cep' => '60540535',
             'street' => 'Rua Joao XXIII',
             'number' => '0001',
@@ -57,7 +61,11 @@ class UsersRegisterTest extends TestCase
             'is_admin' => 1,
         ]);
 
+        $response = $this->post('/login', [
+            'email' => 'admin@example.com',
+            'password' => '12345678',
+        ]);
+
         $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::CATALOGO);
     }
 }

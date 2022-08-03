@@ -32,8 +32,6 @@ class CartController extends Controller
 
         $id_user = Auth::id();
 
-
-
         $id_order = Orders::searchId([
             'user_id' => $id_user,
             'status' => 'RE'
@@ -65,8 +63,6 @@ class CartController extends Controller
             'valor' => $product->sale_price,
             'status' => 'RE'
         ]);
-
-
 
         return redirect()->route('cart.index');
     }
@@ -127,7 +123,6 @@ class CartController extends Controller
 
             $order->update($valueOrder);
         }
-
 
         $check_order = OrderProduct::where([
             'order_id' => $product->order_id
