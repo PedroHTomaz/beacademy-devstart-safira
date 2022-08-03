@@ -37,7 +37,14 @@
                 <div>
                     <span>Pedido n.º :{{$order->id}}</span>
                     <br>
-                    <span class='fw-bold'>Status: {{$order->status}}</span>
+                    <span class='fw-bold'>Status:
+                        <span class="text-success">
+                            @php
+                            if ($order->status === "PA")
+                                echo "Pago";                    
+                            @endphp
+                        </span>
+                    </span>
                 </div>
             </div>
             <hr>
