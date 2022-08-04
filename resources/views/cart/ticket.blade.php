@@ -6,7 +6,7 @@
 <nav class="navbar navbar-expand-lg shadow-sm">
     <div class="container">
         <div class='d-flex'>
-            <a class="navbar-brand text-primary fw-bold" href="#"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
+            <a class="navbar-brand text-primary fw-bold" href="/"><i class="fa-solid fa-diamond"></i> SAFIRA</a>
         </div>       
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
