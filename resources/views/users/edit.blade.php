@@ -14,9 +14,9 @@
             <input type="date" id="birth_date" name="birth_date" placeholder='Data de Nascimento' class='form-control mb-3' value="{{ $user->birth_date }}">
             <label for="photo" class="form-label">Selecione uma Foto para o seu perfil.</label>
             <input type="file" class="form-control form control-md" id="photo" name="photo">
-            @if(Auth::user()->is_admin == 1)
+            @if($user->is_admin == 1)
                 <input type="hidden" name="is_admin" value="1">
-            @else
+            @elseif($user->is_admin == 0)
                 <input type="hidden" name="is_admin" value="0">   
             @endif       
         </div>
