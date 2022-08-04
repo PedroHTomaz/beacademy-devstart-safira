@@ -23,9 +23,6 @@
                     <th scope="col">Email</th> 
                     <th scope="col">Telefone</th> 
                     <th scope="col">Administrador</th>
-                    <!-- <th scope="col">Data de Nascimento</th> -->
-                    <!-- <th scope="col">CPF</th>  -->
-                <!--  <th scope="col">Data de Cadastro</th>  -->
                     <th scope="col">Ações</th> 
                 </tr>
             </thead>
@@ -46,9 +43,6 @@
                     @else
                         <th scope="col">Não</th> 
                     @endif
-                    <!-- <td>{{ date('d/m/Y', strtotime($user->birth_date)) }}</td>
-                    <td>{{ $user->cpf }}</td>
-                    <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td> -->
                     <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-info text-white">Visualizar</a></td>
                 </tr>
                 @endforeach
