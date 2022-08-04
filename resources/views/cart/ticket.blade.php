@@ -54,8 +54,21 @@
 </nav>
 
     <div class="document mt-5">
-        <div class="text-end mb-3">            
-            <button class="btn btn-primary" onclick="window.print()">Imprimir boleto</button>
+        <div class="d-flex justify-content-between">
+            <div class="d-flex">
+                <div class="text-end mb-3 me-3">            
+                    <a href="{{route('cart.checkout')}}" class="btn btn-primary">Pagar com cartão</a>
+                </div>
+                <div class="text-end mb-3">            
+                    <button class="btn btn-primary" onclick="window.print()">Imprimir boleto</button>
+                </div>
+            </div>
+            <div class="text-end mb-3">
+                <form action="{{route('checkout.ticket', $order->id)}}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Pagar</button>
+                </form>                  
+            </div>
         </div>
         <table cellspacing="0" cellpadding="0">
             <tr class="topLine">

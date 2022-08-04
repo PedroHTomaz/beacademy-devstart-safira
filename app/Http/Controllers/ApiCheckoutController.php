@@ -44,6 +44,7 @@ class ApiCheckoutController extends Controller
         $data = [
             $request->all(),
             $status,
+            $response["transaction"]
         ];
 
         Mail::to(Auth::user()->email)->send(new SendMailPayment($data));
@@ -58,6 +59,13 @@ class ApiCheckoutController extends Controller
         $order = Orders::find($id_order);
 
         $orderQtd = OrderProduct::getQtdProductCart();
+
+        return view('cart.ticket', compact('order', 'orderQtd'));
+    }
+
+    public function ticketPay($id_order)
+    {
+        $order = Orders::find($id_order);
 
         $response = Http::withHeaders([
             'content-type' => 'application/json',
@@ -86,10 +94,15 @@ class ApiCheckoutController extends Controller
             ];
         };
 
+        $data = [
+            $response["body"],
+            $status,
+        ];
+
+        Mail::to(Auth::user()->email)->send(new SendMailPayment($data));
+
         $order->update($orders_status);
 
-
-
-        return view('cart.ticket', compact('order', 'orderQtd'));
+        return redirect()->route('orders.concluded');
     }
 }

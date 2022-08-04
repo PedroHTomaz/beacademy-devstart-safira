@@ -159,7 +159,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration">Validade</label>
-                  <input type="text" name="customer_card_expiration_date" maxlength='5' pattern="[0-9]{2}/[0-9]{2}" class="form-control" id="cc-expiration" placeholder="00/00" required="">
+                  <input type="text" name="customer_card_expiration_date" maxlength='5' pattern="[0-9]{2}/[0-9]{2}" class="form-control" id="cc-expiration" placeholder="00/00" required="" data-inputmask="'mask': '00/00'">
                   <div class="invalid-feedback">
                     Data de validade é requerida.
                   </div>

@@ -54,7 +54,7 @@
 
             <div class="devCard card px-3 border-0">
                 <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQGTUPCJnjqXrQ/profile-displayphoto-shrink_200_200/0/1630168471539?e=1664409600&v=beta&t=Vxl0hAKxuUMEu-lzZPu2jiisQIEnoTfAMSffmS6NcSw">
+                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Formado em ADS. Desenvolvedor Full Stack PHP com LARAVEL e REACT. Amante de tecnologia" class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQGTUPCJnjqXrQ/profile-displayphoto-shrink_200_200/0/1630168471539?e=1664409600&v=beta&t=Vxl0hAKxuUMEu-lzZPu2jiisQIEnoTfAMSffmS6NcSw">
                 </div>
                 <div class="card-body text-center">
                     <h5 class="text-primary">Eduardo Henrique</h5>
@@ -82,7 +82,7 @@
 
             <div class="devCard card px-3 border-0">
                 <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQGbPRKY_BYhUA/profile-displayphoto-shrink_200_200/0/1644438376406?e=1664409600&v=beta&t=LKA1ged45ed6d60LOoAMymwWLZmAgKSf0vpt0O2DAUg">
+                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Em busca de uma profissão encontrei essa área e atualmente estudo para me tornar um desenvolvedor FullStack. " class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQGbPRKY_BYhUA/profile-displayphoto-shrink_200_200/0/1644438376406?e=1664409600&v=beta&t=LKA1ged45ed6d60LOoAMymwWLZmAgKSf0vpt0O2DAUg">
                 </div>
                 <div class="card-body text-center">
                     <h5 class="text-primary">Gustavo Rodriguez</h5>
@@ -96,7 +96,7 @@
 
             <div class="devCard card px-3 border-0">
                 <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQFmHFR_PRmPdg/profile-displayphoto-shrink_200_200/0/1567619932909?e=1664409600&v=beta&t=RPMQjnWFS3qBqxNdd0HPdkDJa45SjWJhkZHigM9TL3k">
+                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Sempre busco me tornar um profissional melhor, seja através das minhas atitudes, ou minhas buscas por conteúdos que me façam capacitado e que está sempre disposto a lutar por novas conquistas e aprendizados." class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQFmHFR_PRmPdg/profile-displayphoto-shrink_200_200/0/1567619932909?e=1664409600&v=beta&t=RPMQjnWFS3qBqxNdd0HPdkDJa45SjWJhkZHigM9TL3k">
                 </div>
                 <div class="card-body text-center">
                     <h5 class="text-primary">Odenilson Marques</h5>
