@@ -82,8 +82,7 @@ class UserController extends Controller
             $path = $request->photo->store('/images', 's3');
             $data['photo'] = $path;
         }
-
-        $data['is_admin'] = $request->admin ? 1 : 0;
+        
         $users->update($data);
 
         $message = 'Usuário atualizado com sucesso';
