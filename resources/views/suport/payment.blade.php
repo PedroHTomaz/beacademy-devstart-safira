@@ -1,34 +1,45 @@
-@if($data[1] == 'paid')
+    @if($data[1] == 'paid')
 
-<h1 style="color:#0d6efd;">Equipe Safira!</h1>
+        <h1 style="color:#0d6efd;">Equipe Safira!</h1>
+        <hr>
+        <h2>Olá {{ $data[0]["customer_name"] }}, sua compra foi realizada com sucesso!</h2>
+        @if($data[0]["transaction_type"] == 'ticket')
+            <br>
+            <span><b>Meio de pagamento:</b> Boleto <br>
+            <span><b>Valor total:</b> {{ $data[0]["transaction_amount"] }}<br>
+            <span><b>Data do pagamento:</b>{{date('d/m/Y')}}</span><br>  
+        @elseif($data[0]["transaction_type"] == 'card')
+            <br>
+            <span><b>Meio de pagamento:</b> Cartão de Crédito <br>
+            <span><b>Quantidade de Parcelas:</b> {{ $data[2]["installments"] }}<br> 
+            <span><b>Valor das parcelas:</b> {{ $data[2]["amount_installment"] }}<br> 
+            <span><b>Valor total:</b> {{ $data[2]["amount"] }}<br>    
+            <span><b>Data do pagamento:</b>{{date('d/m/Y')}}</span><br>           
+        @endif
+        </span>
+        <br>
+        <span></span>
+        <span style="color:red;">Se você não fez essa compra, <a href="http://devstart-safira.herokuapp.com/contato">entre em contato conosco</a> , por favor!</span>
 
-<hr>
+    @endif
 
-<h2>Olá {{ $data[0]["customer_name"] }}, sua compra foi realizada com sucesso!</h2>
-<br>
-<span>Meio de pagamento: {{$data[0]["transaction_type"]}}</span>
-<br>
-<span style="color:red;">Se você não fez essa compra, <a href="http://devstart-safira.herokuapp.com/contato">entre em contato conosco</a> , por favor!</span>
+    @if($data[1] == 'reserved')
 
-@endif
+        <h1>Equipe Safira!</h1>
 
-@if($data[1] == 'reserved')
+        <hr>
 
-<h1>Equipe Safira!</h1>
+        <h2> Olá {{ $data[0]["customer_name"] }}, o produto está processando!</h2>
 
-<hr>
-
-<h2> Olá {{ $data[0]["customer_name"] }}, o produto está processando!</h2>
-
-@endif
+    @endif
 
 
-@if($data[1] == 'canceled')
+    @if($data[1] == 'canceled')
 
-<h1>Equipe Safira!</h1>
+        <h1>Equipe Safira!</h1>
 
-<hr>
+        <hr>
 
-<h2> Olá {{ $data[0]["customer_name"] }}, o produto foi recusado!</h2>
+        <h2> Olá {{ $data[0]["customer_name"] }}, o produto foi recusado!</h2>
 
-@endif
+    @endif
