@@ -54,6 +54,9 @@
 </nav>
 
     <div class="document mt-5">
+        <div class="text-end mb-3">            
+            <button class="btn btn-primary" onclick="window.print()">Imprimir boleto</button>
+        </div>
         <table cellspacing="0" cellpadding="0">
             <tr class="topLine">
                 <td class="bankLogo">
