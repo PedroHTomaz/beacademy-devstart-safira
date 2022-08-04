@@ -96,7 +96,7 @@
 
             <div class="devCard card px-3 border-0">
                 <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Sempre busco me tornar um profissional melhor, seja através das minhas atitudes, ou minhas buscas por conteúdos que me façam capacitado e que está sempre disposto a lutar por novas conquistas e aprendizados." class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQFmHFR_PRmPdg/profile-displayphoto-shrink_200_200/0/1567619932909?e=1664409600&v=beta&t=RPMQjnWFS3qBqxNdd0HPdkDJa45SjWJhkZHigM9TL3k">
+                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Sempre busco me tornar um profissional melhor, estou sempre disposto a lutar por novas conquistas e aprendizados." class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQFmHFR_PRmPdg/profile-displayphoto-shrink_200_200/0/1567619932909?e=1664409600&v=beta&t=RPMQjnWFS3qBqxNdd0HPdkDJa45SjWJhkZHigM9TL3k">
                 </div>
                 <div class="card-body text-center">
                     <h5 class="text-primary">Odenilson Marques</h5>
