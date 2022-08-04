@@ -2,9 +2,9 @@
 @section('title', 'Catálogo')
 
 <div class='shadow-sm'>
-<div class='d-flex justify-content-between container align-items-center p-0 '>
+<div class='d-flex justify-content-between container align-items-center'>
     <div>
-        <a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond"></i> SAFIRA</a>
+        <a href="/" class='h5 fw-bold text-decoration-none'><i class="fa-solid fa-diamond py-3"></i> SAFIRA</a>
     </div>
     @if(Auth::user())
     <ul class="navbar-nav ms-auto align-items-center flex-row">
