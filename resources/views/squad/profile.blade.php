@@ -26,7 +26,7 @@
 
             <div class="devCard card px-3 border-0">
                 <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Estudante autodidata de desenvolvimento web, porém se apaixonando pelo universo back-end!" class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4E03AQHRDwfpbcS_5A/profile-displayphoto-shrink_200_200/0/1646874316861?e=1664409600&v=beta&t=FbbVyjvSCcUzpqu-OCyPQJYa3a4Isqm-GKx3aVo6RoY">
+                    <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Estudante autodidata de desenvolvimento web, porém se apaixonando pelo universo back-end!" class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://i.imgur.com/pB1AKfR.png">
                 </div>
                 <div class="card-body text-center">
                     <h5 class="text-primary">Eleazar Freitas</h5>
