@@ -18,7 +18,7 @@
         <li scope="col"class="list-group-item list-group-item-light">Email: {{ $user->email }}</th>
         <li scope="col"class="list-group-item list-group-item-light">Telefone: {{ $user->tel }}</li>
         <li scope="col"class="list-group-item list-group-item-light">Administrador: 
-            @if(Auth::User()->is_admin == 1)
+            @if($user->is_admin == 1)
                 Sim
             @else
                 Não

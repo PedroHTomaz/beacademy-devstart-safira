@@ -14,6 +14,11 @@
             <input type="date" id="birth_date" name="birth_date" placeholder='Data de Nascimento' class='form-control mb-3' value="{{ $user->birth_date }}">
             <label for="photo" class="form-label">Selecione uma Foto para o seu perfil.</label>
             <input type="file" class="form-control form control-md" id="photo" name="photo">
+            @if($user->is_admin == 1)
+                <input type="hidden" name="is_admin" value="1">
+            @elseif($user->is_admin == 0)
+                <input type="hidden" name="is_admin" value="0">   
+            @endif       
         </div>
         <div class='mt-3'>
             <label for="" class='form-label text-primary h3'>Endereço</label>
