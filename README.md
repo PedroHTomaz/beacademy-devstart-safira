@@ -10,6 +10,12 @@
 * [Gustavo Oliveira](https://github.com/sguiLo)
 * [Odenilson Marques](https://github.com/odenilsonmarques)
 
+## Deploy:
+https://devstart-safira.herokuapp.com/
+
+## Kanban do projeto:
+https://github.com/users/PedroHTomaz/projects/1
+
 ### Criar um CHECKOUT para uma PLATAFORMA de VENDAS ONLINE
 * Este checkout será criado em PHP, utilizando a Framework Laravel.
 * O contexto deste projeto é mínimo no que diz respeito a operações de e-commerce e foca na efetivação do pagamento, portanto questões como logística, descontos e afins não serão levados em consideração na descrição e execução do projeto.
