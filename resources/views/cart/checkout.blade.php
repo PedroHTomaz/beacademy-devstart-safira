@@ -135,7 +135,7 @@
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="cc-number">Número do cartão de crédito</label>
-                  <input type="text" name="customer_card_number" maxlength='19' pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control" id="cc-number" placeholder="xxxx-xxxx-xxxx-xxxx" required="">
+                  <input onkeypress="checkNumberCard()" id="numberCard" type="text" name="customer_card_number" maxlength='19' pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control" id="cc-number" placeholder="xxxx-xxxx-xxxx-xxxx" required="">
                   <div class="invalid-feedback">
                     Número do cartão de crédito é requerido.
                   </div>
@@ -144,7 +144,7 @@
               <div class="row">
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration">CPF</label>
-                  <input type="text" name="customer_document" maxlength='14' pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" class="form-control" id="cc-expiration" required="">
+                  <input onkeypress="checkCPF()" id="CPF" type="text" name="customer_document" maxlength='14' pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" class="form-control" id="cc-expiration" required="">
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration">Parcelas</label>
@@ -159,7 +159,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="cc-expiration">Validade</label>
-                  <input type="text" name="customer_card_expiration_date" maxlength='5' pattern="[0-9]{2}/[0-9]{2}" class="form-control" id="cc-expiration" placeholder="00/00" required="" data-inputmask="'mask': '00/00'">
+                  <input onkeypress="check_cc_expiration()" type="text" name="customer_card_expiration_date" maxlength='5' pattern="[0-9]{2}/[0-9]{2}" class="form-control" id="cc-expiration" placeholder="00/00" required="" data-inputmask="'mask': '00/00'">
                   <div class="invalid-feedback">
                     Data de validade é requerida.
                   </div>
@@ -181,5 +181,6 @@
     </div>
 
     <script src="{{asset('assets/js/checkValidation.js')}}"></script>
+    <script src="{{asset('assets/js/checkSignUpAndCheckout.js')}}"></script>
 
 </body></html>
