@@ -82,7 +82,7 @@
 
         <div class="devCard card px-3 border-0">
             <div class="pic mx-auto m-3 border border-5 border-primary rounded-circle">
-                <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Em busca de uma profissão encontrei essa área e atualmente estudo para me tornar um desenvolvedor FullStack. " class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQGbPRKY_BYhUA/profile-displayphoto-shrink_200_200/0/1644438376406?e=1664409600&v=beta&t=LKA1ged45ed6d60LOoAMymwWLZmAgKSf0vpt0O2DAUg">
+                <img data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Por muito tempo em busca de uma área onde gostaria de construir uma carreira me encontrei e atualmente estou estudando para me tornar um desenvolvedor FullStack." class="h-100 border border-5 border-light card-img-top rounded-circle" src="https://media-exp1.licdn.com/dms/image/C4D03AQGbPRKY_BYhUA/profile-displayphoto-shrink_200_200/0/1644438376406?e=1664409600&v=beta&t=LKA1ged45ed6d60LOoAMymwWLZmAgKSf0vpt0O2DAUg">
             </div>
             <div class="card-body text-center">
                 <h5 class="text-primary">Gustavo Rodrigues</h5>
